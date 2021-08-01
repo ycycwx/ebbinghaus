@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/eslint-parser': ^7.14.7
+  '@babel/eslint-parser': ^7.14.9
   '@babel/eslint-plugin': ^7.14.5
   '@chakra-ui/icons': ^1.0.14
   '@chakra-ui/react': ^1.6.5
@@ -52,9 +52,9 @@ dependencies:
   typescript: 4.3.5
 
 devDependencies:
-  '@babel/eslint-parser': 7.14.7_eslint@7.32.0
-  '@babel/eslint-plugin': 7.14.5_5dbea91cbb449cd8f39eb48092b449cf
-  '@ecomfe/eslint-config': 7.1.0_207c8218965abedb95a6e2909f2f80ee
+  '@babel/eslint-parser': 7.14.9_eslint@7.32.0
+  '@babel/eslint-plugin': 7.14.5_e24cd50574d9fee357a9427591e77dc2
+  '@ecomfe/eslint-config': 7.1.0_69621b4cba88ed7bc18ebad0488e2191
   '@types/express': 4.17.13
   '@types/react': 17.0.15
   '@types/react-dom': 17.0.9
@@ -112,8 +112,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser/7.14.7_eslint@7.32.0:
-    resolution: {integrity: sha512-6WPwZqO5priAGIwV6msJcdc9TsEPzYeYdS/Xuoap+/ihkgN6dzHp2bcAAwyWZ5bLzk0vvjDmKvRwkqNaiJ8BiQ==}
+  /@babel/eslint-parser/7.14.9_eslint@7.32.0:
+    resolution: {integrity: sha512-W3En2CT6iOZJ+jEujLlwL2h/Jraj6S/IHrh63nV+TfX83DYe9pI4pcu0Luj6/hJ2kIr/3hOttxzaEsSQnUKx+w==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
@@ -125,14 +125,14 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /@babel/eslint-plugin/7.14.5_5dbea91cbb449cd8f39eb48092b449cf:
+  /@babel/eslint-plugin/7.14.5_e24cd50574d9fee357a9427591e77dc2:
     resolution: {integrity: sha512-nzt/YMnOOIRikvSn2hk9+W2omgJBy6U8TN0R+WTTmqapA+HnZTuviZaketdTE9W7/k/+E/DfZlt1ey1NSE39pg==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/eslint-parser': '>=7.11.0'
       eslint: '>=7.5.0'
     dependencies:
-      '@babel/eslint-parser': 7.14.7_eslint@7.32.0
+      '@babel/eslint-parser': 7.14.9_eslint@7.32.0
       eslint: 7.32.0
       eslint-rule-composer: 0.3.0
     dev: true
@@ -1122,7 +1122,7 @@ packages:
       react: 18.0.0-alpha-6f3fcbd6f-20210730
     dev: false
 
-  /@ecomfe/eslint-config/7.1.0_207c8218965abedb95a6e2909f2f80ee:
+  /@ecomfe/eslint-config/7.1.0_69621b4cba88ed7bc18ebad0488e2191:
     resolution: {integrity: sha512-Q7lzgPbzdSX0/ypXljScjQ9iGIfheI6gzOq0wg2IrRv2PJyllapUU1kHFlGbTeGVdk2rFhnhIy6p4xUnFzqLOA==}
     peerDependencies:
       '@babel/core': ^7.12.10
@@ -1152,8 +1152,8 @@ packages:
       eslint-plugin-vue:
         optional: true
     dependencies:
-      '@babel/eslint-parser': 7.14.7_eslint@7.32.0
-      '@babel/eslint-plugin': 7.14.5_5dbea91cbb449cd8f39eb48092b449cf
+      '@babel/eslint-parser': 7.14.9_eslint@7.32.0
+      '@babel/eslint-plugin': 7.14.5_e24cd50574d9fee357a9427591e77dc2
       '@typescript-eslint/eslint-plugin': 4.28.5_a8e83fcad666e1ba86be4b2e27a20aea
       '@typescript-eslint/parser': 4.28.5_eslint@7.32.0+typescript@4.3.5
       eslint: 7.32.0
