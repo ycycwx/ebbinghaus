@@ -25,7 +25,7 @@ class EbbinghausDatabase extends Dexie {
 
         return this
             .items
-            .filter(({updateTime, stage}) => differenceInDays(Date.now(), updateTime) > stage)
+            .filter(({updateTime, stage}) => differenceInDays(Date.now(), updateTime) >= stage)
             .toArray();
     }
 
