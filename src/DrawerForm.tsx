@@ -13,12 +13,12 @@ import {
     FormLabel,
     Textarea,
 } from '@chakra-ui/react';
-import type {EbbinghausItem} from '../types/store';
+import {useMutate} from './mutate';
+import {db} from './db';
 
 interface Props {
     isOpen: boolean;
     onClose: () => void;
-    onAdd: (item: EbbinghausItem) => void;
 }
 
 type Action =
@@ -40,22 +40,27 @@ const reducer = (state: {name: string, link: string, desc: string}, action: Acti
     return {name: '', link: '', desc: ''};
 };
 
-export const DrawerForm = ({
-    isOpen,
-    onClose,
-    onAdd,
-}: Props) => {
+export const DrawerForm = ({isOpen, onClose}: Props) => {
+    const mutate = useMutate();
     const [{name, link, desc}, dispatch] = useReducer(reducer, {name: '', link: '', desc: ''});
     const onClick = useCallback(
-        () => {
+        async () => {
             if (name) {
                 const now = Date.now();
-                onAdd({name, link, desc, createTime: now, updateTime: now, stage: 1});
+                await db.items.add({
+                    name,
+                    link,
+                    desc,
+                    createTime: now,
+                    updateTime: now,
+                    stage: 1,
+                });
                 dispatch({type: 'reset'});
                 onClose();
+                await mutate();
             }
         },
-        [desc, link, name, onAdd, onClose]
+        [desc, link, mutate, name, onClose]
     );
     const onNameChange = useCallback(e => dispatch({payload: e.target.value, type: 'name'}), []);
     const onLinkChange = useCallback(e => dispatch({payload: e.target.value, type: 'link'}), []);

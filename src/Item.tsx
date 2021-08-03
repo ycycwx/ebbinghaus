@@ -9,27 +9,33 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
+    useDisclosure,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon} from '@chakra-ui/icons';
-import {getNextStage} from './util';
+import {useMutate} from './mutate';
+import {getNextStage, isAvailable} from './util';
 import {db} from './db';
 import type {EbbinghausItem} from '../types/store';
 
-export const Item = ({
-    name,
-    link,
-    stage,
-    id,
-    mutate,
-}: EbbinghausItem & {mutate: (...args: any[]) => Promise<any>}) => {
+export const Item = (props: EbbinghausItem) => {
+    const {
+        name,
+        link,
+        stage,
+        id,
+    } = props;
+    const available = isAvailable(props);
+    const {onOpen, onClose, isOpen} = useDisclosure();
+    const mutate = useMutate();
     const onResolve = useCallback(
         async () => {
             if (id) {
                 await db.items.update(id, {updateTime: Date.now(), stage: getNextStage(stage)});
                 await mutate();
+                onClose();
             }
         },
-        [id, mutate, stage]
+        [id, mutate, onClose, stage]
     );
 
     const onRemove = useCallback(
@@ -49,10 +55,10 @@ export const Item = ({
                     ? <Link href={link} isExternal>{name ?? '--'}</Link>
                     : <Box>{name ?? '--'}</Box>
             }
-            <HStack>
-                <Popover>
+            <HStack spacing={3}>
+                <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
                     <PopoverTrigger>
-                        <IconButton aria-label="resovle" icon={<CheckIcon />} />
+                        <IconButton disabled={!available} aria-label="resovle" icon={<CheckIcon />} />
                     </PopoverTrigger>
                     <PopoverContent width={100}>
                         <Button variant="solid" onClick={onResolve}>确认记住</Button>

@@ -1,5 +1,5 @@
 import Dexie from 'dexie';
-import differenceInDays from 'date-fns/differenceInDays';
+import {isAvailable} from './util';
 import type {EbbinghausItem} from '../types/store';
 
 const isServer = typeof window !== 'object';
@@ -18,24 +18,14 @@ class EbbinghausDatabase extends Dexie {
         this.items = this.table('items');
     }
 
-    async loadAvailableItems(): Promise<EbbinghausItem[]> {
+    async loadAllItems(params: {variant: 'all' | 'available'} = {variant: 'all'}): Promise<EbbinghausItem[]> {
         if (isServer) {
             return [];
         }
 
         return this
             .items
-            .filter(({updateTime, stage}) => differenceInDays(Date.now(), updateTime) >= stage)
-            .toArray();
-    }
-
-    async loadAllItems(): Promise<EbbinghausItem[]> {
-        if (isServer) {
-            return [];
-        }
-
-        return this
-            .items
+            .filter(item => (params.variant === 'all' || isAvailable(item)))
             .toArray();
     }
 }
