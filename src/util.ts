@@ -1,4 +1,5 @@
-import type {Stage} from '../types/store';
+import differenceInDays from 'date-fns/differenceInDays';
+import type {Stage, EbbinghausItem} from '../types/store';
 
 export const getNextStage = (stage: Stage): Stage => {
     switch (stage) {
@@ -9,3 +10,5 @@ export const getNextStage = (stage: Stage): Stage => {
         default: return 1_000_000_000;
     }
 };
+
+export const isAvailable = ({updateTime, stage}: EbbinghausItem) => differenceInDays(Date.now(), updateTime) >= stage;

@@ -3,7 +3,7 @@ import {Accordion, AccordionItem, AccordionIcon, AccordionPanel, AccordionButton
 import {db} from './db';
 
 export const Debug = () => {
-    const {data} = useSWR('db.loadAllItems', () => db.loadAllItems(), {refreshInterval: 1000});
+    const {data} = useSWR('db.debug', () => db.loadAllItems(), {refreshInterval: 1000});
     if (!data) {
         return null;
     }
