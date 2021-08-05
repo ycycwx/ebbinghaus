@@ -9,11 +9,13 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
+    Text,
     useDisclosure,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon} from '@chakra-ui/icons';
+import formatDistance from 'date-fns/formatDistance';
 import {useMutate} from './mutate';
-import {getNextStage, isAvailable} from './util';
+import {getNextStage, isAvailable, useForceUpdate, useInterval} from './util';
 import {db} from './db';
 import type {EbbinghausItem} from '../types/store';
 
@@ -22,6 +24,7 @@ export const Item = (props: EbbinghausItem) => {
         name,
         link,
         stage,
+        updateTime,
         id,
     } = props;
     const available = isAvailable(props);
@@ -48,6 +51,9 @@ export const Item = (props: EbbinghausItem) => {
         [id, mutate]
     );
 
+    const forceUpdate = useForceUpdate();
+    useInterval(forceUpdate, 6000);
+
     return (
         <HStack as={ListItem} justifyContent="space-between">
             {
@@ -56,6 +62,7 @@ export const Item = (props: EbbinghausItem) => {
                     : <Box>{name ?? '--'}</Box>
             }
             <HStack spacing={3}>
+                <Text>{formatDistance(updateTime, new Date(), {addSuffix: true})}</Text>
                 <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
                     <PopoverTrigger>
                         <IconButton disabled={!available} aria-label="resovle" icon={<CheckIcon />} />
