@@ -1,4 +1,4 @@
-import {useCallback, useReducer} from 'react';
+import {useCallback, useEffect, useReducer} from 'react';
 import {
     Button,
     Drawer,
@@ -55,7 +55,6 @@ export const DrawerForm = ({isOpen, onClose}: Props) => {
                     updateTime: now,
                     stage: 1,
                 });
-                dispatch({type: 'reset'});
                 onClose();
                 await mutate();
             }
@@ -65,6 +64,16 @@ export const DrawerForm = ({isOpen, onClose}: Props) => {
     const onNameChange = useCallback(e => dispatch({payload: e.target.value, type: 'name'}), []);
     const onLinkChange = useCallback(e => dispatch({payload: e.target.value, type: 'link'}), []);
     const onDescChange = useCallback(e => dispatch({payload: e.target.value, type: 'desc'}), []);
+
+    useEffect(
+        () => () => {
+            if (!isOpen) {
+                dispatch({type: 'reset'});
+            }
+        },
+        [isOpen]
+    );
+
     return (
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
             <DrawerOverlay />
@@ -89,7 +98,9 @@ export const DrawerForm = ({isOpen, onClose}: Props) => {
                     <Button variant="outline" mr={3} onClick={onClose}>
                         取消
                     </Button>
-                    <Button type="submit" disabled={!name} onClick={onClick}>提交</Button>
+                    <Button type="submit" disabled={!name} onClick={onClick}>
+                        提交
+                    </Button>
                 </DrawerFooter>
             </DrawerContent>
         </Drawer>
