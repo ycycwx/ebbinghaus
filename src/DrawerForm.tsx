@@ -14,7 +14,7 @@ import {
     Textarea,
 } from '@chakra-ui/react';
 import {useMutate} from './mutate';
-import {db} from './db';
+import {addItem, request} from './graphql';
 
 interface Props {
     isOpen: boolean;
@@ -46,15 +46,7 @@ export const DrawerForm = ({isOpen, onClose}: Props) => {
     const onClick = useCallback(
         async () => {
             if (name) {
-                const now = Date.now();
-                await db.items.add({
-                    name,
-                    link,
-                    desc,
-                    createTime: now,
-                    updateTime: now,
-                    stage: 1,
-                });
+                await request(addItem, {name, link, desc});
                 onClose();
                 await mutate();
             }

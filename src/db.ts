@@ -1,5 +1,5 @@
 import Dexie from 'dexie';
-import {isAvailable} from './util';
+import {getNextStage, isAvailable} from './util';
 import type {EbbinghausItem} from '../types/store';
 
 const isServer = typeof window !== 'object';
@@ -27,6 +27,53 @@ class EbbinghausDatabase extends Dexie {
             .items
             .filter(item => (params.variant === 'all' || isAvailable(item)))
             .toArray();
+    }
+
+    async addItem(item: Pick<EbbinghausItem, 'name' | 'link' | 'desc'>): Promise<void | number> {
+        if (isServer) {
+            return;
+        }
+
+        const time = Date.now();
+        // eslint-disable-next-line consistent-return
+        return this.items.add({
+            ...item,
+            createTime: time,
+            updateTime: time,
+            stage: 1,
+        });
+    }
+
+    async getItem(id: number): Promise<EbbinghausItem | undefined> {
+        if (isServer) {
+            return;
+        }
+
+        // eslint-disable-next-line consistent-return
+        return this.items.get({id});
+    }
+
+    async updateItem(id: number): Promise<void> {
+        if (isServer) {
+            return;
+        }
+
+        const item = await this.getItem(id);
+        if (!item) {
+            throw new Error('item should be update with `id`');
+        }
+
+        // eslint-disable-next-line consistent-return
+        return this.items.update(id, {updateTime: Date.now(), stage: getNextStage(item.stage)}) as unknown as void;
+    }
+
+    async deleteItem(id: number): Promise<void | number> {
+        if (isServer) {
+            return;
+        }
+
+        // eslint-disable-next-line consistent-return
+        return this.items.delete(id);
     }
 }
 

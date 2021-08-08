@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+// @ts-ignore
 import {pipeToNodeWritable} from 'react-dom/server';
 import {Html} from './Html';
 import type {Response} from 'express';
