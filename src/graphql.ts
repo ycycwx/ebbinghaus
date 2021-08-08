@@ -1,5 +1,6 @@
 import {buildSchema, graphql, GraphQLScalarType} from 'graphql';
 import {db} from './db';
+import type {EbbinghausItem} from '../types/store';
 
 const dateScalar = new GraphQLScalarType({
     name: 'Date',
@@ -44,6 +45,7 @@ const schema = buildSchema(`
     }
 
     type Mutation {
+        addItem(name: String!, link: String, desc: String): Void
         updateItem(id: ID!): Void
         deleteItem(id: ID!): Void
     }
@@ -54,9 +56,11 @@ const root = {
     voidScalar,
     item: ({id}: {id: string}) => db.getItem(+id),
     items: ({variant}: {variant: 'all' | 'available'}) => db.loadAllItems({variant}),
+    addItem: ({name, link, desc}: EbbinghausItem) => db.addItem({name, link, desc}),
     updateItem: ({id}: {id: string}) => db.updateItem(+id),
     deleteItem: ({id}: {id: string}) => db.deleteItem(+id),
 };
 
-export const request = <T = any>(query: string, variables?: any) =>
-    graphql(schema, query, root, null, variables) as Promise<T>;
+export const request = <T = any>(query: string, variables?: any) => {
+    return graphql(schema, query, root, null, variables) as Promise<T>;
+};

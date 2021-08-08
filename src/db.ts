@@ -29,6 +29,21 @@ class EbbinghausDatabase extends Dexie {
             .toArray();
     }
 
+    async addItem(item: Pick<EbbinghausItem, 'name' | 'link' | 'desc'>): Promise<void | number> {
+        if (isServer) {
+            return;
+        }
+
+        const time = Date.now();
+        // eslint-disable-next-line consistent-return
+        return this.items.add({
+            ...item,
+            createTime: time,
+            updateTime: time,
+            stage: 1,
+        });
+    }
+
     async getItem(id: number): Promise<EbbinghausItem | undefined> {
         if (isServer) {
             return;
@@ -52,7 +67,7 @@ class EbbinghausDatabase extends Dexie {
         return this.items.update(id, {updateTime: Date.now(), stage: getNextStage(item.stage)}) as unknown as void;
     }
 
-    async deleteItem(id: number): Promise<void> {
+    async deleteItem(id: number): Promise<void | number> {
         if (isServer) {
             return;
         }
