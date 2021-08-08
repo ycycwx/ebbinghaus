@@ -12,18 +12,32 @@ import {AddIcon} from '@chakra-ui/icons';
 import useSWR from 'swr';
 import {DataList} from './DataList';
 import {Mutate} from './mutate';
-import {db} from './db';
+import {request} from './graphql';
 import type {EbbinghausItem} from '../types/store';
 
 const Debug = lazy(() => import('./Debug').then(module => ({default: module.Debug})));
 const DrawerForm = lazy(() => import('./DrawerForm').then(module => ({default: module.DrawerForm})));
 
+const query = `
+query GetItems($variant: String = "all") {
+    items(variant: $variant) {
+        id
+        name
+        link
+        desc
+        createTime
+        updateTime
+        stage
+    }
+}
+`;
+
 export const Main = () => {
     const {isOpen, onOpen, onClose} = useDisclosure();
     const [isChecked, {toggle}] = useBoolean();
-    const {data, mutate} = useSWR<EbbinghausItem[]>(
-        ['db.loadAllItems', isChecked],
-        (_, isChecked) => db.loadAllItems({variant: isChecked ? 'all' : 'available'})
+    const {data, mutate} = useSWR<{data: {items: EbbinghausItem[]}}>(
+        [query, isChecked],
+        (query: string, isChecked: boolean) => request(query, {variant: isChecked ? 'all' : 'available'})
     );
     return (
         <Mutate value={mutate}>
@@ -34,7 +48,7 @@ export const Main = () => {
                     <Switch isChecked={isChecked} onChange={toggle} />
                 </HStack>
                 <VStack spacing={4} p={5} width="100%">
-                    <DataList data={data} />
+                    <DataList data={data?.data.items} />
                     <Suspense fallback={null}>
                         {import.meta.env.DEV && <Debug />}
                     </Suspense>

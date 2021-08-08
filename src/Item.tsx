@@ -15,15 +15,26 @@ import {
 import {CheckIcon, SmallCloseIcon} from '@chakra-ui/icons';
 import formatDistance from 'date-fns/formatDistance';
 import {useMutate} from './mutate';
-import {getNextStage, isAvailable, useForceUpdate, useInterval} from './util';
-import {db} from './db';
+import {request} from './graphql';
+import {isAvailable, useForceUpdate, useInterval} from './util';
 import type {EbbinghausItem} from '../types/store';
+
+const updateItem = `
+mutation UpdateItem($id: ID!) {
+    updateItem(id: $id)
+}
+`;
+
+const deleteItem = `
+mutation DeleteItem($id: ID!) {
+    deleteItem(id: $id)
+}
+`;
 
 export const Item = (props: EbbinghausItem) => {
     const {
         name,
         link,
-        stage,
         updateTime,
         id,
     } = props;
@@ -33,18 +44,18 @@ export const Item = (props: EbbinghausItem) => {
     const onResolve = useCallback(
         async () => {
             if (id) {
-                await db.items.update(id, {updateTime: Date.now(), stage: getNextStage(stage)});
+                await request(updateItem, {id});
                 await mutate();
                 onClose();
             }
         },
-        [id, mutate, onClose, stage]
+        [id, mutate, onClose]
     );
 
     const onRemove = useCallback(
         async () => {
             if (id) {
-                await db.items.delete(id);
+                await request(deleteItem, {id});
                 await mutate();
             }
         },
