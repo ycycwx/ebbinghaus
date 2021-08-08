@@ -1,9 +1,9 @@
 import useSWR from 'swr';
 import {Accordion, AccordionItem, AccordionIcon, AccordionPanel, AccordionButton, Box, Heading} from '@chakra-ui/react';
-import {db} from './db';
+import {getItems, request} from './graphql';
 
 export const Debug = () => {
-    const {data} = useSWR('db.debug', () => db.loadAllItems(), {refreshInterval: 1000});
+    const {data} = useSWR(getItems, () => request(getItems, {variant: 'all'}), {refreshInterval: 1000});
     if (!data) {
         return null;
     }

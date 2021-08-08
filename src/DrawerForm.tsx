@@ -14,13 +14,7 @@ import {
     Textarea,
 } from '@chakra-ui/react';
 import {useMutate} from './mutate';
-import {request} from './graphql';
-
-const addItem = `
-mutation AddItem($name: String!, $link: String, $desc: String) {
-    addItem(name: $name, link: $link, desc: $desc)
-}
-`;
+import {addItem, request} from './graphql';
 
 interface Props {
     isOpen: boolean;

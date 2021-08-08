@@ -15,21 +15,9 @@ import {
 import {CheckIcon, SmallCloseIcon} from '@chakra-ui/icons';
 import formatDistance from 'date-fns/formatDistance';
 import {useMutate} from './mutate';
-import {request} from './graphql';
+import {updateItem, deleteItem, request} from './graphql';
 import {isAvailable, useForceUpdate, useInterval} from './util';
 import type {EbbinghausItem} from '../types/store';
-
-const updateItem = `
-mutation UpdateItem($id: ID!) {
-    updateItem(id: $id)
-}
-`;
-
-const deleteItem = `
-mutation DeleteItem($id: ID!) {
-    deleteItem(id: $id)
-}
-`;
 
 export const Item = (props: EbbinghausItem) => {
     const {

@@ -64,3 +64,36 @@ const root = {
 export const request = <T = any>(query: string, variables?: any) => {
     return graphql(schema, query, root, null, variables) as Promise<T>;
 };
+
+export const getItems = `
+query GetItems($variant: String = "all") {
+    items(variant: $variant) {
+        id
+        name
+        link
+        desc
+        createTime
+        updateTime
+        stage
+    }
+}
+`;
+
+export const addItem = `
+mutation AddItem($name: String!, $link: String, $desc: String) {
+    addItem(name: $name, link: $link, desc: $desc)
+}
+`;
+
+export const updateItem = `
+mutation UpdateItem($id: ID!) {
+    updateItem(id: $id)
+}
+`;
+
+export const deleteItem = `
+mutation DeleteItem($id: ID!) {
+    deleteItem(id: $id)
+}
+`;
+
