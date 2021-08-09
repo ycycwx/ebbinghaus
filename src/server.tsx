@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import {pipeToNodeWritable} from 'react-dom/server';
-import {Html} from './Html';
+import {Html} from './components/Html';
 import type {Response} from 'express';
 import type {Manifest} from 'vite';
 

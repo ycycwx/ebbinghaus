@@ -14,10 +14,10 @@ import {
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon} from '@chakra-ui/icons';
 import formatDistance from 'date-fns/formatDistance';
-import {useMutate} from './mutate';
-import {updateItem, deleteItem, request} from './graphql';
-import {isAvailable, useForceUpdate, useInterval} from './util';
-import type {EbbinghausItem} from '../types/store';
+import {useMutate} from '../context';
+import {updateItem, deleteItem, request} from '../graphql';
+import {isAvailable, useForceUpdate, useInterval} from '../util';
+import type {EbbinghausItem} from '../../types/store';
 
 export const Item = (props: EbbinghausItem) => {
     const {

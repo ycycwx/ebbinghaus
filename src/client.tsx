@@ -1,5 +1,5 @@
 import {hydrateRoot} from 'react-dom';
-import {App} from './App';
+import {App} from './components/App';
 
 const root = document.getElementById('root');
 if (root) {

@@ -1,6 +1,6 @@
 import {Box, List} from '@chakra-ui/react';
 import {Item} from './Item';
-import type {EbbinghausItem} from '../types/store';
+import type {EbbinghausItem} from '../../types/store';
 
 export const DataList = ({data}: {data: EbbinghausItem[] | undefined}) => {
     if (!data || data.length <= 0) {

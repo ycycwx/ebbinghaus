@@ -10,10 +10,10 @@ import {
 } from '@chakra-ui/react';
 import {AddIcon} from '@chakra-ui/icons';
 import useSWR from 'swr';
+import {Mutate} from '../context';
+import {getItems, request} from '../graphql';
 import {DataList} from './DataList';
-import {Mutate} from './mutate';
-import {getItems, request} from './graphql';
-import type {EbbinghausItem} from '../types/store';
+import type {EbbinghausItem} from '../../types/store';
 
 const Debug = lazy(() => import('./Debug').then(module => ({default: module.Debug})));
 const DrawerForm = lazy(() => import('./DrawerForm').then(module => ({default: module.DrawerForm})));

@@ -13,8 +13,8 @@ import {
     FormLabel,
     Textarea,
 } from '@chakra-ui/react';
-import {useMutate} from './mutate';
-import {addItem, request} from './graphql';
+import {useMutate} from '../context';
+import {addItem, request} from '../graphql';
 
 interface Props {
     isOpen: boolean;

@@ -1,6 +1,6 @@
 import Dexie from 'dexie';
-import {getNextStage, isAvailable} from './util';
-import type {EbbinghausItem} from '../types/store';
+import {getNextStage, isAvailable} from '../util';
+import type {EbbinghausItem} from '../../types/store';
 
 const isServer = typeof window !== 'object';
 
