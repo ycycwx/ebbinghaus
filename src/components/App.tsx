@@ -12,6 +12,7 @@ import {
     withDefaultSize,
 } from '@chakra-ui/react';
 import {AddIcon} from '@chakra-ui/icons';
+import {Router} from './Router';
 
 const theme = extendTheme(
     withDefaultVariant({variant: 'outline'}),
@@ -34,9 +35,11 @@ const Fallback = () => {
 export const App = () => {
     return (
         <ChakraProvider theme={theme}>
-            <Suspense fallback={<Fallback />}>
-                <Main />
-            </Suspense>
+            <Router>
+                <Suspense fallback={<Fallback />}>
+                    <Main />
+                </Suspense>
+            </Router>
         </ChakraProvider>
     );
 };

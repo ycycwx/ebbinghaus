@@ -31,6 +31,7 @@ export const resolvers = {
     item: ({id}: {id: string}) => db.getItem(+id),
     items: ({variant}: {variant: 'all' | 'available'}) => db.loadAllItems({variant}),
     addItem: ({name, link, desc}: EbbinghausItem) => db.addItem({name, link, desc}),
-    updateItem: ({id}: {id: string}) => db.updateItem(+id),
+    updateStage: ({id}: {id: string}) => db.updateStage(+id),
+    updateItem: ({id, ...item}: {id: string, name?: string, link?: string, desc?: string}) => db.updateItem(+id, item),
     deleteItem: ({id}: {id: string}) => db.deleteItem(+id),
 };

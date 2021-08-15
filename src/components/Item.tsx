@@ -12,11 +12,12 @@ import {
     Text,
     useDisclosure,
 } from '@chakra-ui/react';
-import {CheckIcon, SmallCloseIcon} from '@chakra-ui/icons';
+import {CheckIcon, SmallCloseIcon, EditIcon} from '@chakra-ui/icons';
 import formatDistance from 'date-fns/formatDistance';
 import {useMutate} from '../context';
-import {updateItem, deleteItem, request} from '../graphql';
+import {deleteItem, request, updateStage} from '../graphql';
 import {isAvailable, useForceUpdate, useInterval} from '../util';
+import {useHistory} from './Router';
 import type {EbbinghausItem} from '../../types/store';
 
 export const Item = (props: EbbinghausItem) => {
@@ -26,13 +27,14 @@ export const Item = (props: EbbinghausItem) => {
         updateTime,
         id,
     } = props;
+    const history = useHistory();
     const available = isAvailable(props);
     const {onOpen, onClose, isOpen} = useDisclosure();
     const mutate = useMutate();
     const onResolve = useCallback(
         async () => {
             if (id) {
-                await request(updateItem, {id});
+                await request(updateStage, {id});
                 await mutate();
                 onClose();
             }
@@ -50,8 +52,17 @@ export const Item = (props: EbbinghausItem) => {
         [id, mutate]
     );
 
+    const onEdit = useCallback(
+        () => {
+            if (id) {
+                history.push(`/edit/${id}`);
+            }
+        },
+        [id, history]
+    );
+
     const forceUpdate = useForceUpdate();
-    useInterval(forceUpdate, 6000);
+    useInterval(forceUpdate, 60_000);
 
     return (
         <HStack as={ListItem} justifyContent="space-between">
@@ -70,6 +81,7 @@ export const Item = (props: EbbinghausItem) => {
                         <Button variant="solid" onClick={onResolve}>确认记住</Button>
                     </PopoverContent>
                 </Popover>
+                <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
                 <Popover>
                     <PopoverTrigger>
                         <IconButton aria-label="remove" icon={<SmallCloseIcon />} />

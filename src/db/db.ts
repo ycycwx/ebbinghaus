@@ -53,7 +53,7 @@ class EbbinghausDatabase extends Dexie {
         return this.items.get({id});
     }
 
-    async updateItem(id: number): Promise<void> {
+    async updateStage(id: number): Promise<void> {
         if (isServer) {
             return;
         }
@@ -65,6 +65,15 @@ class EbbinghausDatabase extends Dexie {
 
         // eslint-disable-next-line consistent-return
         return this.items.update(id, {updateTime: Date.now(), stage: getNextStage(item.stage)}) as unknown as void;
+    }
+
+    async updateItem(id: number, partialItem: Partial<EbbinghausItem>): Promise<void> {
+        if (isServer) {
+            return;
+        }
+
+        // eslint-disable-next-line consistent-return
+        return this.items.update(id, {...(await this.getItem(id)), ...partialItem}) as unknown as void;
     }
 
     async deleteItem(id: number): Promise<void | number> {

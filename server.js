@@ -1,10 +1,12 @@
 /* eslint-disable no-console, import/unambiguous, import/no-commonjs, global-require, init-declarations */
 
+// @ts-check
+
 const path = require('path');
 const express = require('express');
 
 async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV === 'production') {
-    const resolve = p => path.resolve(__dirname, p);
+    const resolve = (/** @type {string} */ p) => path.resolve(__dirname, p);
 
     const app = express();
 

@@ -1,4 +1,5 @@
-import {useCallback, useEffect, useReducer} from 'react';
+import {useCallback, useReducer} from 'react';
+import useSWR from 'swr';
 import {
     Button,
     Drawer,
@@ -8,17 +9,20 @@ import {
     DrawerFooter,
     DrawerCloseButton,
     DrawerHeader,
+    HStack,
     Input,
     FormControl,
     FormLabel,
     Textarea,
 } from '@chakra-ui/react';
 import {useMutate} from '../context';
-import {addItem, request} from '../graphql';
+import {addItem, getItem, request, updateItem} from '../graphql';
+import {useHistory, useParams} from './Router';
 
-interface Props {
-    isOpen: boolean;
-    onClose: () => void;
+interface State {
+    name: string;
+    link?: string;
+    desc?: string;
 }
 
 type Action =
@@ -27,7 +31,13 @@ type Action =
     | {type: 'desc', payload: string}
     | {type: 'reset'};
 
-const reducer = (state: {name: string, link: string, desc: string}, action: Action) => {
+const defaults: State = {
+    name: '',
+    link: '',
+    desc: '',
+};
+
+const reducer = (state: State, action: Action) => {
     if (action.type === 'name') {
         return {...state, name: action.payload};
     }
@@ -40,34 +50,40 @@ const reducer = (state: {name: string, link: string, desc: string}, action: Acti
     return {name: '', link: '', desc: ''};
 };
 
-export const DrawerForm = ({isOpen, onClose}: Props) => {
+const DrawerInternal = ({defaultValue = defaults, updateCache}: {
+    defaultValue?: State;
+    updateCache?: () => void;
+}) => {
+    const params = useParams<{id?: string}>();
+    const id = params.id;
+    const history = useHistory();
+    const onClose = useCallback(() => history.push('/'), [history]);
     const mutate = useMutate();
-    const [{name, link, desc}, dispatch] = useReducer(reducer, {name: '', link: '', desc: ''});
+    const [{name, link, desc}, dispatch] = useReducer(reducer, defaultValue);
     const onClick = useCallback(
         async () => {
             if (name) {
-                await request(addItem, {name, link, desc});
+                if (id) {
+                    await request(updateItem, {id, name, link, desc});
+                    updateCache?.();
+                }
+                else {
+                    await request(addItem, {name, link, desc});
+                }
+
                 onClose();
                 await mutate();
             }
         },
-        [desc, link, mutate, name, onClose]
+        [desc, id, link, mutate, name, onClose, updateCache]
     );
+
     const onNameChange = useCallback(e => dispatch({payload: e.target.value, type: 'name'}), []);
     const onLinkChange = useCallback(e => dispatch({payload: e.target.value, type: 'link'}), []);
     const onDescChange = useCallback(e => dispatch({payload: e.target.value, type: 'desc'}), []);
 
-    useEffect(
-        () => () => {
-            if (!isOpen) {
-                dispatch({type: 'reset'});
-            }
-        },
-        [isOpen]
-    );
-
     return (
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <Drawer isOpen placement="right" onClose={onClose}>
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
@@ -87,14 +103,37 @@ export const DrawerForm = ({isOpen, onClose}: Props) => {
                     </FormControl>
                 </DrawerBody>
                 <DrawerFooter>
-                    <Button variant="outline" mr={3} onClick={onClose}>
-                        取消
-                    </Button>
-                    <Button type="submit" disabled={!name} onClick={onClick}>
-                        提交
-                    </Button>
+                    <HStack spacing={3}>
+                        <Button variant="outline" onClick={onClose}>
+                            取消
+                        </Button>
+                        <Button type="submit" disabled={!name} onClick={onClick}>
+                            提交
+                        </Button>
+                    </HStack>
                 </DrawerFooter>
             </DrawerContent>
         </Drawer>
     );
+};
+
+const CreateForm = () => {
+    return <DrawerInternal defaultValue={defaults} />;
+};
+
+const EditForm = ({id}: {id: number}) => {
+    const {data, mutate} = useSWR(id ? [getItem, id] : null, (getItem, id) => request(getItem, {id}));
+    if (!data) {
+        return null;
+    }
+    return <DrawerInternal defaultValue={data.data.item} updateCache={mutate} />;
+};
+
+export const DrawerForm = () => {
+    const params = useParams<{id?: string}>();
+    const id = params.id;
+    if (!id) {
+        return <CreateForm />;
+    }
+    return <EditForm id={+id} />;
 };
