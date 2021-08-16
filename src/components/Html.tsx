@@ -21,7 +21,9 @@ const ManifestResolver = ({manifest}: {manifest?: Manifest}) => {
         return null;
     }
 
-    const entryScript = <script key={entryChunk.file} type="module" src={`${base}${entryChunk.file}`} />;
+    const entryScript = (
+        <script key={entryChunk.file} type="module" crossOrigin="crossorigin" src={`${base}${entryChunk.file}`} />
+    );
     const importsScripts = entryChunk.imports?.map(file => {
         const importLinks = manifest[file];
         return <link key={importLinks.file} type="modulepreload" href={`${base}${importLinks.file}`} />;

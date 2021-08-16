@@ -5,8 +5,14 @@ mutation AddItem($name: String!, $link: String, $desc: String) {
 `;
 
 export const updateItem = `
-mutation UpdateItem($id: ID!) {
-    updateItem(id: $id)
+mutation UpdateItem($id: ID!, $name: String!, $link: String, $desc: String) {
+    updateItem(id: $id, name: $name, link: $link, desc: $desc)
+}
+`;
+
+export const updateStage = `
+mutation UpdateStage($id: ID!) {
+    updateStage(id: $id)
 }
 `;
 

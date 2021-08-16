@@ -21,7 +21,8 @@ export const schema = buildSchema(`
 
     type Mutation {
         addItem(name: String!, link: String, desc: String): Void
-        updateItem(id: ID!): Void
+        updateItem(id: ID!, name: String, link: String, desc: String): Void
+        updateStage(id: ID!): Void
         deleteItem(id: ID!): Void
     }
 `);

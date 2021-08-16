@@ -1,4 +1,4 @@
-import {lazy, Suspense} from 'react';
+import {lazy, useCallback, Suspense} from 'react';
 import {
     HStack,
     Heading,
@@ -6,20 +6,21 @@ import {
     Switch,
     VStack,
     useBoolean,
-    useDisclosure,
 } from '@chakra-ui/react';
 import {AddIcon} from '@chakra-ui/icons';
 import useSWR from 'swr';
 import {Mutate} from '../context';
 import {getItems, request} from '../graphql';
 import {DataList} from './DataList';
+import {useHistory} from './Router';
 import type {EbbinghausItem} from '../../types/store';
 
 const Debug = lazy(() => import('./Debug').then(module => ({default: module.Debug})));
-const DrawerForm = lazy(() => import('./DrawerForm').then(module => ({default: module.DrawerForm})));
+const Form = lazy(() => import('./Form').then(module => ({default: module.Form})));
 
 export const Main = () => {
-    const {isOpen, onOpen, onClose} = useDisclosure();
+    const history = useHistory();
+    const onAdd = useCallback(() => history.push('/add'), [history]);
     const [isChecked, {toggle}] = useBoolean();
     const {data, mutate} = useSWR<{data: {items: EbbinghausItem[]}}>(
         [getItems, isChecked],
@@ -30,17 +31,21 @@ export const Main = () => {
             <VStack p={6} m="0 auto" maxWidth={800}>
                 <HStack spacing={3}>
                     <Heading size="lg">Ebbinghaus</Heading>
-                    <IconButton size="xs" variant="outline" aria-label="add" icon={<AddIcon />} onClick={onOpen} />
+                    <IconButton
+                        size="xs"
+                        variant="outline"
+                        aria-label="add"
+                        icon={<AddIcon />}
+                        onClick={onAdd}
+                    />
                     <Switch isChecked={isChecked} onChange={toggle} />
                 </HStack>
                 <VStack spacing={4} p={5} width="100%">
                     <DataList data={data?.data.items} />
-                    <Suspense fallback={null}>
-                        {import.meta.env.DEV && <Debug />}
-                    </Suspense>
+                    <Suspense fallback={null}>{import.meta.env.DEV && <Debug />}</Suspense>
                 </VStack>
                 <Suspense fallback={null}>
-                    <DrawerForm isOpen={isOpen} onClose={onClose} />
+                    <Form />
                 </Suspense>
             </VStack>
         </Mutate>

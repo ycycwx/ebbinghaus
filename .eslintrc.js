@@ -27,5 +27,6 @@ module.exports = {
                 prefer: 'type-imports',
             },
         ],
+        '@typescript-eslint/prefer-ts-expect-error': ['error'],
     },
 };
