@@ -67,6 +67,20 @@ class EbbinghausDatabase extends Dexie {
         return this.items.update(id, {updateTime: Date.now(), stage: getNextStage(item.stage)}) as unknown as void;
     }
 
+    async updateUpdateTime(id: number): Promise<void> {
+        if (isServer) {
+            return;
+        }
+
+        const item = await this.getItem(id);
+        if (!item) {
+            throw new Error('item should be update with `id`');
+        }
+
+        // eslint-disable-next-line consistent-return
+        return this.items.update(id, {updateTime: Date.now()}) as unknown as void;
+    }
+
     async updateItem(id: number, partialItem: Partial<EbbinghausItem>): Promise<void> {
         if (isServer) {
             return;

@@ -16,6 +16,12 @@ mutation UpdateStage($id: ID!) {
 }
 `;
 
+export const updateUpdateTime = `
+mutation UpdateUpdateTime($id: ID!) {
+    updateUpdateTime(id: $id)
+}
+`;
+
 export const deleteItem = `
 mutation DeleteItem($id: ID!) {
     deleteItem(id: $id)
