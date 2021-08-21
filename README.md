@@ -1,6 +1,2 @@
 # ebbinghaus
-simple ebbinghaus webapp
-
-## demo
-
-`Vite` + `React` SSR
+simple ebbinghaus webapp via `Vite` + `React` SSR
