@@ -7,6 +7,9 @@ module.exports = {
                 moduleDirectory: ['node_modules', './src', './server', './types'],
             },
         },
+        'import/ignore': [
+            '@chakra-ui/react',
+        ],
     },
     extends: [
         '@ecomfe/eslint-config/strict',

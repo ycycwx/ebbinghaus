@@ -1,11 +1,11 @@
 import {lazy, Suspense} from 'react';
 import {
-    ChakraProvider,
     Center,
+    ChakraProvider,
+    HStack,
+    Heading,
     IconButton,
     Switch,
-    Heading,
-    HStack,
     extendTheme,
     withDefaultVariant,
     withDefaultColorScheme,
