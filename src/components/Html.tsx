@@ -43,6 +43,7 @@ export const Html = ({manifest}: {manifest?: Manifest}) => {
                 {import.meta.env.DEV && <script type="module" src="/@vite/client" />}
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <title>Ebbinghaus</title>
                 <link rel="shortcut icon" href="favicon.ico" />
                 <ManifestResolver manifest={manifest} />
             </head>
