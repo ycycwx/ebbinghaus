@@ -10,6 +10,7 @@ import {
     PopoverContent,
     PopoverTrigger,
     Text,
+    useTheme,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/icons';
 import formatDistance from 'date-fns/formatDistance';
@@ -27,6 +28,7 @@ export const Item = (props: EbbinghausItem) => {
         id,
     } = props;
     const history = useHistory();
+    const theme = useTheme();
     const available = isAvailable(props);
     const mutate = useMutate();
     const onRemove = useCallback(
@@ -53,7 +55,17 @@ export const Item = (props: EbbinghausItem) => {
 
     /* eslint-disable react/jsx-no-bind */
     return (
-        <HStack as={ListItem} justifyContent="space-between">
+        <HStack
+            as={ListItem}
+            justifyContent="space-between"
+            sx={{
+                p: 2,
+                borderRadius: 2,
+                ':hover': {
+                    bgColor: theme.colors.teal['50'],
+                },
+            }}
+        >
             {
                 link
                     ? <Link href={link} isExternal>{name ?? '--'}</Link>

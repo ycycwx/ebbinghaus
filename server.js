@@ -42,6 +42,7 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
     app.use('*', async (req, res) => {
         try {
             const url = req.originalUrl;
+            // @ts-expect-error
             const manifest = isProd ? require('./dist/client/manifest.json') : undefined;
             const render = isProd
                 ? require('./dist/server/server').render
