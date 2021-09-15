@@ -1,4 +1,4 @@
-import {lazy, Suspense} from 'react';
+import {lazy, StrictMode, Suspense} from 'react';
 import {
     Center,
     ChakraProvider,
@@ -34,12 +34,14 @@ const Fallback = () => {
 
 export const App = () => {
     return (
-        <ChakraProvider theme={theme}>
-            <Router>
-                <Suspense fallback={<Fallback />}>
-                    <Main />
-                </Suspense>
-            </Router>
-        </ChakraProvider>
+        <StrictMode>
+            <ChakraProvider theme={theme}>
+                <Router>
+                    <Suspense fallback={<Fallback />}>
+                        <Main />
+                    </Suspense>
+                </Router>
+            </ChakraProvider>
+        </StrictMode>
     );
 };
