@@ -19,15 +19,15 @@
         "@emotion/react": "^11.4.1",
         "@emotion/styled": "^11",
         "compression": "^1.7.4",
-        "date-fns": "^2.23.0",
+        "date-fns": "^2.24.0",
         "dexie": "^3.0.3",
         "express": "^4.17.1",
         "framer-motion": "^4",
         "graphql": "^15.5.3",
         "immer": "^9.0.6",
         "path-to-regexp": "^6.2.0",
-        "react": "^18.0.0-alpha-67222f044-20210915",
-        "react-dom": "^18.0.0-alpha-67222f044-20210915",
+        "react": "^18.0.0-alpha-a8cabb564-20210915",
+        "react-dom": "^18.0.0-alpha-a8cabb564-20210915",
         "serve-static": "^1.14.1",
         "swr": "^1.0.1",
         "typescript": "^4.4.3"
@@ -45,10 +45,10 @@
         "cross-env": "^7.0.3",
         "eslint": "^7.32.0",
         "eslint-plugin-import": "2.24.2",
-        "eslint-plugin-react": "^7.25.1",
+        "eslint-plugin-react": "^7.25.2",
         "eslint-plugin-react-hooks": "^4.2.0",
         "husky": "^7.0.2",
         "lint-staged": "^11.1.2",
-        "vite": "^2.5.7"
+        "vite": "^2.5.8"
     }
 }

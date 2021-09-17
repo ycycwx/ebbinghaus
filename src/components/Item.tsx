@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/icons';
 import formatDistance from 'date-fns/formatDistance';
+import {zhCN} from 'date-fns/locale';
 import {useMutate} from '../context';
 import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, useForceUpdate, useInterval} from '../util';
@@ -72,7 +73,7 @@ export const Item = (props: EbbinghausItem) => {
                     : <Box>{name ?? '--'}</Box>
             }
             <HStack spacing={3}>
-                <Text>{formatDistance(updateTime, new Date(), {addSuffix: true})}</Text>
+                <Text>{formatDistance(updateTime, new Date(), {addSuffix: true, locale: zhCN})}</Text>
                 <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
                 <Popover>
                     {({onClose}) => (
