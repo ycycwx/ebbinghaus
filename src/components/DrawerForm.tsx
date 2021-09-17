@@ -87,7 +87,7 @@ const DrawerInternal = ({defaultValue = defaults, updateCache}: {
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>新增记录</DrawerHeader>
+                <DrawerHeader>{id ? '编辑' : '新增'}记录</DrawerHeader>
                 <DrawerBody>
                     <FormControl isRequired>
                         <FormLabel>名称</FormLabel>
