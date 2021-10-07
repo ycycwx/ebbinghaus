@@ -1,0 +1,13 @@
+{
+    "drawer.header.add": "新增",
+    "drawer.header.edit": "编辑",
+    "drawer.content.name": "名称",
+    "drawer.content.link": "链接",
+    "drawer.content.description": "描述",
+    "drawer.footer.submit": "提交",
+    "drawer.footer.cancel": "取消",
+    "dataList.list.emptyText": "暂无数据",
+    "dataList.action.delay": "延期处理",
+    "dataList.action.finish": "确认记住",
+    "dataList.action.remove": "确认删除"
+}

@@ -43,12 +43,14 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
         try {
             const url = req.originalUrl;
             // @ts-expect-error
+            // eslint-disable-next-line import/extensions
             const manifest = isProd ? require('./dist/client/manifest.json') : undefined;
             const render = isProd
+                // @ts-expect-error
                 ? require('./dist/server/server').render
                 : (await vite.ssrLoadModule('/src/server.tsx')).render;
 
-            render(url, res, manifest);
+            render(url, req, res, manifest);
         }
         catch (e) {
             !isProd && vite.ssrFixStacktrace(e);
