@@ -1,10 +1,13 @@
 import {Box, List} from '@chakra-ui/react';
+import {useLocaleText} from '../locales';
 import {Item} from './Item';
 import type {EbbinghausItem} from '../../types/store';
 
 export const DataList = ({data}: {data: EbbinghausItem[] | undefined}) => {
+    const emptyText = useLocaleText('dataList.list.emptyText');
+
     if (!data || data.length <= 0) {
-        return <Box>暂无数据</Box>;
+        return <Box>{emptyText}</Box>;
     }
 
     return (

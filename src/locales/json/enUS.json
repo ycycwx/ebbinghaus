@@ -1,0 +1,13 @@
+{
+    "drawer.header.add": "add",
+    "drawer.header.edit": "edit",
+    "drawer.content.name": "name",
+    "drawer.content.link": "link",
+    "drawer.content.description": "description",
+    "drawer.footer.submit": "submit",
+    "drawer.footer.cancel": "cancel",
+    "dataList.list.emptyText": "No Data",
+    "dataList.action.delay": "DELAY",
+    "dataList.action.finish": "FINISH",
+    "dataList.action.remove": "REMOVE"
+}

@@ -1,4 +1,4 @@
-import {lazy, StrictMode, Suspense} from 'react';
+import {lazy, memo, StrictMode, Suspense} from 'react';
 import {
     Center,
     ChakraProvider,
@@ -12,7 +12,9 @@ import {
     withDefaultSize,
 } from '@chakra-ui/react';
 import {AddIcon} from '@chakra-ui/icons';
+import {Locales} from '../locales';
 import {Router} from './Router';
+import type {LocalesContext} from '../locales';
 
 const theme = extendTheme(
     withDefaultVariant({variant: 'outline'}),
@@ -32,16 +34,22 @@ const Fallback = () => {
     );
 };
 
-export const App = () => {
+interface AppProps {
+    locales: LocalesContext;
+}
+
+export const App = memo(({locales}: AppProps) => {
     return (
         <StrictMode>
-            <ChakraProvider theme={theme}>
-                <Router>
-                    <Suspense fallback={<Fallback />}>
-                        <Main />
-                    </Suspense>
-                </Router>
-            </ChakraProvider>
+            <Locales value={locales}>
+                <ChakraProvider theme={theme}>
+                    <Router>
+                        <Suspense fallback={<Fallback />}>
+                            <Main />
+                        </Suspense>
+                    </Router>
+                </ChakraProvider>
+            </Locales>
         </StrictMode>
     );
-};
+});

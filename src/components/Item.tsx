@@ -13,33 +13,46 @@ import {
     useTheme,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/icons';
+import {useSWRConfig} from 'swr';
 import formatDistance from 'date-fns/formatDistance';
-import {zhCN} from 'date-fns/locale';
-import {useMutate} from '../context';
-import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
+import {useLocaleDate, useLocaleText} from '../locales';
+import {deleteItem, getItems, request, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
 import type {EbbinghausItem} from '../../types/store';
 
 export const Item = (props: EbbinghausItem) => {
-    const {
-        name,
-        link,
-        updateTime,
-        id,
-    } = props;
     const history = useHistory();
     const theme = useTheme();
+    const dateLocale = useLocaleDate();
+    const [delayText, finishText, removeText] = useLocaleText([
+        'dataList.action.delay',
+        'dataList.action.finish',
+        'dataList.action.remove',
+    ]);
+
+    const {name, link, updateTime, id} = props;
     const available = isAvailable(props);
-    const mutate = useMutate();
+
+    const {mutate} = useSWRConfig();
+    const reload = useCallback(
+        () => {
+            // TODO: isChecked
+            void mutate([getItems, true]);
+            void mutate([getItems, false]);
+        },
+        [mutate]
+    );
+
     const onRemove = useCallback(
         async () => {
             if (id) {
                 await request(deleteItem, {id});
-                await mutate();
+
+                reload();
             }
         },
-        [id, mutate]
+        [id, reload]
     );
 
     const onEdit = useCallback(
@@ -73,7 +86,9 @@ export const Item = (props: EbbinghausItem) => {
                     : <Box>{name ?? '--'}</Box>
             }
             <HStack spacing={3}>
-                <Text>{formatDistance(updateTime, new Date(), {addSuffix: true, locale: zhCN})}</Text>
+                <Text>
+                    {formatDistance(updateTime, new Date(), {addSuffix: true, locale: dateLocale})}
+                </Text>
                 <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
                 <Popover>
                     {({onClose}) => (
@@ -87,12 +102,13 @@ export const Item = (props: EbbinghausItem) => {
                                     onClick={async () => {
                                         if (id) {
                                             await request(updateUpdateTime, {id});
-                                            await mutate();
+
+                                            reload();
                                             onClose();
                                         }
                                     }}
                                 >
-                                    延期处理
+                                    {delayText}
                                 </Button>
                             </PopoverContent>
                         </>
@@ -110,12 +126,13 @@ export const Item = (props: EbbinghausItem) => {
                                     onClick={async () => {
                                         if (id) {
                                             await request(updateStage, {id});
-                                            await mutate();
+
+                                            reload();
                                             onClose();
                                         }
                                     }}
                                 >
-                                    确认记住
+                                    {finishText}
                                 </Button>
                             </PopoverContent>
                         </>
@@ -127,7 +144,7 @@ export const Item = (props: EbbinghausItem) => {
                     </PopoverTrigger>
                     <PopoverContent width={100}>
                         <Button variant="solid" colorScheme="red" onClick={onRemove}>
-                            确认删除
+                            {removeText}
                         </Button>
                     </PopoverContent>
                 </Popover>

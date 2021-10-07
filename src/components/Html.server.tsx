@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
 
+import {getUniversalLocales} from '../util';
 import {App} from './App';
 import type {Manifest} from 'vite';
 
@@ -35,7 +36,12 @@ const ManifestResolver = ({manifest}: {manifest?: Manifest}) => {
     return <>{entryScript}{importsScripts}{styleLinks}</>;
 };
 
-export const Html = ({manifest}: {manifest?: Manifest}) => {
+interface HtmlProps {
+    manifest?: Manifest;
+    lang: string;
+}
+
+export const Html = ({manifest, lang}: HtmlProps) => {
     return (
         <html lang="en">
             <head>
@@ -49,7 +55,7 @@ export const Html = ({manifest}: {manifest?: Manifest}) => {
             </head>
             <body>
                 <div id="root">
-                    <App />
+                    <App locales={getUniversalLocales(lang)} />
                 </div>
                 {import.meta.env.DEV && <script type="module" src="/src/client.tsx" />}
             </body>
