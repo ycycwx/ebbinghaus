@@ -1,7 +1,10 @@
 import {graphql} from 'graphql';
-import {resolvers} from './resolver';
+import {rootValue} from './rootValue';
 import {schema} from './schema';
 
-export const request = <T = any>(query: string, variables?: any) => {
-    return graphql(schema, query, resolvers, null, variables) as Promise<T>;
-};
+export const request = async <T = any>(source: string, variableValues?: any) => graphql({
+    schema,
+    source,
+    rootValue,
+    variableValues,
+}) as Promise<T>;

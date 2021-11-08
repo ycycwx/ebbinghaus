@@ -2,13 +2,13 @@ import {GraphQLScalarType} from 'graphql';
 import {db} from '../db';
 import type {EbbinghausItem} from '../../types/store';
 
-const dateScalar = new GraphQLScalarType({
+const dateScalar = new GraphQLScalarType<Date, string>({
     name: 'Date',
-    parseValue(value) {
-        return new Date(value);
+    parseValue(value: unknown) {
+        return new Date(value as string);
     },
-    serialize(value) {
-        return value.toISOString();
+    serialize(value: unknown) {
+        return (value as Date).toISOString();
     },
 });
 
@@ -25,7 +25,7 @@ const voidScalar = new GraphQLScalarType({
     },
 });
 
-export const resolvers = {
+export const rootValue = {
     dateScalar,
     voidScalar,
     item: ({id}: {id: string}) => db.getItem(+id),
