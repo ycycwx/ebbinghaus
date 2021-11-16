@@ -6,5 +6,5 @@ const locales = getUniversalLocales(navigator.language);
 
 const root = document.getElementById('root');
 if (root) {
-    hydrateRoot(root, <App locales={locales} /> as any);
+    hydrateRoot(root, <App locales={locales} />);
 }

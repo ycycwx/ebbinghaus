@@ -7,11 +7,10 @@ import type {Request, Response} from 'express';
 import type {Manifest} from 'vite';
 
 export const render = (_: string, req: Request, res: Response, manifest?: Manifest) => {
-    res.socket?.on('error', (error: any) => {
+    res.socket?.on('error', error => {
         console.error('Fatal', error);
     });
 
-    renderToPipeableStream(
-        <Html manifest={manifest} lang={getLocales(req)[0]} />
-    ).pipe(res);
+    const html = <Html manifest={manifest} lang={getLocales(req)[0]} />;
+    renderToPipeableStream(html).pipe(res);
 };
