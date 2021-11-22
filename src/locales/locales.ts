@@ -13,7 +13,7 @@ const context = createContext<LocalesContext | null>(null);
 
 export const Locales = context.Provider;
 
-export const useLocales = () => {
+const useLocales = () => {
     const locales = useContext(context);
     if (!locales) {
         throw new Error('`useLocales` must be used with `Locales`');

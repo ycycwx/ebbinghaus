@@ -1,6 +1,4 @@
-/* eslint-disable import/unambiguous, import/no-commonjs */
-
-module.exports = {
+export default {
     '**/*.{js,ts,tsx}': 'eslint --fix',
     'src/**/*.{ts,tsx}'() {
         return 'pnpm exec tsc';
