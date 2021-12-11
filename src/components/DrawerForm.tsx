@@ -1,5 +1,4 @@
 import {useCallback, useReducer} from 'react';
-import useSWR, {useSWRConfig} from 'swr';
 import {
     Button,
     Drawer,
@@ -15,8 +14,10 @@ import {
     FormLabel,
     Textarea,
 } from '@chakra-ui/react';
-import {addItem, getItem, getItems, request, updateItem} from '../graphql';
+import {useLiveQuery} from 'dexie-react-hooks';
+import {addItem, request, updateItem} from '../graphql';
 import {useLocaleText} from '../locales';
+import {db} from '../db';
 import {useHistory, useParams} from './Router';
 
 interface State {
@@ -68,25 +69,20 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
 
     const onClose = useCallback(() => history.push('/'), [history]);
 
-    const {mutate} = useSWRConfig();
     const onClick = useCallback(
         async () => {
             if (name) {
                 if (id) {
                     await request(updateItem, {id, name, link, desc});
-                    void mutate([getItem, id]);
                 }
                 else {
                     await request(addItem, {name, link, desc});
-                    void mutate([getItems, false]);
                 }
-
-                void mutate([getItems, true]);
 
                 onClose();
             }
         },
-        [desc, id, link, mutate, name, onClose]
+        [desc, id, link, name, onClose]
     );
 
     const onNameChange = useCallback(e => dispatch({payload: e.target.value, type: 'name'}), []);
@@ -133,11 +129,11 @@ const CreateForm = () => {
 };
 
 const EditForm = ({id}: {id: number}) => {
-    const {data} = useSWR(id ? [getItem, id] : null, (getItem, id) => request(getItem, {id}));
+    const data = useLiveQuery(() => db.getItem(id), [id]);
     if (!data) {
         return null;
     }
-    return <DrawerInternal defaultValue={data.data.item} />;
+    return <DrawerInternal defaultValue={data} />;
 };
 
 export const DrawerForm = () => {
