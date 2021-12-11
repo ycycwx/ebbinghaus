@@ -8,10 +8,9 @@ import {
     useBoolean,
 } from '@chakra-ui/react';
 import {AddIcon} from '@chakra-ui/icons';
-import useSWR from 'swr';
-import {getItems, request} from '../graphql';
+import {useLiveQuery} from 'dexie-react-hooks';
+import {db} from '../db';
 import {useHistory} from './Router';
-import type {EbbinghausItem} from '../../types/store';
 
 const Debug = lazy(() => import('./Debug').then(module => ({default: module.Debug})));
 const Form = lazy(() => import('./Form').then(module => ({default: module.Form})));
@@ -21,10 +20,7 @@ export const Main = () => {
     const history = useHistory();
     const onAdd = useCallback(() => history.push('/add'), [history]);
     const [isChecked, {toggle}] = useBoolean();
-    const {data} = useSWR<{data: {items: EbbinghausItem[]}}>(
-        [getItems, isChecked],
-        (query: string, isChecked: boolean) => request(query, {variant: isChecked ? 'all' : 'available'})
-    );
+    const data = useLiveQuery(() => db.loadAllItems({variant: isChecked ? 'all' : 'available'}), [isChecked]);
     return (
         <VStack p={6} m="0 auto" maxWidth={800}>
             <HStack spacing={3}>
@@ -39,7 +35,7 @@ export const Main = () => {
                 <Switch isChecked={isChecked} onChange={toggle} />
             </HStack>
             <VStack spacing={4} p={5} width="100%">
-                <DataList data={data?.data.items} />
+                <DataList data={data} />
                 <Suspense fallback={null}>{import.meta.env.DEV && <Debug />}</Suspense>
             </VStack>
             <Suspense fallback={null}>

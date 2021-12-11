@@ -20,16 +20,16 @@
         "@emotion/styled": "^11.6.0",
         "compression": "^1.7.4",
         "date-fns": "^2.27.0",
-        "dexie": "^3.0.3",
+        "dexie": "^3.2.0",
+        "dexie-react-hooks": "^1.0.7",
         "express": "^4.17.1",
         "framer-motion": "^5.4.5",
         "graphql": "^16.1.0",
         "immer": "^9.0.7",
         "path-to-regexp": "^6.2.0",
-        "react": "^18.0.0-beta-c7917fe76-20211206",
-        "react-dom": "^18.0.0-beta-c7917fe76-20211206",
+        "react": "^18.0.0-rc.0-next-3b3daf557-20211210",
+        "react-dom": "^18.0.0-rc.0-next-3b3daf557-20211210",
         "serve-static": "^1.14.1",
-        "swr": "^1.1.1",
         "typescript": "^4.5.3"
     },
     "devDependencies": {
@@ -52,6 +52,6 @@
         "vite": "^2.7.1"
     },
     "engines": {
-        "node": ">=14.15.4"
+        "node": ">=14.x"
     }
 }
