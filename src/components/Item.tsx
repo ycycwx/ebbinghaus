@@ -13,10 +13,9 @@ import {
     useTheme,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/icons';
-import {useSWRConfig} from 'swr';
 import formatDistance from 'date-fns/formatDistance';
 import {useLocaleDate, useLocaleText} from '../locales';
-import {deleteItem, getItems, request, updateStage, updateUpdateTime} from '../graphql';
+import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
 import type {EbbinghausItem} from '../../types/store';
@@ -34,25 +33,13 @@ export const Item = (props: EbbinghausItem) => {
     const {name, link, updateTime, id} = props;
     const available = isAvailable(props);
 
-    const {mutate} = useSWRConfig();
-    const reload = useCallback(
-        () => {
-            // TODO: isChecked
-            void mutate([getItems, true]);
-            void mutate([getItems, false]);
-        },
-        [mutate]
-    );
-
     const onRemove = useCallback(
         async () => {
             if (id) {
                 await request(deleteItem, {id});
-
-                reload();
             }
         },
-        [id, reload]
+        [id]
     );
 
     const onEdit = useCallback(
@@ -103,7 +90,6 @@ export const Item = (props: EbbinghausItem) => {
                                         if (id) {
                                             await request(updateUpdateTime, {id});
 
-                                            reload();
                                             onClose();
                                         }
                                     }}
@@ -127,7 +113,6 @@ export const Item = (props: EbbinghausItem) => {
                                         if (id) {
                                             await request(updateStage, {id});
 
-                                            reload();
                                             onClose();
                                         }
                                     }}

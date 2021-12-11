@@ -1,9 +1,9 @@
-import useSWR from 'swr';
 import {Accordion, AccordionItem, AccordionIcon, AccordionPanel, AccordionButton, Box, Heading} from '@chakra-ui/react';
-import {getItems, request} from '../graphql';
+import {useLiveQuery} from 'dexie-react-hooks';
+import {db} from '../db';
 
 export const Debug = () => {
-    const {data} = useSWR(getItems, () => request(getItems, {variant: 'all'}), {refreshInterval: 1000});
+    const data = useLiveQuery(() => db.loadAllItems({variant: 'all'}));
     if (!data) {
         return null;
     }
