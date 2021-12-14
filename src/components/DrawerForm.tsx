@@ -19,6 +19,7 @@ import {addItem, request, updateItem} from '../graphql';
 import {useLocaleText} from '../locales';
 import {db} from '../db';
 import {useHistory, useParams} from './Router';
+import {useChecked} from './Checked';
 
 interface State {
     name: string;
@@ -53,6 +54,8 @@ const reducer = (state: State, action: Action) => {
 
 const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
     const history = useHistory();
+    const disclosure = useChecked();
+    const params = useParams<{id?: string}>();
     const [addText, editText, nameText, linkText, descText, submitText, cancelText] = useLocaleText([
         'drawer.header.add',
         'drawer.header.edit',
@@ -62,7 +65,6 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
         'drawer.footer.submit',
         'drawer.footer.cancel',
     ]);
-    const params = useParams<{id?: string}>();
     const id = params.id;
 
     const [{name, link, desc}, dispatch] = useReducer(reducer, defaultValue);
@@ -77,12 +79,14 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
                 }
                 else {
                     await request(addItem, {name, link, desc});
+                    // redirect to all items tab after adding item
+                    disclosure.onOpen();
                 }
 
                 onClose();
             }
         },
-        [desc, id, link, name, onClose]
+        [name, id, onClose, link, desc, disclosure]
     );
 
     const onNameChange = useCallback(e => dispatch({payload: e.target.value, type: 'name'}), []);
