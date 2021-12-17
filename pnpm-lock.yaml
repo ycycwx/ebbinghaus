@@ -6,7 +6,7 @@ specifiers:
   '@babel/eslint-plugin': 7.16.5
   '@chakra-ui/icons': 1.1.1
   '@chakra-ui/react': 1.7.3
-  '@chakra-ui/system': ^1.8.3
+  '@chakra-ui/system': 1.8.3
   '@ecomfe/eslint-config': 7.3.0
   '@emotion/react': 11.7.1
   '@emotion/styled': 11.6.0
