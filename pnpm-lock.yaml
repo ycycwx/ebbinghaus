@@ -19,7 +19,7 @@ specifiers:
   cross-env: 7.0.3
   date-fns: 2.27.0
   dexie: 3.2.0
-  dexie-react-hooks: 1.0.7
+  dexie-react-hooks: 1.1.1
   eslint: 8.4.1
   eslint-plugin-import: 2.25.3
   eslint-plugin-react: 7.27.1
@@ -45,7 +45,7 @@ dependencies:
   compression: 1.7.4
   date-fns: 2.27.0
   dexie: 3.2.0
-  dexie-react-hooks: 1.0.7_ca78e5015310c401b3ea85d48f4f0e06
+  dexie-react-hooks: 1.1.1_ca78e5015310c401b3ea85d48f4f0e06
   express: 4.17.2
   framer-motion: 5.5.4_2d030df00ff2d3f6ef0b59e9e494e1ba
   graphql: 16.1.0
@@ -2090,11 +2090,11 @@ packages:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
     dev: false
 
-  /dexie-react-hooks/1.0.7_ca78e5015310c401b3ea85d48f4f0e06:
-    resolution: {integrity: sha512-hqXGFbfgu1rdfcGHQUPwW2G0iWyupoNWnk3ODvqr+HdZt2ip3y1e/dcWIOsEnlUWWCWk6a3+ok0fvECU05eE2A==}
+  /dexie-react-hooks/1.1.1_ca78e5015310c401b3ea85d48f4f0e06:
+    resolution: {integrity: sha512-Cam5JP6PxHN564RvWEoe8cqLhosW0O4CAZ9XEVYeGHJBa6KEJlOpd9CUpV3kmU9dm2MrW97/lk7qkf1xpij7gA==}
     peerDependencies:
       '@types/react': '>=16'
-      dexie: ~3.1.0-alpha.1 || ~3.2.0-beta.1
+      dexie: '>=3.1.0-alpha.1 <5.0.0'
       react: '>=16'
     dependencies:
       '@types/react': 17.0.37
