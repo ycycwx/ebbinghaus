@@ -33,7 +33,7 @@
         "typescript": "4.5.4"
     },
     "devDependencies": {
-        "@babel/core": "^7.16.5",
+        "@babel/core": "7.16.5",
         "@babel/eslint-parser": "7.16.5",
         "@babel/eslint-plugin": "7.16.5",
         "@ecomfe/eslint-config": "7.3.0",
