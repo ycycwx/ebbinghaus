@@ -18,7 +18,7 @@ specifiers:
   '@vitejs/plugin-react-refresh': 1.3.6
   compression: 1.7.4
   cross-env: 7.0.3
-  date-fns: 2.27.0
+  date-fns: 2.28.0
   dexie: 3.2.0
   dexie-react-hooks: 1.1.1
   eslint: 8.5.0
@@ -45,7 +45,7 @@ dependencies:
   '@emotion/react': 11.7.1_201773eacf8a137fa52d9111e1251b1e
   '@emotion/styled': 11.6.0_0883861458441ccbc498a8ed61446451
   compression: 1.7.4
-  date-fns: 2.27.0
+  date-fns: 2.28.0
   dexie: 3.2.0
   dexie-react-hooks: 1.1.1_f902f657d99285ee98bc92b013bc9cfe
   express: 4.17.2
@@ -2020,8 +2020,8 @@ packages:
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
 
-  /date-fns/2.27.0:
-    resolution: {integrity: sha512-sj+J0Mo2p2X1e306MHq282WS4/A8Pz/95GIFcsPNMPMZVI3EUrAdSv90al1k+p74WGLCruMXk23bfEDZa71X9Q==}
+  /date-fns/2.28.0:
+    resolution: {integrity: sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==}
     engines: {node: '>=0.11'}
     dev: false
 
