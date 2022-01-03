@@ -30,7 +30,7 @@ specifiers:
   graphql: 16.2.0
   husky: 7.0.4
   immer: 9.0.7
-  lint-staged: 12.1.4
+  lint-staged: 12.1.5
   path-to-regexp: 6.2.0
   react: 18.0.0-rc.0-next-3dc41d8a2-20211223
   react-dom: 18.0.0-rc.0-next-3dc41d8a2-20211223
@@ -75,7 +75,7 @@ devDependencies:
   eslint-plugin-react: 7.28.0_eslint@8.6.0
   eslint-plugin-react-hooks: 4.3.0_eslint@8.6.0
   husky: 7.0.4
-  lint-staged: 12.1.4
+  lint-staged: 12.1.5
   vite: 2.7.10
 
 packages:
@@ -3182,8 +3182,8 @@ packages:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: false
 
-  /lint-staged/12.1.4:
-    resolution: {integrity: sha512-RgDz9nsFsE0/5eL9Vat0AvCuk0+j5mEuzBIVfrRH5FRtt5wibYe8zTjZs2nuqLFrLAGQGYnj8+HJxolcj08i/A==}
+  /lint-staged/12.1.5:
+    resolution: {integrity: sha512-WyKb+0sNKDTd1LwwAfTBPp0XmdaKkAOEbg4oHE4Kq2+oQVchg/VAcjVQtSqZih1izNsTURjc2EkhG/syRQUXdA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
