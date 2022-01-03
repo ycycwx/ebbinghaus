@@ -22,7 +22,7 @@ specifiers:
   dexie: 3.2.0
   dexie-react-hooks: 1.1.1
   eslint: 8.6.0
-  eslint-plugin-import: 2.25.3
+  eslint-plugin-import: 2.25.4
   eslint-plugin-react: 7.28.0
   eslint-plugin-react-hooks: 4.3.0
   express: 4.17.2
@@ -62,7 +62,7 @@ devDependencies:
   '@babel/core': 7.16.7
   '@babel/eslint-parser': 7.16.5_@babel+core@7.16.7+eslint@8.6.0
   '@babel/eslint-plugin': 7.16.5_ab4f72bc3b996cfd2bba2110a061c257
-  '@ecomfe/eslint-config': 7.4.0_cf8bd9c110f44c89cd35fe51994d86f5
+  '@ecomfe/eslint-config': 7.4.0_8faface3109805b1e46db208916fff4b
   '@types/express': 4.17.13
   '@types/react': 17.0.38
   '@types/react-dom': 17.0.11
@@ -71,7 +71,7 @@ devDependencies:
   '@vitejs/plugin-react-refresh': 1.3.6
   cross-env: 7.0.3
   eslint: 8.6.0
-  eslint-plugin-import: 2.25.3_eslint@8.6.0
+  eslint-plugin-import: 2.25.4_eslint@8.6.0
   eslint-plugin-react: 7.28.0_eslint@8.6.0
   eslint-plugin-react-hooks: 4.3.0_eslint@8.6.0
   husky: 7.0.4
@@ -1146,7 +1146,7 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /@ecomfe/eslint-config/7.4.0_cf8bd9c110f44c89cd35fe51994d86f5:
+  /@ecomfe/eslint-config/7.4.0_8faface3109805b1e46db208916fff4b:
     resolution: {integrity: sha512-X0gO63txlk+q8KgNQ5SJiCqnc5ii2+01V6Z7vka6SLUGGDK8KLKpwc69Q0jJ9zWKZ4PIDMIuV25nx+GTlqmo8Q==}
     peerDependencies:
       '@babel/core': ^7.12.10
@@ -1182,7 +1182,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.8.1_13039593e64cd539d0b4c5c2da390958
       '@typescript-eslint/parser': 5.8.1_eslint@8.6.0+typescript@4.5.4
       eslint: 8.6.0
-      eslint-plugin-import: 2.25.3_eslint@8.6.0
+      eslint-plugin-import: 2.25.4_eslint@8.6.0
       eslint-plugin-react: 7.28.0_eslint@8.6.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.6.0
       semver: 7.3.5
@@ -2381,17 +2381,16 @@ packages:
       resolve: 1.20.0
     dev: true
 
-  /eslint-module-utils/2.7.1:
-    resolution: {integrity: sha512-fjoetBXQZq2tSTWZ9yWVl2KuFrTZZH3V+9iD1V1RfpDgxzJR+mPd/KZmMiA8gbPqdBzpNiEHOuT7IYEWxrH0zQ==}
+  /eslint-module-utils/2.7.2:
+    resolution: {integrity: sha512-zquepFnWCY2ISMFwD/DqzaM++H+7PDzOpUvotJWm/y1BAFt5R4oeULgdrTejKqLkz7MA/tgstsUMNYc7wNdTrg==}
     engines: {node: '>=4'}
     dependencies:
       debug: 3.2.7
       find-up: 2.1.0
-      pkg-dir: 2.0.0
     dev: true
 
-  /eslint-plugin-import/2.25.3_eslint@8.6.0:
-    resolution: {integrity: sha512-RzAVbby+72IB3iOEL8clzPLzL3wpDrlwjsTBAQXgyp5SeTqqY+0bFubwuo+y/HLhNZcXV4XqTBO4LGsfyHIDXg==}
+  /eslint-plugin-import/2.25.4_eslint@8.6.0:
+    resolution: {integrity: sha512-/KJBASVFxpu0xg1kIBn9AUa8hQVnszpwgE7Ld0lKAlx7Ie87yzEzCgSkekt+le/YVhiaosO4Y14GDAOc41nfxA==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
@@ -2402,14 +2401,14 @@ packages:
       doctrine: 2.1.0
       eslint: 8.6.0
       eslint-import-resolver-node: 0.3.6
-      eslint-module-utils: 2.7.1
+      eslint-module-utils: 2.7.2
       has: 1.0.3
       is-core-module: 2.8.0
       is-glob: 4.0.3
       minimatch: 3.0.4
       object.values: 1.1.5
       resolve: 1.20.0
-      tsconfig-paths: 3.11.0
+      tsconfig-paths: 3.12.0
     dev: true
 
   /eslint-plugin-react-hooks/4.3.0_eslint@8.6.0:
@@ -3547,13 +3546,6 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pkg-dir/2.0.0:
-    resolution: {integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=}
-    engines: {node: '>=4'}
-    dependencies:
-      find-up: 2.1.0
-    dev: true
-
   /popmotion/11.0.3:
     resolution: {integrity: sha512-Y55FLdj3UxkR7Vl3s7Qr4e9m0onSnP8W7d/xQLsoJM40vs6UKHFdygs6SWryasTZYqugMjm3BepCF4CWXDiHgA==}
     dependencies:
@@ -4100,8 +4092,8 @@ packages:
     engines: {node: '>=0.6'}
     dev: false
 
-  /tsconfig-paths/3.11.0:
-    resolution: {integrity: sha512-7ecdYDnIdmv639mmDwslG6KQg1Z9STTz1j7Gcz0xa+nshh/gKDAHcPxRbWOsA3SPp0tXP2leTcY9Kw+NAkfZzA==}
+  /tsconfig-paths/3.12.0:
+    resolution: {integrity: sha512-e5adrnOYT6zqVnWqZu7i/BQ3BnhzvGbjEjejFXO20lKIKpwTaupkCPgEfv4GZK1IBciJUEhYs3J3p75FdaTFVg==}
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.1
