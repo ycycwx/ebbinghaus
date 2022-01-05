@@ -28,8 +28,8 @@
         "graphql": "16.2.0",
         "immer": "9.0.7",
         "path-to-regexp": "6.2.0",
-        "react": "18.0.0-rc.0-next-3dc41d8a2-20211223",
-        "react-dom": "18.0.0-rc.0-next-3dc41d8a2-20211223",
+        "react": "18.0.0-rc.0-next-42c30e8b1-20220104",
+        "react-dom": "18.0.0-rc.0-next-42c30e8b1-20220104",
         "serve-static": "1.14.2",
         "typescript": "4.5.4"
     },
