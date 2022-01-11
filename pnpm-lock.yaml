@@ -29,7 +29,7 @@ specifiers:
   framer-motion: 5.5.6
   graphql: 16.2.0
   husky: 7.0.4
-  immer: 9.0.7
+  immer: 9.0.11
   lint-staged: 12.1.7
   path-to-regexp: 6.2.0
   react: 18.0.0-rc.0-next-fe905f152-20220107
@@ -51,7 +51,7 @@ dependencies:
   express: 4.17.2
   framer-motion: 5.5.6_88bc4fee344d9ebe6e1abd431fb36b31
   graphql: 16.2.0
-  immer: 9.0.7
+  immer: 9.0.11
   path-to-regexp: 6.2.0
   react: 18.0.0-rc.0-next-fe905f152-20220107
   react-dom: 18.0.0-rc.0-next-fe905f152-20220107_e32785dbcafa2fde92a71a8f50f52ce6
@@ -3047,8 +3047,8 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /immer/9.0.7:
-    resolution: {integrity: sha512-KGllzpbamZDvOIxnmJ0jI840g7Oikx58lBPWV0hUh7dtAyZpFqqrBZdKka5GlTwMTZ1Tjc/bKKW4VSFAt6BqMA==}
+  /immer/9.0.11:
+    resolution: {integrity: sha512-vBKTH7T6jezcwwS6AgIHgBrg3TppJzQJD9SBXSkcp1+y5KqoZlpwPnPJjH3eSfC9giEknexQdP3WOa43iDVU0A==}
     dev: false
 
   /import-fresh/3.3.0:
