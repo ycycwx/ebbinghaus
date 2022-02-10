@@ -24,7 +24,7 @@
         "dexie": "3.2.0",
         "dexie-react-hooks": "1.1.1",
         "express": "4.17.2",
-        "framer-motion": "6.2.4",
+        "framer-motion": "6.2.6",
         "graphql": "16.3.0",
         "path-to-regexp": "6.2.0",
         "react": "18.0.0-rc.0-next-3a4462129-20220201",
@@ -33,7 +33,7 @@
         "typescript": "4.5.5"
     },
     "devDependencies": {
-        "@babel/core": "7.17.0",
+        "@babel/core": "7.17.2",
         "@babel/eslint-parser": "7.17.0",
         "@babel/eslint-plugin": "7.16.5",
         "@ecomfe/eslint-config": "7.4.0",
@@ -42,7 +42,7 @@
         "@types/react-dom": "17.0.11",
         "@typescript-eslint/eslint-plugin": "5.11.0",
         "@typescript-eslint/parser": "5.11.0",
-        "@vitejs/plugin-react": "1.1.4",
+        "@vitejs/plugin-react": "1.2.0",
         "cross-env": "7.0.3",
         "eslint": "8.8.0",
         "eslint-plugin-import": "2.25.4",
@@ -50,7 +50,7 @@
         "eslint-plugin-react-hooks": "4.3.0",
         "husky": "7.0.4",
         "lint-staged": "12.3.3",
-        "vite": "2.7.13"
+        "vite": "2.8.0"
     },
     "engines": {
         "node": ">=14.x"
