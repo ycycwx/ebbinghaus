@@ -18,9 +18,18 @@ import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
+import {useBreakpoints} from './useBreakpoints';
 import type {EbbinghausItem} from '../../types/store';
 
+const ellipsis = {
+    overflow: 'hidden',
+    display: '-webkit-box',
+    '-webkit-line-clamp': '1',
+    '-webkit-box-orient': 'vertical',
+};
+
 export const Item = (props: EbbinghausItem) => {
+    const {isLargerThan960} = useBreakpoints();
     const history = useHistory();
     const theme = useTheme();
     const dateLocale = useLocaleDate();
@@ -69,13 +78,17 @@ export const Item = (props: EbbinghausItem) => {
         >
             {
                 link
-                    ? <Link href={link} isExternal>{name ?? '--'}</Link>
-                    : <Box>{name ?? '--'}</Box>
+                    ? <Link href={link} isExternal sx={ellipsis} title={name}>{name ?? '--'}</Link>
+                    : <Box sx={ellipsis} title={name}>{name ?? '--'}</Box>
             }
             <HStack spacing={3}>
-                <Text>
-                    {formatDistance(updateTime, new Date(), {addSuffix: true, locale: dateLocale})}
-                </Text>
+                {
+                    isLargerThan960 && (
+                        <Text>
+                            {formatDistance(updateTime, new Date(), {addSuffix: true, locale: dateLocale})}
+                        </Text>
+                    )
+                }
                 <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
                 <Popover>
                     {({onClose}) => (

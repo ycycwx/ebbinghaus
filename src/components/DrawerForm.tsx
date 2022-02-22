@@ -20,6 +20,7 @@ import {useLocaleText} from '../locales';
 import {db} from '../db';
 import {useHistory, useParams} from './Router';
 import {useChecked} from './Checked';
+import {useBreakpoints} from './useBreakpoints';
 
 interface State {
     name: string;
@@ -53,6 +54,7 @@ const reducer = (state: State, action: Action) => {
 };
 
 const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
+    const {isSmallerThan540} = useBreakpoints();
     const history = useHistory();
     const disclosure = useChecked();
     const params = useParams<{id?: string}>();
@@ -93,8 +95,9 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
     const onLinkChange = useCallback(e => dispatch({payload: e.target.value, type: 'link'}), []);
     const onDescChange = useCallback(e => dispatch({payload: e.target.value, type: 'desc'}), []);
 
+    const drawerSize = isSmallerThan540 ? 'full' : 'md';
     return (
-        <Drawer isOpen placement="right" onClose={onClose}>
+        <Drawer isOpen placement="right" size={drawerSize} onClose={onClose}>
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
