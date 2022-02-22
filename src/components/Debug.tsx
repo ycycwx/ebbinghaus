@@ -12,7 +12,7 @@ export const Debug = () => {
         <Accordion allowToggle width="100%">
             <AccordionItem>
                 <AccordionButton>
-                    <Heading flex="1" textAlign="left">
+                    <Heading as="h5" size="sm" flex="1" textAlign="left">
                         Debug
                     </Heading>
                     <AccordionIcon />
@@ -24,4 +24,3 @@ export const Debug = () => {
         </Accordion>
     );
 };
-

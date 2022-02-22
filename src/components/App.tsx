@@ -3,33 +3,23 @@ import {
     Center,
     ChakraProvider,
     HStack,
-    Heading,
-    IconButton,
-    Switch,
     extendTheme,
     withDefaultVariant,
     withDefaultColorScheme,
     withDefaultSize,
 } from '@chakra-ui/react';
-import {AddIcon} from '@chakra-ui/icons';
 import {Locales} from '../locales';
 import {Router} from './Router';
+import {Title} from './Title';
+import {useBreakpoints} from './useBreakpoints';
 import type {LocalesContext} from '../locales';
-
-const theme = extendTheme(
-    withDefaultVariant({variant: 'outline'}),
-    withDefaultSize({size: 'sm'}),
-    withDefaultColorScheme({colorScheme: 'teal'})
-);
 
 const Main = lazy(() => import('./Main').then(module => ({default: module.Main})));
 
 const Fallback = () => {
     return (
         <HStack as={Center} spacing={3} p={6}>
-            <Heading size="lg">Ebbinghaus</Heading>
-            <IconButton size="xs" variant="outline" aria-label="add" icon={<AddIcon />} />
-            <Switch isChecked={false} />
+            <Title isOpen={false} />
         </HStack>
     );
 };
@@ -39,6 +29,23 @@ interface AppProps {
 }
 
 export const App = memo(({locales}: AppProps) => {
+    const {isLargerThan960} = useBreakpoints();
+    const theme = extendTheme(
+        withDefaultVariant({variant: 'outline'}),
+        withDefaultSize({
+            size: isLargerThan960 ? 'lg' : 'md',
+            components: ['Heading'],
+        }),
+        withDefaultSize({
+            size: isLargerThan960 ? 'md' : 'sm',
+            components: ['Switch'],
+        }),
+        withDefaultSize({
+            size: isLargerThan960 ? 'sm' : 'xs',
+            components: ['Button', 'IconButton', 'Input', 'Textarea'],
+        }),
+        withDefaultColorScheme({colorScheme: 'teal'})
+    );
     return (
         <StrictMode>
             <Locales value={locales}>
