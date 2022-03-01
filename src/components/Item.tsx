@@ -16,9 +16,8 @@ import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/i
 import formatDistance from 'date-fns/formatDistance';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
-import {isAvailable, useForceUpdate, useInterval} from '../util';
+import {isAvailable, useBreakpoints, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
-import {useBreakpoints} from './useBreakpoints';
 import type {EbbinghausItem} from '../../types/store';
 
 const ellipsis = {

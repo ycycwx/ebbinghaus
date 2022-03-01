@@ -18,9 +18,9 @@ import {useLiveQuery} from 'dexie-react-hooks';
 import {addItem, request, updateItem} from '../graphql';
 import {useLocaleText} from '../locales';
 import {db} from '../db';
+import {useBreakpoints} from '../util';
 import {useHistory, useParams} from './Router';
 import {useChecked} from './Checked';
-import {useBreakpoints} from './useBreakpoints';
 
 interface State {
     name: string;

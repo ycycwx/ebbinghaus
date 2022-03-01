@@ -9,9 +9,9 @@ import {
     withDefaultSize,
 } from '@chakra-ui/react';
 import {Locales} from '../locales';
+import {useBreakpoints} from '../util';
 import {Router} from './Router';
 import {Title} from './Title';
-import {useBreakpoints} from './useBreakpoints';
 import type {LocalesContext} from '../locales';
 
 const Main = lazy(() => import('./Main').then(module => ({default: module.Main})));
