@@ -35,7 +35,7 @@ specifiers:
   react-dom: 18.0.0-rc.1-next-f468816ef-20220225
   serve-static: 1.14.2
   typescript: 4.5.5
-  vite: 2.8.4
+  vite: 2.8.6
 
 dependencies:
   '@chakra-ui/icons': 1.1.7_380f2a45222bef5748a71aed9da8d2c7
@@ -74,7 +74,7 @@ devDependencies:
   eslint-plugin-react-hooks: 4.3.0_eslint@8.10.0
   husky: 7.0.4
   lint-staged: 12.3.4
-  vite: 2.8.4
+  vite: 2.8.6
 
 packages:
 
@@ -4273,8 +4273,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /vite/2.8.4:
-    resolution: {integrity: sha512-GwtOkkaT2LDI82uWZKcrpRQxP5tymLnC7hVHHqNkhFNknYr0hJUlDLfhVRgngJvAy3RwypkDCWtTKn1BjO96Dw==}
+  /vite/2.8.6:
+    resolution: {integrity: sha512-e4H0QpludOVKkmOsRyqQ7LTcMUDF3mcgyNU4lmi0B5JUbe0ZxeBBl8VoZ8Y6Rfn9eFKYtdXNPcYK97ZwH+K2ug==}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
