@@ -23,7 +23,7 @@ specifiers:
   dexie-react-hooks: 1.1.1
   eslint: 8.10.0
   eslint-plugin-import: 2.25.4
-  eslint-plugin-react: 7.29.2
+  eslint-plugin-react: 7.29.3
   eslint-plugin-react-hooks: 4.3.0
   express: 4.17.3
   framer-motion: 6.2.8
@@ -60,7 +60,7 @@ devDependencies:
   '@babel/core': 7.17.5
   '@babel/eslint-parser': 7.17.0_@babel+core@7.17.5+eslint@8.10.0
   '@babel/eslint-plugin': 7.16.5_fe2b17f5cea7d312cb7a0336ca5c48e8
-  '@ecomfe/eslint-config': 7.4.0_cbc09b79a2d4c7d7abc773682e305a21
+  '@ecomfe/eslint-config': 7.4.0_e0fc02e7fbc99670711c5b67551bcc82
   '@types/express': 4.17.13
   '@types/react': 17.0.39
   '@types/react-dom': 17.0.13
@@ -70,7 +70,7 @@ devDependencies:
   cross-env: 7.0.3
   eslint: 8.10.0
   eslint-plugin-import: 2.25.4_eslint@8.10.0
-  eslint-plugin-react: 7.29.2_eslint@8.10.0
+  eslint-plugin-react: 7.29.3_eslint@8.10.0
   eslint-plugin-react-hooks: 4.3.0_eslint@8.10.0
   husky: 7.0.4
   lint-staged: 12.3.4
@@ -1174,7 +1174,7 @@ packages:
     engines: {node: '>=10'}
     dev: false
 
-  /@ecomfe/eslint-config/7.4.0_cbc09b79a2d4c7d7abc773682e305a21:
+  /@ecomfe/eslint-config/7.4.0_e0fc02e7fbc99670711c5b67551bcc82:
     resolution: {integrity: sha512-X0gO63txlk+q8KgNQ5SJiCqnc5ii2+01V6Z7vka6SLUGGDK8KLKpwc69Q0jJ9zWKZ4PIDMIuV25nx+GTlqmo8Q==}
     peerDependencies:
       '@babel/core': ^7.12.10
@@ -1211,7 +1211,7 @@ packages:
       '@typescript-eslint/parser': 5.13.0_eslint@8.10.0+typescript@4.6.2
       eslint: 8.10.0
       eslint-plugin-import: 2.25.4_eslint@8.10.0
-      eslint-plugin-react: 7.29.2_eslint@8.10.0
+      eslint-plugin-react: 7.29.3_eslint@8.10.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.10.0
       semver: 7.3.5
     dev: true
@@ -2524,8 +2524,8 @@ packages:
       eslint: 8.10.0
     dev: true
 
-  /eslint-plugin-react/7.29.2_eslint@8.10.0:
-    resolution: {integrity: sha512-ypEBTKOy5liFQXZWMchJ3LN0JX1uPI6n7MN7OPHKacqXAxq5gYC30TdO7wqGYQyxD1OrzpobdHC3hDmlRWDg9w==}
+  /eslint-plugin-react/7.29.3_eslint@8.10.0:
+    resolution: {integrity: sha512-MzW6TuCnDOcta67CkpDyRfRsEVx9FNMDV8wZsDqe1luHPdGTrQIUaUXD27Ja3gHsdOIs/cXzNchWGlqm+qRVRg==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
