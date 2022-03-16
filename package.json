@@ -27,8 +27,8 @@
         "framer-motion": "6.2.8",
         "graphql": "16.3.0",
         "path-to-regexp": "6.2.0",
-        "react": "18.0.0-rc.2-next-2bf7c02f0-20220314",
-        "react-dom": "18.0.0-rc.2-next-2bf7c02f0-20220314",
+        "react": "18.0.0-rc.2-next-8fce11699-20220316",
+        "react-dom": "18.0.0-rc.2-next-8fce11699-20220316",
         "serve-static": "1.14.2",
         "typescript": "4.6.2"
     },
@@ -49,7 +49,7 @@
         "eslint-plugin-react": "7.29.4",
         "eslint-plugin-react-hooks": "4.3.0",
         "husky": "7.0.4",
-        "lint-staged": "12.3.5",
+        "lint-staged": "12.3.6",
         "vite": "2.8.6"
     },
     "engines": {
