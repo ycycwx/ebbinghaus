@@ -29,7 +29,7 @@ specifiers:
   framer-motion: 6.2.8
   graphql: 16.3.0
   husky: 7.0.4
-  lint-staged: 12.3.6
+  lint-staged: 12.3.7
   path-to-regexp: 6.2.0
   react: 18.0.0-rc.2-next-8fce11699-20220316
   react-dom: 18.0.0-rc.2-next-8fce11699-20220316
@@ -73,7 +73,7 @@ devDependencies:
   eslint-plugin-react: 7.29.4_eslint@8.11.0
   eslint-plugin-react-hooks: 4.3.0_eslint@8.11.0
   husky: 7.0.4
-  lint-staged: 12.3.6
+  lint-staged: 12.3.7
   vite: 2.8.6
 
 packages:
@@ -3263,8 +3263,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: false
 
-  /lint-staged/12.3.6:
-    resolution: {integrity: sha512-tVNyl/HsAnplKh4oaoRNzyZLm0PE/6VaBUXvd/gA9zhYCC/+ivZwiwpoT6jOxcLzuIOjP19wW+mfOi7/Bw4c1A==}
+  /lint-staged/12.3.7:
+    resolution: {integrity: sha512-/S4D726e2GIsDVWIk1XGvheCaDm1SJRQp8efamZFWJxQMVEbOwSysp7xb49Oo73KYCdy97mIWinhlxcoNqIfIQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
