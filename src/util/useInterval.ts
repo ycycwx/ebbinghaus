@@ -1,4 +1,4 @@
-import {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 export const useInterval = (callback: () => void, delay: number | null) => {
     const savedCallback = useRef(callback);
@@ -22,4 +22,10 @@ export const useInterval = (callback: () => void, delay: number | null) => {
         },
         [delay]
     );
+};
+
+export const useIntervalToken = (delay: number | null) => {
+    const [token, setToken] = useState(0);
+    useInterval(() => setToken(token => token + 1), delay);
+    return token;
 };

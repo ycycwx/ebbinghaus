@@ -2,6 +2,7 @@ import {lazy, useCallback, Suspense} from 'react';
 import {HStack, VStack, useDisclosure} from '@chakra-ui/react';
 import {useLiveQuery} from 'dexie-react-hooks';
 import {db} from '../db';
+import {useIntervalToken} from '../util';
 import {useHistory} from './Router';
 import {Checked} from './Checked';
 import {Title} from './Title';
@@ -13,11 +14,15 @@ const DataList = lazy(() => import('./DataList').then(module => ({default: modul
 export const Main = () => {
     const history = useHistory();
     const onAdd = useCallback(() => history.push('/add'), [history]);
+
+    // polling the database
+    const token = useIntervalToken(60_000);
     const disclosure = useDisclosure();
     const data = useLiveQuery(
         () => db.loadAllItems({variant: disclosure.isOpen ? 'all' : 'available'}),
-        [disclosure.isOpen]
+        [disclosure.isOpen, token]
     );
+
     return (
         <VStack p={6} m="0 auto" maxWidth={800}>
             <Checked value={disclosure}>
