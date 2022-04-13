@@ -21,6 +21,7 @@ import {db} from '../db';
 import {useBreakpoints} from '../util';
 import {useHistory, useParams} from './Router';
 import {useChecked} from './Checked';
+import type {ChangeEventHandler} from 'react';
 
 interface State {
     name: string;
@@ -91,9 +92,18 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
         [name, id, onClose, link, desc, disclosure]
     );
 
-    const onNameChange = useCallback(e => dispatch({payload: e.target.value, type: 'name'}), []);
-    const onLinkChange = useCallback(e => dispatch({payload: e.target.value, type: 'link'}), []);
-    const onDescChange = useCallback(e => dispatch({payload: e.target.value, type: 'desc'}), []);
+    const onNameChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
+        e => dispatch({payload: e.target.value, type: 'name'}),
+        []
+    );
+    const onLinkChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
+        e => dispatch({payload: e.target.value, type: 'link'}),
+        []
+    );
+    const onDescChange = useCallback<ChangeEventHandler<HTMLTextAreaElement>>(
+        e => dispatch({payload: e.target.value, type: 'desc'}),
+        []
+    );
 
     const drawerSize = isSmallerThan540 ? 'full' : 'md';
     return (
