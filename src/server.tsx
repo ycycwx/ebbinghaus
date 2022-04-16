@@ -1,5 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import {renderToPipeableStream} from 'react-dom/server';
 import {Html} from './components/Html.server';
 import {getLocales} from './util/index.server';
