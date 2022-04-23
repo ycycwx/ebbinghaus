@@ -62,3 +62,5 @@ export const Html = ({manifest, lang}: HtmlProps) => {
         </html>
     );
 };
+
+/* eslint-enable react/no-danger */

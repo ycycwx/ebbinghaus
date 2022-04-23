@@ -29,6 +29,7 @@ const ellipsis = {
     '-webkit-box-orient': 'vertical',
 };
 
+// eslint-disable-next-line max-lines-per-function
 export const Item = (props: EbbinghausItem) => {
     const {isLargerThan960} = useBreakpoints();
     const history = useHistory();
@@ -73,6 +74,8 @@ export const Item = (props: EbbinghausItem) => {
                 p: 2,
                 borderRadius: 2,
                 ':hover': {
+                    // eslint-disable-next-line max-len
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
                     bgColor: theme.colors.teal['50'],
                 },
             }}
@@ -157,3 +160,5 @@ export const Item = (props: EbbinghausItem) => {
     );
     /* eslint-enable react/jsx-no-bind */
 };
+
+/* eslint-enable @typescript-eslint/ban-ts-comment */

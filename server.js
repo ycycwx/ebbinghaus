@@ -1,4 +1,5 @@
-/* eslint-disable no-console, import/unambiguous, import/no-commonjs, global-require, init-declarations */
+// eslint-disable-next-line eslint-comments/disable-enable-pair
+/* eslint-disable no-console, global-require */
 
 // @ts-check
 
@@ -38,7 +39,6 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
         );
     }
 
-    // eslint-disable-next-line consistent-return
     app.use('*', async (req, res) => {
         try {
             const url = req.originalUrl;

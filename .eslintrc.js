@@ -7,23 +7,18 @@ module.exports = {
                 moduleDirectory: ['node_modules', './src', './server', './types'],
             },
         },
-        'import/ignore': [
-            '@chakra-ui/react',
-        ],
+        'import/ignore': ['@chakra-ui/react'],
     },
     extends: [
-        '@ecomfe/eslint-config/strict',
-        '@ecomfe/eslint-config/import/strict',
-        '@ecomfe/eslint-config/react/strict',
-        '@ecomfe/eslint-config/typescript/strict',
+        require.resolve('@yotsubacy/config/eslint/browser'),
+        require.resolve('@yotsubacy/config/eslint/react'),
+        require.resolve('@yotsubacy/config/eslint/typescript'),
     ],
+    parserOptions: {
+        tsconfigRootDir: __dirname,
+        project: ['./tsconfig.json'],
+    },
     rules: {
-        'import/order': [
-            'warn',
-            {
-                groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'type'],
-            },
-        ],
         '@typescript-eslint/consistent-type-imports': [
             'error',
             {

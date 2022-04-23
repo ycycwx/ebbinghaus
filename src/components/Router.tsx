@@ -38,6 +38,8 @@ export const Switch = ({children}: {children: ReactNode}) => {
                     if (!isValidElement(child)) {
                         return false;
                     }
+                    // eslint-disable-next-line max-len
+                    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
                     return match(child.props.path, pathname);
                 })[0]
             }
