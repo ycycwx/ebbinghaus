@@ -6,5 +6,6 @@ export const request = <T = any>(source: string, variableValues?: any) => graphq
     schema,
     source,
     rootValue,
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     variableValues,
 }) as Promise<T>;

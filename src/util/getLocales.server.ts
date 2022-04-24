@@ -30,7 +30,6 @@ export const getLocales = (req: Request): string[] => {
             const weight = m[5] || '1';
             const q = Number(weight);
 
-            // eslint-disable-next-line max-depth
             if (lng && !isNaN(q)) {
                 lngs.push({lng, q});
             }
