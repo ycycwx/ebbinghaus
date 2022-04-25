@@ -20,7 +20,7 @@ specifiers:
   eslint: 8.14.0
   express: 4.17.3
   framer-motion: 6.3.1
-  graphql: 16.3.0
+  graphql: 16.4.0
   husky: 7.0.4
   lint-staged: 12.4.0
   path-to-regexp: 6.2.0
@@ -42,7 +42,7 @@ dependencies:
   dexie-react-hooks: 1.1.1_8252433a50bfdea685001d6c18ea6fb6
   express: 4.17.3
   framer-motion: 6.3.1_853491282dfacb401c1d0b2ff462bcd7
-  graphql: 16.3.0
+  graphql: 16.4.0
   path-to-regexp: 6.2.0
   react: 18.1.0-next-bd0813766-20220420
   react-dom: 18.1.0-next-bd0813766-20220420_41f66d6ad5c7e79ac077e00d8f566444
@@ -2990,9 +2990,9 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /graphql/16.3.0:
-    resolution: {integrity: sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==}
-    engines: {node: ^12.22.0 || ^14.16.0 || >=16.0.0}
+  /graphql/16.4.0:
+    resolution: {integrity: sha512-tYDNcRvKCcfHREZYje3v33NSrSD/ZpbWWdPtBtUUuXx9NCo/2QDxYzNqCnMvfsrnbwRpEHMovVrPu/ERoLrIRg==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: false
 
   /has-bigints/1.0.2:
