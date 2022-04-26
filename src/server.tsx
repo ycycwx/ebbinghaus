@@ -9,6 +9,6 @@ export const render = (_: string, req: Request, res: Response, manifest?: Manife
         console.error('Fatal', error);
     });
 
-    const html = <Html manifest={manifest} lang={getLocales(req)[0]} />;
+    const html = <Html manifest={manifest} lang={getLocales(req)[0]!} />;
     renderToPipeableStream(html).pipe(res);
 };
