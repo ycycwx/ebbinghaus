@@ -15,7 +15,7 @@ specifiers:
   compression: 1.7.4
   cross-env: 7.0.3
   date-fns: 2.28.0
-  dexie: 3.2.1
+  dexie: 3.2.2
   dexie-react-hooks: 1.1.1
   eslint: 8.14.0
   express: 4.18.0
@@ -38,8 +38,8 @@ dependencies:
   '@emotion/styled': 11.8.1_43b0c0febcc59fceea267ed228243096
   compression: 1.7.4
   date-fns: 2.28.0
-  dexie: 3.2.1
-  dexie-react-hooks: 1.1.1_51a61a0932c3218dbd17e969e55e2017
+  dexie: 3.2.2
+  dexie-react-hooks: 1.1.1_2518d0b22dc98941eb1851c513cbec04
   express: 4.18.0
   framer-motion: 6.3.2_react-dom@18.1.0+react@18.1.0
   graphql: 16.4.0
@@ -2144,7 +2144,7 @@ packages:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
     dev: false
 
-  /dexie-react-hooks/1.1.1_51a61a0932c3218dbd17e969e55e2017:
+  /dexie-react-hooks/1.1.1_2518d0b22dc98941eb1851c513cbec04:
     resolution: {integrity: sha512-Cam5JP6PxHN564RvWEoe8cqLhosW0O4CAZ9XEVYeGHJBa6KEJlOpd9CUpV3kmU9dm2MrW97/lk7qkf1xpij7gA==}
     peerDependencies:
       '@types/react': '>=16'
@@ -2152,12 +2152,12 @@ packages:
       react: '>=16'
     dependencies:
       '@types/react': 18.0.8
-      dexie: 3.2.1
+      dexie: 3.2.2
       react: 18.1.0
     dev: false
 
-  /dexie/3.2.1:
-    resolution: {integrity: sha512-Y8oz3t2XC9hvjkP35B5I8rUkKKwM36GGRjWQCMjzIYScg7W+GHKDXobSYswkisW7CxL1/tKQtggMDsiWqDUc1g==}
+  /dexie/3.2.2:
+    resolution: {integrity: sha512-q5dC3HPmir2DERlX+toCBbHQXW5MsyrFqPFcovkH9N2S/UW/H3H5AWAB6iEOExeraAu+j+zRDG+zg/D7YhH0qg==}
     engines: {node: '>=6.0'}
     dev: false
 
