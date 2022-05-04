@@ -27,8 +27,8 @@
         "framer-motion": "6.3.3",
         "graphql": "16.4.0",
         "path-to-regexp": "6.2.0",
-        "react": "18.2.0-next-ce1386028-20220428",
-        "react-dom": "18.2.0-next-ce1386028-20220428",
+        "react": "18.2.0-next-99eef9e2d-20220503",
+        "react-dom": "18.2.0-next-99eef9e2d-20220503",
         "serve-static": "1.15.0",
         "typescript": "4.6.4"
     },
