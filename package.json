@@ -26,7 +26,7 @@
         "express": "4.18.1",
         "framer-motion": "6.3.3",
         "graphql": "16.4.0",
-        "path-to-regexp": "6.2.0",
+        "path-to-regexp": "6.2.1",
         "react": "18.2.0-next-99eef9e2d-20220503",
         "react-dom": "18.2.0-next-99eef9e2d-20220503",
         "serve-static": "1.15.0",
