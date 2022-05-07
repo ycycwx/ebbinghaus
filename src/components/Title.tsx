@@ -1,7 +1,7 @@
 import {Heading, IconButton, Switch} from '@chakra-ui/react';
 import {AddIcon} from '@chakra-ui/icons';
 
-const noop = () => undefined;
+const noop = (): void => undefined;
 
 interface TitleProps {
     isOpen: boolean;

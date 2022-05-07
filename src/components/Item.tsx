@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import {useCallback} from 'react';
 import {
     Box,
@@ -97,7 +95,6 @@ export const Item = (props: EbbinghausItem) => {
                 <Popover>
                     {({onClose}) => (
                         <>
-                            {/* @ts-expect-error */}
                             <PopoverTrigger>
                                 <IconButton aria-label="repeat" icon={<RepeatClockIcon />} />
                             </PopoverTrigger>
@@ -121,8 +118,6 @@ export const Item = (props: EbbinghausItem) => {
                 <Popover>
                     {({onClose}) => (
                         <>
-                            {/* https://github.com/chakra-ui/chakra-ui/pull/5856 */}
-                            {/* @ts-expect-error */}
                             <PopoverTrigger>
                                 <IconButton disabled={!available} aria-label="resovle" icon={<CheckIcon />} />
                             </PopoverTrigger>
@@ -144,8 +139,6 @@ export const Item = (props: EbbinghausItem) => {
                     )}
                 </Popover>
                 <Popover>
-                    {/* https://github.com/chakra-ui/chakra-ui/pull/5856 */}
-                    {/* @ts-expect-error */}
                     <PopoverTrigger>
                         <IconButton aria-label="remove" icon={<SmallCloseIcon />} />
                     </PopoverTrigger>
@@ -160,5 +153,3 @@ export const Item = (props: EbbinghausItem) => {
     );
     /* eslint-enable react/jsx-no-bind */
 };
-
-/* eslint-enable @typescript-eslint/ban-ts-comment */

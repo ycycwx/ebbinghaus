@@ -10,6 +10,7 @@
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,
+        "strictNullChecks": false,
         "jsx": "react-jsxdev"
     },
     "include": ["./src", "./types", "./*.ts"]
