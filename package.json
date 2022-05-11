@@ -28,8 +28,8 @@
         "framer-motion": "6.3.3",
         "graphql": "16.5.0",
         "path-to-regexp": "6.2.1",
-        "react": "18.2.0-next-7d9e17a98-20220511",
-        "react-dom": "18.2.0-next-7d9e17a98-20220511",
+        "react": "18.2.0-next-e531a4a62-20220505",
+        "react-dom": "18.2.0-next-e531a4a62-20220505",
         "serve-static": "1.15.0",
         "typescript": "4.6.4"
     },
