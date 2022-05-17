@@ -19,4 +19,7 @@ module.exports = {
             },
         },
     },
+    rules: {
+        'import/extensions': ['error', {json: 'always'}],
+    },
 };
