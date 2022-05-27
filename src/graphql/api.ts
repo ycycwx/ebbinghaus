@@ -1,11 +1,11 @@
 import {graphql} from 'graphql';
 import {rootValue} from './rootValue';
 import {schema} from './schema';
+import type {GraphQLArgs} from 'graphql';
 
-export const request = <T = any>(source: string, variableValues?: any) => graphql({
+export const request = (source: GraphQLArgs['source'], variableValues: GraphQLArgs['variableValues']) => graphql({
     schema,
     source,
     rootValue,
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     variableValues,
-}) as Promise<T>;
+});
