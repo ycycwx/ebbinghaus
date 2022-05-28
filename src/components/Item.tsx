@@ -17,7 +17,7 @@ import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/i
 import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
-import {isAvailable, useBreakpoints, useForceUpdate, useInterval} from '../util';
+import {isAvailable, isFinished, useBreakpoints, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
 import type {EbbinghausItem} from '../../types/store';
 
@@ -42,6 +42,7 @@ export const Item = (props: EbbinghausItem) => {
 
     const {name, link, updateTime, id, stage} = props;
     const available = isAvailable(props);
+    const hasFinish = isFinished(stage);
 
     const onRemove = useCallback(
         async () => {
@@ -89,9 +90,14 @@ export const Item = (props: EbbinghausItem) => {
                     isLargerThan960 && (
                         <Tooltip
                             label={
-                                formatDistanceToNow(addDays(updateTime, stage), {addSuffix: true, locale: dateLocale})
+                                available || hasFinish
+                                    ? null
+                                    : formatDistanceToNow(
+                                        addDays(updateTime, stage),
+                                        {addSuffix: true, locale: dateLocale}
+                                    )
                             }
-                            isDisabled={available}
+                            isDisabled={available || hasFinish}
                         >
                             <Text>
                                 {formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}
