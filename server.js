@@ -43,7 +43,6 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
         try {
             const url = req.originalUrl;
             // @ts-expect-error
-            // eslint-disable-next-line import/extensions
             const manifest = isProd ? require('./dist/client/manifest.json') : undefined;
             const render = isProd
                 ? require('./dist/server/server').render
