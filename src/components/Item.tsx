@@ -10,10 +10,11 @@ import {
     PopoverContent,
     PopoverTrigger,
     Text,
+    Tooltip,
     useTheme,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/icons';
-import formatDistance from 'date-fns/formatDistance';
+import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, useBreakpoints, useForceUpdate, useInterval} from '../util';
@@ -39,7 +40,7 @@ export const Item = (props: EbbinghausItem) => {
         'dataList.action.remove',
     ]);
 
-    const {name, link, updateTime, id} = props;
+    const {name, link, updateTime, id, stage} = props;
     const available = isAvailable(props);
 
     const onRemove = useCallback(
@@ -86,9 +87,16 @@ export const Item = (props: EbbinghausItem) => {
             <HStack spacing={3}>
                 {
                     isLargerThan960 && (
-                        <Text>
-                            {formatDistance(updateTime, new Date(), {addSuffix: true, locale: dateLocale})}
-                        </Text>
+                        <Tooltip
+                            label={
+                                formatDistanceToNow(addDays(updateTime, stage), {addSuffix: true, locale: dateLocale})
+                            }
+                            isDisabled={available}
+                        >
+                            <Text>
+                                {formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}
+                            </Text>
+                        </Tooltip>
                     )
                 }
                 <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
