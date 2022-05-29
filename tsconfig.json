@@ -14,5 +14,5 @@
         "strictNullChecks": false,
         "jsx": "react-jsxdev"
     },
-    "include": ["./src", "./types", "./*.ts"]
+    "include": ["./src", "./types", "./plugins", "./*.ts"]
 }
