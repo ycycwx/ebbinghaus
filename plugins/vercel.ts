@@ -1,7 +1,7 @@
 import type {Plugin} from 'vite';
 
 export const vercel = (): Plugin => ({
-    name: 'vite:html',
+    name: 'vercel',
     enforce: 'pre',
     transformIndexHtml: {
         enforce: 'pre',
