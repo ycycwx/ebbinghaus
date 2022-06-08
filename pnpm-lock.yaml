@@ -22,7 +22,7 @@ specifiers:
   framer-motion: 6.3.11
   graphql: 16.5.0
   husky: 8.0.1
-  lint-staged: 13.0.0
+  lint-staged: 13.0.1
   path-to-regexp: 6.2.1
   react: 18.1.0
   react-dom: 18.1.0
@@ -59,7 +59,7 @@ devDependencies:
   cross-env: 7.0.3
   eslint: 8.17.0
   husky: 8.0.1
-  lint-staged: 13.0.0
+  lint-staged: 13.0.1
   vite: 2.9.10
 
 packages:
@@ -3271,8 +3271,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: false
 
-  /lint-staged/13.0.0:
-    resolution: {integrity: sha512-vWban5utFt78VZohbosUxNIa46KKJ+KOQTDWTQ8oSl1DLEEVl9zhUtaQbiiydAmx+h2wKJK2d0+iMaRmknuWRQ==}
+  /lint-staged/13.0.1:
+    resolution: {integrity: sha512-Ykaf4QTi0a02BF7cnq7JIPGOJxH4TkNMWhSlJdH9wOekd0X+gog47Jfh/0L31DqZe5AiydLGC7LkPqpaNm+Kvg==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -3286,7 +3286,7 @@ packages:
       micromatch: 4.0.5
       normalize-path: 3.0.0
       object-inspect: 1.12.2
-      pidtree: 0.5.0
+      pidtree: 0.6.0
       string-argv: 0.3.1
       yaml: 2.1.1
     transitivePeerDependencies:
@@ -3650,8 +3650,8 @@ packages:
     engines: {node: '>=8.6'}
     dev: true
 
-  /pidtree/0.5.0:
-    resolution: {integrity: sha512-9nxspIM7OpZuhBxPg73Zvyq7j1QMPMPsGKTqRc2XOaFQauDvoNz9fM1Wdkjmeo7l9GXOZiRs97sPkuayl39wjA==}
+  /pidtree/0.6.0:
+    resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
     hasBin: true
     dev: true
