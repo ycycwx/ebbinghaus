@@ -1,12 +1,13 @@
-import Dexie from 'dexie';
+import {Dexie} from 'dexie';
 import {getNextStage, isAvailable} from '../util';
+import type {Table} from 'dexie';
 import type {EbbinghausItem} from '../../types/store';
 
 const isServer = typeof window !== 'object';
 
 class EbbinghausDatabase extends Dexie {
 
-    readonly items: Dexie.Table<EbbinghausItem, number>;
+    readonly items: Table<EbbinghausItem, number>;
 
     constructor() {
         super('EbbinghausDatabase');
@@ -35,7 +36,7 @@ class EbbinghausDatabase extends Dexie {
         }
 
         const time = Date.now();
-        // eslint-disable-next-line consistent-return
+
         return this.items.add({
             ...item,
             createTime: time,
@@ -49,7 +50,6 @@ class EbbinghausDatabase extends Dexie {
             return;
         }
 
-        // eslint-disable-next-line consistent-return
         return this.items.get({id});
     }
 
@@ -63,7 +63,6 @@ class EbbinghausDatabase extends Dexie {
             throw new Error('item should be update with `id`');
         }
 
-        // eslint-disable-next-line consistent-return
         return this.items.update(id, {updateTime: Date.now(), stage: getNextStage(item.stage)}) as unknown as void;
     }
 
@@ -77,7 +76,6 @@ class EbbinghausDatabase extends Dexie {
             throw new Error('item should be update with `id`');
         }
 
-        // eslint-disable-next-line consistent-return
         return this.items.update(id, {updateTime: Date.now()}) as unknown as void;
     }
 
@@ -86,7 +84,6 @@ class EbbinghausDatabase extends Dexie {
             return;
         }
 
-        // eslint-disable-next-line consistent-return
         return this.items.update(id, {...(await this.getItem(id)), ...partialItem}) as unknown as void;
     }
 
@@ -95,7 +92,6 @@ class EbbinghausDatabase extends Dexie {
             return;
         }
 
-        // eslint-disable-next-line consistent-return
         return this.items.delete(id);
     }
 }
