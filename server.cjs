@@ -3,7 +3,7 @@
 
 // @ts-check
 
-const path = require('path');
+const path = require('node:path');
 const express = require('express');
 
 async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV === 'production') {
@@ -31,10 +31,8 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
         app.use(vite.middlewares);
     }
     else {
-        // @ts-expect-error
         app.use(require('compression')());
         app.use(
-            // @ts-expect-error
             require('serve-static')(resolve('dist/client'), {
                 index: false,
             })
@@ -47,6 +45,7 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
             // @ts-expect-error
             const manifest = isProd ? require('./dist/client/manifest.json') : undefined;
             const render = isProd
+                // @ts-expect-error
                 ? require('./dist/server/server').render
                 : (await vite.ssrLoadModule('/src/server.tsx')).render;
 

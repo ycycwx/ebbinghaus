@@ -11,7 +11,7 @@ specifiers:
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   '@vitejs/plugin-react': 1.3.2
-  '@yotsubacy/config': 1.5.1
+  '@yotsubacy/config': 1.6.0
   compression: 1.7.4
   cross-env: 7.0.3
   date-fns: 2.28.0
@@ -55,7 +55,7 @@ devDependencies:
   '@types/react': 18.0.14
   '@types/react-dom': 18.0.5
   '@vitejs/plugin-react': 1.3.2
-  '@yotsubacy/config': 1.5.1_ab6h3r64zohk23vz5sz2qw4gm4
+  '@yotsubacy/config': 1.6.0_ab6h3r64zohk23vz5sz2qw4gm4
   cross-env: 7.0.3
   eslint: 8.18.0
   husky: 8.0.1
@@ -1596,8 +1596,8 @@ packages:
       - supports-color
     dev: true
 
-  /@yotsubacy/config/1.5.1_ab6h3r64zohk23vz5sz2qw4gm4:
-    resolution: {integrity: sha512-uoo1/phBq2vIL4OUbONU3oStI9rY2sDpnfbNB4G9iddS/w0lcF+jf0KSsaiX6TFL/7JsySfuOEnL8MKbxG9T9Q==}
+  /@yotsubacy/config/1.6.0_ab6h3r64zohk23vz5sz2qw4gm4:
+    resolution: {integrity: sha512-8IJeA2zQxjbaRqwEoWfNTbaNSvbE2e8ed/YSkUrx0Ey1K0nCXep9H9Ntf6gdSFYpg+7GNKg9K9PHPkdZ0d0dzA==}
     peerDependencies:
       eslint: ^8.16.0
     dependencies:
@@ -1805,9 +1805,9 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001358
-      electron-to-chromium: 1.4.165
+      electron-to-chromium: 1.4.167
       node-releases: 2.0.5
-      update-browserslist-db: 1.0.3_browserslist@4.21.0
+      update-browserslist-db: 1.0.4_browserslist@4.21.0
 
   /bytes/3.0.0:
     resolution: {integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=}
@@ -2112,8 +2112,8 @@ packages:
     resolution: {integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=}
     dev: false
 
-  /electron-to-chromium/1.4.165:
-    resolution: {integrity: sha512-DKQW1lqUSAYQvn9dnpK7mWaDpWbNOXQLXhfCi7Iwx0BKxdZOxkKcCyKw1l3ihWWW5iWSxKKbhEUoNRoHvl/hbA==}
+  /electron-to-chromium/1.4.167:
+    resolution: {integrity: sha512-lPHuHXBwpkr4RcfaZBKm6TKOWG/1N9mVggUpP4fY3l1JIUU2x4fkM8928smYdZ5lF+6KCTAxo1aK9JmqT+X71Q==}
 
   /emoji-regex/8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -2527,7 +2527,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.18.0
       estraverse: 5.3.0
-      jsx-ast-utils: 3.3.0
+      jsx-ast-utils: 3.3.1
       minimatch: 3.1.2
       object.entries: 1.1.5
       object.fromentries: 2.0.5
@@ -3245,8 +3245,8 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  /jsx-ast-utils/3.3.0:
-    resolution: {integrity: sha512-XzO9luP6L0xkxwhIJMTJQpZo/eeN60K08jHdexfD569AGxeNug6UketeHXEhROoM8aR7EcUoOQmIhcJQjcuq8Q==}
+  /jsx-ast-utils/3.3.1:
+    resolution: {integrity: sha512-pxrjmNpeRw5wwVeWyEAk7QJu2GnBO3uzPFmHCKJJFPKK2Cy0cWL23krGtLdnMmbIi6/FjlrQpPyfQI19ByPOhQ==}
     engines: {node: '>=4.0'}
     dependencies:
       array-includes: 3.1.5
@@ -4261,8 +4261,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /update-browserslist-db/1.0.3_browserslist@4.21.0:
-    resolution: {integrity: sha512-ufSazemeh9Gty0qiWtoRpJ9F5Q5W3xdIPm1UZQqYQv/q0Nyb9EMHUB2lu+O9x1re9WsorpMAUu4Y6Lxcs5n+XQ==}
+  /update-browserslist-db/1.0.4_browserslist@4.21.0:
+    resolution: {integrity: sha512-jnmO2BEGUjsMOe/Fg9u0oczOe/ppIDZPebzccl1yDWGLFP16Pa1/RM5wEoKYPG2zstNcDuAStejyxsOuKINdGA==}
     hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
