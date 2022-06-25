@@ -1,5 +1,5 @@
 export default {
-    '**/*.{cjs,js,ts,tsx}': 'eslint --fix',
+    '**/*.{cjs,mjs,js,ts,tsx}': 'eslint --fix',
     'src/**/*.{ts,tsx}'() {
         return 'pnpm exec tsc';
     },
