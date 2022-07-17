@@ -20,8 +20,9 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
         vite = await require('vite').createServer({
             root,
             logLevel: 'info',
+            appType: 'custom',
             server: {
-                middlewareMode: 'ssr',
+                middlewareMode: true,
                 watch: {
                     usePolling: true,
                     interval: 100,
@@ -45,8 +46,8 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
             // @ts-expect-error
             const manifest = isProd ? require('./dist/client/manifest.json') : undefined;
             const render = isProd
-                // @ts-expect-error
-                ? require('./dist/server/server').render
+                // eslint-disable-next-line import/extensions
+                ? (await import('./dist/server/server.mjs')).render
                 : (await vite.ssrLoadModule('/src/server.tsx')).render;
 
             render(url, req, res, manifest);
