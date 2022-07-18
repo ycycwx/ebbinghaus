@@ -28,7 +28,7 @@ specifiers:
   react-dom: 18.2.0
   serve-static: 1.15.0
   typescript: 4.7.4
-  vite: 3.0.0
+  vite: 3.0.2
 
 dependencies:
   '@chakra-ui/icons': 2.0.4_yvhl5ql2jypczm6naccxme2hbi
@@ -54,13 +54,13 @@ devDependencies:
   '@types/express': 4.17.13
   '@types/react': 18.0.15
   '@types/react-dom': 18.0.6
-  '@vitejs/plugin-react': 2.0.0_vite@3.0.0
+  '@vitejs/plugin-react': 2.0.0_vite@3.0.2
   '@yotsubacy/config': 1.7.1_lx6jkr3ccqxuww6wnfj7rroswu
   cross-env: 7.0.3
   eslint: 8.20.0
   husky: 8.0.1
   lint-staged: 13.0.3
-  vite: 3.0.0
+  vite: 3.0.2
 
 packages:
 
@@ -1642,7 +1642,7 @@ packages:
     resolution: {integrity: sha512-8mPf1bBzF2S+fyuyYOQWjDcaJTTgJ14UAnXW9I3KwrqioRWG1byRXHwciYdqXpbdOiu7Fg4WJbymBIakGk+aMA==}
     dev: true
 
-  /@vitejs/plugin-react/2.0.0_vite@3.0.0:
+  /@vitejs/plugin-react/2.0.0_vite@3.0.2:
     resolution: {integrity: sha512-zHkRR+X4zqEPNBbKV2FvWSxK7Q6crjMBVIAYroSU8Nbb4M3E5x4qOiLoqJBHtXgr27kfednXjkwr3lr8jS6Wrw==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
@@ -1655,7 +1655,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.18.6_@babel+core@7.18.6
       magic-string: 0.26.2
       react-refresh: 0.14.0
-      vite: 3.0.0
+      vite: 3.0.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4479,9 +4479,9 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /vite/3.0.0:
-    resolution: {integrity: sha512-M7phQhY3+fRZa0H+1WzI6N+/onruwPTBTMvaj7TzgZ0v2TE+N2sdLKxJOfOv9CckDWt5C4HmyQP81xB4dwRKzA==}
-    engines: {node: '>=14.18.0'}
+  /vite/3.0.2:
+    resolution: {integrity: sha512-TAqydxW/w0U5AoL5AsD9DApTvGb2iNbGs3sN4u2VdT1GFkQVUfgUldt+t08TZgi23uIauh1TUOQJALduo9GXqw==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
       less: '*'
