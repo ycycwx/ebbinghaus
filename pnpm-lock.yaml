@@ -11,7 +11,7 @@ specifiers:
   '@types/express': 4.17.13
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
-  '@vitejs/plugin-react': 2.0.0
+  '@vitejs/plugin-react': 2.0.1
   '@yotsubacy/config': 1.7.1
   compression: 1.7.4
   cross-env: 7.0.3
@@ -56,7 +56,7 @@ devDependencies:
   '@types/express': 4.17.13
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
-  '@vitejs/plugin-react': 2.0.0_vite@3.0.5
+  '@vitejs/plugin-react': 2.0.1_vite@3.0.5
   '@yotsubacy/config': 1.7.1_srjmap6z5qkqhl5uh55oplck4y
   cross-env: 7.0.3
   eslint: 8.21.0
@@ -1654,9 +1654,9 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-react/2.0.0_vite@3.0.5:
-    resolution: {integrity: sha512-zHkRR+X4zqEPNBbKV2FvWSxK7Q6crjMBVIAYroSU8Nbb4M3E5x4qOiLoqJBHtXgr27kfednXjkwr3lr8jS6Wrw==}
-    engines: {node: '>=14.18.0'}
+  /@vitejs/plugin-react/2.0.1_vite@3.0.5:
+    resolution: {integrity: sha512-uINzNHmjrbunlFtyVkST6lY1ewSfz/XwLufG0PIqvLGnpk2nOIOa/1CACTDNcKi1/RwaCzJLmsXwm1NsUVV/NA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
     dependencies:
