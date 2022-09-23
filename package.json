@@ -48,7 +48,7 @@
         "lint-staged": "13.0.3",
         "vite": "3.1.0"
     },
-    "packageManager": "pnpm@7.12.1",
+    "packageManager": "pnpm@7.12.2",
     "engines": {
         "node": ">=14.x"
     }
