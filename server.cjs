@@ -15,8 +15,15 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
      * @type {import('vite').ViteDevServer}
      */
     let vite;
-    // eslint-disable-next-line no-negated-condition
-    if (!isProd) {
+    if (isProd) {
+        app.use(require('compression')());
+        app.use(
+            require('serve-static')(resolve('dist/client'), {
+                index: false,
+            })
+        );
+    }
+    else {
         vite = await require('vite').createServer({
             root,
             logLevel: 'info',
@@ -30,14 +37,6 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
             },
         });
         app.use(vite.middlewares);
-    }
-    else {
-        app.use(require('compression')());
-        app.use(
-            require('serve-static')(resolve('dist/client'), {
-                index: false,
-            })
-        );
     }
 
     app.use('*', async (req, res) => {
