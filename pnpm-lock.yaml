@@ -8,7 +8,7 @@ specifiers:
   '@chakra-ui/system': 2.3.4
   '@emotion/react': 11.10.5
   '@emotion/styled': 11.10.5
-  '@types/express': 4.17.14
+  '@types/express': 4.17.15
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   '@vitejs/plugin-react': 2.2.0
@@ -53,7 +53,7 @@ dependencies:
 
 devDependencies:
   '@babel/core': 7.20.5
-  '@types/express': 4.17.14
+  '@types/express': 4.17.15
   '@types/react': 18.0.26
   '@types/react-dom': 18.0.9
   '@vitejs/plugin-react': 2.2.0_vite@3.2.5
@@ -1706,8 +1706,8 @@ packages:
       '@types/range-parser': 1.2.4
     dev: true
 
-  /@types/express/4.17.14:
-    resolution: {integrity: sha512-TEbt+vaPFQ+xpxFLFssxUDXj5cWCxZJjIcB7Yg0k0GMHGtgtQgpvx/MUQUeAkNbA9AAGrwkAsoeItdTgS7FMyg==}
+  /@types/express/4.17.15:
+    resolution: {integrity: sha512-Yv0k4bXGOH+8a+7bELd2PqHQsuiANB+A8a4gnQrkRWzrkKlb6KHaVvyXhqs04sVW/OWlbPyYxRgYlIXLfrufMQ==}
     dependencies:
       '@types/body-parser': 1.19.2
       '@types/express-serve-static-core': 4.17.31
