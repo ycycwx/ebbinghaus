@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@babel/core': 7.20.12
-  '@chakra-ui/icons': 2.0.16
+  '@chakra-ui/icons': 2.0.17
   '@chakra-ui/react': 2.4.9
   '@chakra-ui/styled-system': 2.5.1
   '@chakra-ui/system': 2.3.8
@@ -32,7 +32,7 @@ specifiers:
   vite: 3.2.5
 
 dependencies:
-  '@chakra-ui/icons': 2.0.16_i3shekjw4uogiqsyudihvyzi2i
+  '@chakra-ui/icons': 2.0.17_i3shekjw4uogiqsyudihvyzi2i
   '@chakra-ui/react': 2.4.9_u5ze33slj76olb4tspmq33x5ia
   '@chakra-ui/styled-system': 2.5.1
   '@chakra-ui/system': 2.3.8_dovxhg2tvkkxkdnqyoum6wzcxm
@@ -597,13 +597,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/icon/3.0.15_i3shekjw4uogiqsyudihvyzi2i:
-    resolution: {integrity: sha512-6RRppml4kW3hOMgMCtgeKc73nJhJEZXOvzDvmZKKW9WrLsDpWiI7WDQb5VIxUXqZlbrh88K5WVRY0YivIefCDA==}
+  /@chakra-ui/icon/3.0.16_i3shekjw4uogiqsyudihvyzi2i:
+    resolution: {integrity: sha512-RpA1X5Ptz8Mt39HSyEIW1wxAz2AXyf9H0JJ5HVx/dBdMZaGMDJ0HyyPBVci0m4RCoJuyG1HHG/DXJaVfUTVAeg==}
     peerDependencies:
       '@chakra-ui/system': '>=2.0.0'
       react: '>=18'
     dependencies:
-      '@chakra-ui/shared-utils': 2.0.4
+      '@chakra-ui/shared-utils': 2.0.5
       '@chakra-ui/system': 2.3.8_dovxhg2tvkkxkdnqyoum6wzcxm
       react: 18.2.0
     dev: false
@@ -619,13 +619,13 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@chakra-ui/icons/2.0.16_i3shekjw4uogiqsyudihvyzi2i:
-    resolution: {integrity: sha512-8sNMpkA4t0EOYuAZONgvMYaIO8vHyf9kBkHCk/2SRW+KXZKY0Q0aWJMxFW047r9GBUJmzvsu2wdrmOv3KMGzPA==}
+  /@chakra-ui/icons/2.0.17_i3shekjw4uogiqsyudihvyzi2i:
+    resolution: {integrity: sha512-HMJP0WrJgAmFR9+Xh/CBH0nVnGMsJ4ZC8MK6tMgxPKd9/muvn0I4hsicHqdPlLpmB0TlxlhkBAKaVMtOdz6F0w==}
     peerDependencies:
       '@chakra-ui/system': '>=2.0.0'
       react: '>=18'
     dependencies:
-      '@chakra-ui/icon': 3.0.15_i3shekjw4uogiqsyudihvyzi2i
+      '@chakra-ui/icon': 3.0.16_i3shekjw4uogiqsyudihvyzi2i
       '@chakra-ui/system': 2.3.8_dovxhg2tvkkxkdnqyoum6wzcxm
       react: 18.2.0
     dev: false
