@@ -28,7 +28,7 @@ interface AppProps {
     locales: LocalesContext;
 }
 
-export const App = memo(({locales}: AppProps) => {
+export const App = memo<AppProps>(({locales}) => {
     const {isLargerThan960} = useBreakpoints();
     const theme = extendTheme(
         withDefaultVariant({variant: 'outline'}),

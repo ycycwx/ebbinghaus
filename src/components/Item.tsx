@@ -107,7 +107,7 @@ export const Item = (props: EbbinghausItem) => {
                 }
                 <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
                 <Popover>
-                    {({onClose}: {onClose: () => void}) => (
+                    {({onClose}) => (
                         <>
                             <PopoverTrigger>
                                 <IconButton aria-label="repeat" icon={<RepeatClockIcon />} />
@@ -130,7 +130,7 @@ export const Item = (props: EbbinghausItem) => {
                     )}
                 </Popover>
                 <Popover>
-                    {({onClose}: {onClose: () => void}) => (
+                    {({onClose}) => (
                         <>
                             <PopoverTrigger>
                                 <IconButton disabled={!available} aria-label="resovle" icon={<CheckIcon />} />
