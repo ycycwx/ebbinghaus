@@ -75,7 +75,7 @@ export const useHistory = () => {
     return useMemo(() => ({push: dispatch}), [dispatch]);
 };
 
-export const useParams = <T extends Record<string, unknown> = any>(): T => {
+export const useParams = <T extends object>(): T => {
     const path = useRoute();
     const {pathname} = useLocation();
     const keys: Key[] = [];
