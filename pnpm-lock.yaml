@@ -73,8 +73,8 @@ devDependencies:
     specifier: 2.2.0
     version: 2.2.0(vite@3.2.5)
   '@yotsubacy/config':
-    specifier: 1.8.4
-    version: 1.8.4(@babel/core@7.21.4)(eslint@8.37.0)(typescript@5.0.3)
+    specifier: 1.9.0
+    version: 1.9.0(@babel/core@7.21.4)(eslint@8.37.0)(typescript@5.0.3)
   cross-env:
     specifier: 7.0.3
     version: 7.0.3
@@ -1984,8 +1984,8 @@ packages:
       - supports-color
     dev: true
 
-  /@yotsubacy/config@1.8.4(@babel/core@7.21.4)(eslint@8.37.0)(typescript@5.0.3):
-    resolution: {integrity: sha512-VdGY2Jb8XIbp1ifk0agL//RZjXk8EyvD+cv91zjM4eYBIMo44ahtmqWlrVL8ZRMQXDZ6LEc5rP6uFyAJiCEQ0A==}
+  /@yotsubacy/config@1.9.0(@babel/core@7.21.4)(eslint@8.37.0)(typescript@5.0.3):
+    resolution: {integrity: sha512-NUKVqrb65Pc/TTm1hsZ5GAG/AcoXKWOfnRSotDgWWMVrq6OeC25PP7styC5JMIF7wFhim0cBo7hFlfCPWdBltw==}
     peerDependencies:
       eslint: ^8.16.0
     dependencies:
