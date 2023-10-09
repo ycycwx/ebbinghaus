@@ -40,7 +40,7 @@
         "@types/react": "18.2.25",
         "@types/react-dom": "18.2.11",
         "@vitejs/plugin-react": "2.2.0",
-        "@yotsubacy/config": "1.10.3",
+        "@yotsubacy/config": "1.10.4",
         "cross-env": "7.0.3",
         "eslint": "8.51.0",
         "husky": "8.0.3",
