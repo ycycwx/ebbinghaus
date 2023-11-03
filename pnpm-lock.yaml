@@ -33,8 +33,8 @@ dependencies:
     specifier: 3.2.4
     version: 3.2.4
   dexie-react-hooks:
-    specifier: 1.1.6
-    version: 1.1.6(@types/react@18.2.34)(dexie@3.2.4)(react@18.2.0)
+    specifier: 1.1.7
+    version: 1.1.7(@types/react@18.2.34)(dexie@3.2.4)(react@18.2.0)
   express:
     specifier: 4.18.2
     version: 4.18.2
@@ -2573,8 +2573,8 @@ packages:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
     dev: false
 
-  /dexie-react-hooks@1.1.6(@types/react@18.2.34)(dexie@3.2.4)(react@18.2.0):
-    resolution: {integrity: sha512-xSblWtmPwhafWNWMECsW7zMMmBu8goH3QqTxEfwBNoNG1mgsM0oFclippev7ss9HhKICqBwTjgqpscci5Ed4mA==}
+  /dexie-react-hooks@1.1.7(@types/react@18.2.34)(dexie@3.2.4)(react@18.2.0):
+    resolution: {integrity: sha512-Lwv5W0Hk+uOW3kGnsU9GZoR1er1B7WQ5DSdonoNG+focTNeJbHW6vi6nBoX534VKI3/uwHebYzSw1fwY6a7mTw==}
     peerDependencies:
       '@types/react': '>=16'
       dexie: ^3.2 || ^4.0.1-alpha
