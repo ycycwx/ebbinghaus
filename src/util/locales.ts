@@ -1,5 +1,4 @@
-import zhCN from 'date-fns/locale/zh-CN/index.js';
-import enUS from 'date-fns/locale/en-US/index.js';
+import {zhCN, enUS} from 'date-fns/locale';
 import * as locales from '../locales';
 
 const zhCnLang = ['zh-CN', 'zh'];
