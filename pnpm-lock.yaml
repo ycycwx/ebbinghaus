@@ -30,11 +30,11 @@ dependencies:
     specifier: 3.3.1
     version: 3.3.1
   dexie:
-    specifier: 3.2.5
-    version: 3.2.5(karma@6.4.2)
+    specifier: 3.2.6
+    version: 3.2.6(karma@6.4.2)
   dexie-react-hooks:
     specifier: 1.1.7
-    version: 1.1.7(@types/react@18.2.62)(dexie@3.2.5)(react@18.2.0)
+    version: 1.1.7(@types/react@18.2.62)(dexie@3.2.6)(react@18.2.0)
   express:
     specifier: 4.18.3
     version: 4.18.3
@@ -2660,7 +2660,7 @@ packages:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
     dev: false
 
-  /dexie-react-hooks@1.1.7(@types/react@18.2.62)(dexie@3.2.5)(react@18.2.0):
+  /dexie-react-hooks@1.1.7(@types/react@18.2.62)(dexie@3.2.6)(react@18.2.0):
     resolution: {integrity: sha512-Lwv5W0Hk+uOW3kGnsU9GZoR1er1B7WQ5DSdonoNG+focTNeJbHW6vi6nBoX534VKI3/uwHebYzSw1fwY6a7mTw==}
     peerDependencies:
       '@types/react': '>=16'
@@ -2668,12 +2668,12 @@ packages:
       react: '>=16'
     dependencies:
       '@types/react': 18.2.62
-      dexie: 3.2.5(karma@6.4.2)
+      dexie: 3.2.6(karma@6.4.2)
       react: 18.2.0
     dev: false
 
-  /dexie@3.2.5(karma@6.4.2):
-    resolution: {integrity: sha512-MA7vYQvXxWN2+G50D0GLS4FqdYUyRYQsN0FikZIVebOmRoNCSCL9+eUbIF80dqrfns3kmY+83+hE2GN9CnAGyA==}
+  /dexie@3.2.6(karma@6.4.2):
+    resolution: {integrity: sha512-R9VzQ27/cncQymoAeD1kfu66NUrdxcnMNXVfEoFLnQ+apVVbS4++veUcSGxft9V++zaeiLkMAREOMf8EwgR/Vw==}
     engines: {node: '>=6.0'}
     dependencies:
       karma-safari-launcher: 1.0.0(karma@6.4.2)
