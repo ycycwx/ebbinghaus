@@ -27,8 +27,8 @@ dependencies:
     specifier: 1.7.4
     version: 1.7.4
   date-fns:
-    specifier: 3.5.0
-    version: 3.5.0
+    specifier: 3.6.0
+    version: 3.6.0
   dexie:
     specifier: 3.2.6
     version: 3.2.6(karma@6.4.3)
@@ -2585,8 +2585,8 @@ packages:
     resolution: {integrity: sha512-GAj5FOq0Hd+RsCGVJxZuKaIDXDf3h6GQoNEjFgbLLI/trgtavwUbSnZ5pVfg27DVCaWjIohryS0JFwIJyT2cMg==}
     dev: false
 
-  /date-fns@3.5.0:
-    resolution: {integrity: sha512-a+DwyXn7NOfdJireCzAA0B9p7jIXEu/Q9JKCyMYvH6+0vPUNbQceA0neXrdfJ/xzl3mhOh5vibQQ3936Tssm6A==}
+  /date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
     dev: false
 
   /date-format@4.0.14:
