@@ -30,11 +30,11 @@ dependencies:
     specifier: 3.6.0
     version: 3.6.0
   dexie:
-    specifier: 3.2.7
-    version: 3.2.7
+    specifier: 4.0.1
+    version: 4.0.1
   dexie-react-hooks:
     specifier: 1.1.7
-    version: 1.1.7(@types/react@18.2.74)(dexie@3.2.7)(react@18.2.0)
+    version: 1.1.7(@types/react@18.2.74)(dexie@4.0.1)(react@18.2.0)
   express:
     specifier: 4.19.2
     version: 4.19.2
@@ -2588,7 +2588,7 @@ packages:
     resolution: {integrity: sha512-ypdmJU/TbBby2Dxibuv7ZLW3Bs1QEmM7nHjEANfohJLvE0XVujisn1qPJcZxg+qDucsr+bP6fLD1rPS3AhJ7EQ==}
     dev: false
 
-  /dexie-react-hooks@1.1.7(@types/react@18.2.74)(dexie@3.2.7)(react@18.2.0):
+  /dexie-react-hooks@1.1.7(@types/react@18.2.74)(dexie@4.0.1)(react@18.2.0):
     resolution: {integrity: sha512-Lwv5W0Hk+uOW3kGnsU9GZoR1er1B7WQ5DSdonoNG+focTNeJbHW6vi6nBoX534VKI3/uwHebYzSw1fwY6a7mTw==}
     peerDependencies:
       '@types/react': '>=16'
@@ -2596,13 +2596,12 @@ packages:
       react: '>=16'
     dependencies:
       '@types/react': 18.2.74
-      dexie: 3.2.7
+      dexie: 4.0.1
       react: 18.2.0
     dev: false
 
-  /dexie@3.2.7:
-    resolution: {integrity: sha512-2a+BXvVhY5op+smDRLxeBAivE7YcYaneXJ1la3HOkUfX9zKkE/AJ8CNgjiXbtXepFyFmJNGSbmjOwqbT749r/w==}
-    engines: {node: '>=6.0'}
+  /dexie@4.0.1:
+    resolution: {integrity: sha512-wSNn+TcCh+DuE2pdg058K3MhxA4g+IiZlW7yGz4cMd/t3z2rJXZcV3HDxZljbrICU2Iq0qY4UHnbolTMK/+bcA==}
     dev: false
 
   /dir-glob@3.0.1:
