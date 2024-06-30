@@ -26,13 +26,13 @@
         "dexie": "4.0.7",
         "dexie-react-hooks": "1.1.7",
         "express": "4.19.2",
-        "framer-motion": "11.2.10",
+        "framer-motion": "11.2.12",
         "graphql": "16.8.2",
         "path-to-regexp": "6.2.2",
         "react": "18.3.1",
         "react-dom": "18.3.1",
         "serve-static": "1.15.0",
-        "typescript": "5.4.5"
+        "typescript": "5.5.2"
     },
     "devDependencies": {
         "@babel/core": "7.24.7",
