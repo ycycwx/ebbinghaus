@@ -33,11 +33,11 @@ importers:
         specifier: 3.6.0
         version: 3.6.0
       dexie:
-        specifier: 4.0.7
-        version: 4.0.7
+        specifier: 4.0.8
+        version: 4.0.8
       dexie-react-hooks:
         specifier: 1.1.7
-        version: 1.1.7(@types/react@18.3.3)(dexie@4.0.7)(react@18.3.1)
+        version: 1.1.7(@types/react@18.3.3)(dexie@4.0.8)(react@18.3.1)
       express:
         specifier: 4.19.2
         version: 4.19.2
@@ -1297,8 +1297,8 @@ packages:
       dexie: ^3.2 || ^4.0.1-alpha
       react: '>=16'
 
-  dexie@4.0.7:
-    resolution: {integrity: sha512-M+Lo6rk4pekIfrc2T0o2tvVJwL6EAAM/B78DNfb8aaxFVoI1f8/rz5KTxuAnApkwqTSuxx7T5t0RKH7qprapGg==}
+  dexie@4.0.8:
+    resolution: {integrity: sha512-1G6cJevS17KMDK847V3OHvK2zei899GwpDiqfEXHP1ASvme6eWJmAp9AU4s1son2TeGkWmC0g3y8ezOBPnalgQ==}
 
   dir-glob@3.0.1:
     resolution: {integrity: sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==}
@@ -4360,13 +4360,13 @@ snapshots:
 
   detect-node-es@1.1.0: {}
 
-  dexie-react-hooks@1.1.7(@types/react@18.3.3)(dexie@4.0.7)(react@18.3.1):
+  dexie-react-hooks@1.1.7(@types/react@18.3.3)(dexie@4.0.8)(react@18.3.1):
     dependencies:
       '@types/react': 18.3.3
-      dexie: 4.0.7
+      dexie: 4.0.8
       react: 18.3.1
 
-  dexie@4.0.7: {}
+  dexie@4.0.8: {}
 
   dir-glob@3.0.1:
     dependencies:
