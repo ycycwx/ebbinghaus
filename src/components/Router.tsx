@@ -1,16 +1,10 @@
 import {createContext, isValidElement, useContext, useMemo, useState, Children} from 'react';
-import {pathToRegexp} from 'path-to-regexp';
+import {match, pathToRegexp} from 'path-to-regexp';
 import type {ReactNode, Dispatch, PropsWithChildren, SetStateAction} from 'react';
-import type {Key} from 'path-to-regexp';
 
 const pathContext = createContext('/');
 const dispatchContext = createContext<Dispatch<SetStateAction<string>> | undefined>(undefined);
 const routeContext = createContext<string | null>(null);
-
-const match = (path: string, pathname: string) => {
-    const regexp = pathToRegexp(path);
-    return regexp.test(pathname);
-};
 
 // Mock Route
 export const Router = ({children}: {children: ReactNode}) => {
@@ -34,13 +28,14 @@ export const Switch = ({children}: {children: ReactNode}) => {
     return (
         <>
             {
+                // TODO: `Children` is marked as deprecated.
                 Children.toArray(children).filter(child => {
                     if (!isValidElement(child)) {
                         return false;
                     }
                     // eslint-disable-next-line max-len
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-                    return match(child.props.path, pathname);
+                    return match(child.props.path)(pathname);
                 })[0]
             }
         </>
@@ -78,20 +73,11 @@ export const useHistory = () => {
 export const useParams = <T extends object>(): T => {
     const path = useRoute();
     const {pathname} = useLocation();
-    const keys: Key[] = [];
-    const regexp = pathToRegexp(path, keys);
-    const match = regexp.exec(pathname);
-    if (!match) {
+    const fn = match(path);
+    const matches = fn(pathname);
+    if (!matches) {
         return {} as T;
     }
 
-    return keys.reduce(
-        (result, {name}, index) => {
-            return {
-                ...result,
-                [name]: match[1 + index],
-            };
-        },
-        {} as T
-    );
+    return matches.params as T;
 };
