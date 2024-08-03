@@ -27,6 +27,7 @@ export const getLocales = (req: Request): string[] => {
         m = lookupRegex.exec(acceptLanguage);
         if (m) {
             const lng = m[1];
+            // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
             const weight = m[5] || '1';
             const q = Number(weight);
 
