@@ -25,5 +25,6 @@ export const schema = buildSchema(`
         updateStage(id: ID!): Void
         updateUpdateTime(id: ID!): Void
         deleteItem(id: ID!): Void
+        resetItem(id: ID!): Void
     }
 `);
