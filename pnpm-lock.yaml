@@ -79,8 +79,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(vite@3.2.10(@types/node@22.1.0))
       '@yotsubacy/config':
-        specifier: 1.11.11
-        version: 1.11.11(@babel/core@7.25.2)(eslint@8.57.0)(typescript@5.5.4)
+        specifier: 1.12.0
+        version: 1.12.0(@babel/core@7.25.2)(eslint@8.57.0)(typescript@5.5.4)
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -962,8 +962,8 @@ packages:
     peerDependencies:
       vite: ^3.0.0
 
-  '@yotsubacy/config@1.11.11':
-    resolution: {integrity: sha512-YcEsFcKFPPYZE8lwfVxJM4CFqaGjI9vaVxKSatRsZ19nfrIljDfa6exaLy7c2QxOh9hFUHlUHQmTsG5b1AwklQ==}
+  '@yotsubacy/config@1.12.0':
+    resolution: {integrity: sha512-Hgq8GvY0oPlQzcu1OfgTdKL/c/jNTNuTCBbns4hAuZXnLuygrcyMCbqL1N8oM+ze/SEO4ipfhi8OpgJRFDLftA==}
     peerDependencies:
       eslint: ^8.16.0
 
@@ -3973,7 +3973,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@yotsubacy/config@1.11.11(@babel/core@7.25.2)(eslint@8.57.0)(typescript@5.5.4)':
+  '@yotsubacy/config@1.12.0(@babel/core@7.25.2)(eslint@8.57.0)(typescript@5.5.4)':
     dependencies:
       '@babel/eslint-parser': 7.25.1(@babel/core@7.25.2)(eslint@8.57.0)
       '@rushstack/eslint-patch': 1.10.4
