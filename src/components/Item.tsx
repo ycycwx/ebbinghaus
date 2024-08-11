@@ -104,9 +104,9 @@ export const Item = (props: EbbinghausItem) => {
                                     onClick={async () => {
                                         if (id) {
                                             await request(updateUpdateTime, {id});
-
-                                            onClose();
                                         }
+
+                                        onClose();
                                     }}
                                 >
                                     {delayText}
@@ -127,9 +127,9 @@ export const Item = (props: EbbinghausItem) => {
                                     onClick={async () => {
                                         if (id) {
                                             await request(updateStage, {id});
-
-                                            onClose();
                                         }
+
+                                        onClose();
                                     }}
                                 >
                                     {finishText}
@@ -157,22 +157,27 @@ export const Item = (props: EbbinghausItem) => {
                     </PopoverContent>
                 </Popover>
                 <Popover>
-                    <PopoverTrigger>
-                        <IconButton aria-label="reset" icon={<RepeatIcon />} />
-                    </PopoverTrigger>
-                    <PopoverContent width={100}>
-                        <Button
-                            variant="solid"
-                            colorScheme="red"
-                            onClick={async () => {
-                                if (id) {
-                                    await request(resetItem, {id});
-                                }
-                            }}
-                        >
-                            {resetText}
-                        </Button>
-                    </PopoverContent>
+                    {({onClose}) => (
+                        <>
+                            <PopoverTrigger>
+                                <IconButton aria-label="reset" icon={<RepeatIcon />} />
+                            </PopoverTrigger>
+                            <PopoverContent width={100}>
+                                <Button
+                                    variant="solid"
+                                    colorScheme="red"
+                                    onClick={async () => {
+                                        if (id) {
+                                            await request(resetItem, {id});
+                                        }
+                                        onClose();
+                                    }}
+                                >
+                                    {resetText}
+                                </Button>
+                            </PopoverContent>
+                        </>
+                    )}
                 </Popover>
             </HStack>
         </HStack>
