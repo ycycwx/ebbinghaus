@@ -27,3 +27,9 @@ mutation DeleteItem($id: ID!) {
     deleteItem(id: $id)
 }
 `;
+
+export const resetItem = `
+mutation ResetItem($id: ID!) {
+    resetItem(id: $id)
+}
+`;

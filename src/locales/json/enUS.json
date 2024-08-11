@@ -9,5 +9,6 @@
     "dataList.list.emptyText": "No Data",
     "dataList.action.delay": "DELAY",
     "dataList.action.finish": "FINISH",
-    "dataList.action.remove": "REMOVE"
+    "dataList.action.remove": "REMOVE",
+    "dataList.action.reset": "RESET"
 }

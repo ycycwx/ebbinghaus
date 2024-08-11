@@ -1,4 +1,3 @@
-import {useCallback} from 'react';
 import {
     Box,
     Button,
@@ -13,10 +12,10 @@ import {
     Tooltip,
     useTheme,
 } from '@chakra-ui/react';
-import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon} from '@chakra-ui/icons';
+import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon, RepeatIcon} from '@chakra-ui/icons';
 import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
-import {deleteItem, request, updateStage, updateUpdateTime} from '../graphql';
+import {deleteItem, request, resetItem, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, isFinished, useBreakpoints, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
 import type {EbbinghausItem} from '../../types/store';
@@ -34,38 +33,20 @@ export const Item = (props: EbbinghausItem) => {
     const history = useHistory();
     const theme = useTheme();
     const dateLocale = useLocaleDate();
-    const [delayText, finishText, removeText] = useLocaleText([
+    const [delayText, finishText, removeText, resetText] = useLocaleText([
         'dataList.action.delay',
         'dataList.action.finish',
         'dataList.action.remove',
+        'dataList.action.reset',
     ]);
 
     const {name, link, updateTime, id, stage} = props;
     const available = isAvailable(props);
     const hasFinish = isFinished(stage);
 
-    const onRemove = useCallback(
-        async () => {
-            if (id) {
-                await request(deleteItem, {id});
-            }
-        },
-        [id]
-    );
-
-    const onEdit = useCallback(
-        () => {
-            if (id) {
-                history.push(`/edit/${id}`);
-            }
-        },
-        [id, history]
-    );
-
     const forceUpdate = useForceUpdate();
     useInterval(forceUpdate, 60_000);
 
-    /* eslint-disable react/jsx-no-bind */
     return (
         <HStack
             as={ListItem}
@@ -80,32 +61,37 @@ export const Item = (props: EbbinghausItem) => {
                 },
             }}
         >
-            {
-                link
-                    ? <Link href={link} isExternal sx={ellipsis} title={name}>{name ?? '--'}</Link>
-                    : <Box sx={ellipsis} title={name}>{name ?? '--'}</Box>
-            }
+            {link ? (
+                <Link href={link} isExternal sx={ellipsis} title={name}>
+                    {name ?? '--'}
+                </Link>
+            ) : (
+                <Box sx={ellipsis} title={name}>
+                    {name ?? '--'}
+                </Box>
+            )}
             <HStack spacing={3}>
-                {
-                    isLargerThan960 && (
-                        <Tooltip
-                            label={
-                                available || hasFinish
-                                    ? null
-                                    : formatDistanceToNow(
-                                        addDays(updateTime, stage),
-                                        {addSuffix: true, locale: dateLocale}
-                                    )
-                            }
-                            isDisabled={available || hasFinish}
-                        >
-                            <Text>
-                                {formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}
-                            </Text>
-                        </Tooltip>
-                    )
-                }
-                <IconButton aria-label="edit" icon={<EditIcon />} onClick={onEdit} />
+                {isLargerThan960 && (
+                    <Tooltip
+                        label={
+                            available || hasFinish
+                                ? null
+                                : formatDistanceToNow(addDays(updateTime, stage), {addSuffix: true, locale: dateLocale})
+                        }
+                        isDisabled={available || hasFinish}
+                    >
+                        <Text>{formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}</Text>
+                    </Tooltip>
+                )}
+                <IconButton
+                    aria-label="edit"
+                    icon={<EditIcon />}
+                    onClick={() => {
+                        if (id) {
+                            history.push(`/edit/${id}`);
+                        }
+                    }}
+                />
                 <Popover>
                     {({onClose}) => (
                         <>
@@ -157,13 +143,38 @@ export const Item = (props: EbbinghausItem) => {
                         <IconButton aria-label="remove" icon={<SmallCloseIcon />} />
                     </PopoverTrigger>
                     <PopoverContent width={100}>
-                        <Button variant="solid" colorScheme="red" onClick={onRemove}>
+                        <Button
+                            variant="solid"
+                            colorScheme="red"
+                            onClick={async () => {
+                                if (id) {
+                                    await request(deleteItem, {id});
+                                }
+                            }}
+                        >
                             {removeText}
+                        </Button>
+                    </PopoverContent>
+                </Popover>
+                <Popover>
+                    <PopoverTrigger>
+                        <IconButton aria-label="reset" icon={<RepeatIcon />} />
+                    </PopoverTrigger>
+                    <PopoverContent width={100}>
+                        <Button
+                            variant="solid"
+                            colorScheme="red"
+                            onClick={async () => {
+                                if (id) {
+                                    await request(resetItem, {id});
+                                }
+                            }}
+                        >
+                            {resetText}
                         </Button>
                     </PopoverContent>
                 </Popover>
             </HStack>
         </HStack>
     );
-    /* eslint-enable react/jsx-no-bind */
 };

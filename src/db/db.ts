@@ -6,7 +6,6 @@ import type {EbbinghausItem} from '../../types/store';
 const isServer = typeof window !== 'object';
 
 class EbbinghausDatabase extends Dexie {
-
     readonly items: Table<EbbinghausItem, number>;
 
     constructor() {
@@ -24,10 +23,7 @@ class EbbinghausDatabase extends Dexie {
             return [];
         }
 
-        return this
-            .items
-            .filter(item => (params.variant === 'all' || isAvailable(item)))
-            .toArray();
+        return this.items.filter(item => params.variant === 'all' || isAvailable(item)).toArray();
     }
 
     async addItem(item: Pick<EbbinghausItem, 'name' | 'link' | 'desc'>): Promise<void | number> {
@@ -93,6 +89,25 @@ class EbbinghausDatabase extends Dexie {
         }
 
         return this.items.delete(id);
+    }
+
+    async resetItem(id: number) {
+        if (isServer) {
+            return;
+        }
+
+        const item = await this.getItem(id);
+        if (!item) {
+            return;
+        }
+
+        const now = Date.now();
+        return this.items.update(id, {
+            ...item,
+            createTime: now,
+            updateTime: now,
+            stage: 1,
+        });
     }
 }
 

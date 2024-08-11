@@ -35,4 +35,5 @@ export const rootValue = {
     updateUpdateTime: ({id}: {id: string}) => db.updateUpdateTime(+id),
     updateItem: ({id, ...item}: {id: string, name?: string, link?: string, desc?: string}) => db.updateItem(+id, item),
     deleteItem: ({id}: {id: string}) => db.deleteItem(+id),
+    resetItem: ({id}: {id: string}) => db.resetItem(+id),
 };
