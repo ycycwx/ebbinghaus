@@ -11,13 +11,7 @@ import {
     Tooltip,
     useTheme,
 } from '@chakra-ui/react';
-import {
-    CheckIcon,
-    SmallCloseIcon,
-    EditIcon,
-    RepeatClockIcon,
-    RepeatIcon,
-} from '@chakra-ui/icons';
+import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon, RepeatIcon} from '@chakra-ui/icons';
 import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, resetItem, updateStage, updateUpdateTime} from '../graphql';
@@ -73,7 +67,11 @@ export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausIt
                         <Text>{formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}</Text>
                     </Tooltip>
                 )}
-                {isLargerThan960 ? <Badge variant="solid">{stage > 28 ? 'MAX' : stage}</Badge> : null}
+                {isLargerThan960 ? (
+                    <Badge variant="solid" fontFamily="monospace">
+                        {stage > 28 ? 'MAX' : stage}
+                    </Badge>
+                ) : null}
                 <IconButton
                     aria-label="edit"
                     icon={<EditIcon />}
