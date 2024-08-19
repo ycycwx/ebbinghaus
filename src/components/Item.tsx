@@ -1,9 +1,8 @@
 import {
-    Box,
+    Badge,
     Button,
     HStack,
     IconButton,
-    Link,
     ListItem,
     Popover,
     PopoverContent,
@@ -12,23 +11,23 @@ import {
     Tooltip,
     useTheme,
 } from '@chakra-ui/react';
-import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon, RepeatIcon} from '@chakra-ui/icons';
+import {
+    CheckIcon,
+    SmallCloseIcon,
+    EditIcon,
+    RepeatClockIcon,
+    RepeatIcon,
+} from '@chakra-ui/icons';
 import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, resetItem, updateStage, updateUpdateTime} from '../graphql';
 import {isAvailable, isFinished, useBreakpoints, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
+import {Name} from './Name';
 import type {EbbinghausItem} from '../../types/store';
 
-const ellipsis = {
-    overflow: 'hidden',
-    display: '-webkit-box',
-    '-webkit-line-clamp': '1',
-    '-webkit-box-orient': 'vertical',
-};
-
 // eslint-disable-next-line max-lines-per-function
-export const Item = (props: EbbinghausItem) => {
+export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausItem) => {
     const {isLargerThan960} = useBreakpoints();
     const history = useHistory();
     const theme = useTheme();
@@ -40,8 +39,7 @@ export const Item = (props: EbbinghausItem) => {
         'dataList.action.reset',
     ]);
 
-    const {name, link, updateTime, id, stage} = props;
-    const available = isAvailable(props);
+    const available = isAvailable({name, link, updateTime, id, stage, ...props});
     const hasFinish = isFinished(stage);
 
     const forceUpdate = useForceUpdate();
@@ -61,15 +59,7 @@ export const Item = (props: EbbinghausItem) => {
                 },
             }}
         >
-            {link ? (
-                <Link href={link} isExternal sx={ellipsis} title={name}>
-                    {name ?? '--'}
-                </Link>
-            ) : (
-                <Box sx={ellipsis} title={name}>
-                    {name ?? '--'}
-                </Box>
-            )}
+            <Name name={name} link={link} />
             <HStack spacing={3}>
                 {isLargerThan960 && (
                     <Tooltip
@@ -83,6 +73,7 @@ export const Item = (props: EbbinghausItem) => {
                         <Text>{formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}</Text>
                     </Tooltip>
                 )}
+                {isLargerThan960 ? <Badge variant="solid">{stage > 28 ? 'MAX' : stage}</Badge> : null}
                 <IconButton
                     aria-label="edit"
                     icon={<EditIcon />}
