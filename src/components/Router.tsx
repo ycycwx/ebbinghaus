@@ -11,9 +11,7 @@ export const Router = ({children}: {children: ReactNode}) => {
     const [path, setPath] = useState('/');
     return (
         <pathContext.Provider value={path}>
-            <dispatchContext.Provider value={setPath}>
-                {children}
-            </dispatchContext.Provider>
+            <dispatchContext.Provider value={setPath}>{children}</dispatchContext.Provider>
         </pathContext.Provider>
     );
 };
@@ -53,7 +51,7 @@ const useRoute = () => {
 };
 
 export const Route = ({path, children}: PropsWithChildren<{path: string}>) => {
-    const regexp = pathToRegexp(path);
+    const {regexp} = pathToRegexp(path);
     const {pathname} = useLocation();
     if (!regexp.test(pathname)) {
         return null;
