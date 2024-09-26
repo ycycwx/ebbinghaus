@@ -48,8 +48,8 @@ importers:
         specifier: 16.9.0
         version: 16.9.0
       path-to-regexp:
-        specifier: 8.1.0
-        version: 8.1.0
+        specifier: 8.2.0
+        version: 8.2.0
       react:
         specifier: 18.3.1
         version: 18.3.1
@@ -2262,8 +2262,8 @@ packages:
   path-to-regexp@0.1.10:
     resolution: {integrity: sha512-7lf7qcQidTku0Gu3YDPc8DJ1q7OOucfa/BSsIwjuh56VU7katFvuM8hULfkwB3Fns/rsVF7PwPKVw1sl5KQS9w==}
 
-  path-to-regexp@8.1.0:
-    resolution: {integrity: sha512-Bqn3vc8CMHty6zuD+tG23s6v2kwxslHEhTj4eYaVKGIEB+YX/2wd0/rgXLFD9G9id9KCtbVy/3ZgmvZjpa0UdQ==}
+  path-to-regexp@8.2.0:
+    resolution: {integrity: sha512-TdrF7fW9Rphjq4RjrW0Kp2AW0Ahwu9sRGTkS6bvDi0SCwZlEZYmcfDbEsTz8RVk0EHIS/Vd1bv3JhG+1xZuAyQ==}
     engines: {node: '>=16'}
 
   path-type@4.0.0:
@@ -5400,7 +5400,7 @@ snapshots:
 
   path-to-regexp@0.1.10: {}
 
-  path-to-regexp@8.1.0: {}
+  path-to-regexp@8.2.0: {}
 
   path-type@4.0.0: {}
 
