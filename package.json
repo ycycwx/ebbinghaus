@@ -3,13 +3,14 @@
     "version": "0.0.0",
     "private": true,
     "description": "ebbinghaus",
+    "type": "module",
     "scripts": {
-        "dev": "node server.cjs",
+        "dev": "node server.js",
         "build": "tsc -p tsconfig.prod.json && pnpm build:client && pnpm build:server",
         "build:vercel": "tsc -p tsconfig.prod.json && vite build -c vite.vercel.config.ts",
         "build:client": "vite build --outDir dist/client",
         "build:server": "vite build --ssr src/server.tsx --outDir dist/server",
-        "serve": "cross-env NODE_ENV=production node server.cjs",
+        "serve": "cross-env NODE_ENV=production node server.js",
         "prepare": "husky"
     },
     "author": "yytcjcy@gmail.com",
@@ -39,13 +40,13 @@
         "@types/express": "5.0.0",
         "@types/react": "18.3.11",
         "@types/react-dom": "18.3.0",
-        "@vitejs/plugin-react": "2.2.0",
+        "@vitejs/plugin-react": "4.3.2",
         "@yotsubacy/config": "1.13.2",
         "cross-env": "7.0.3",
         "eslint": "8.57.1",
         "husky": "9.1.6",
         "lint-staged": "15.2.10",
-        "vite": "3.2.11"
+        "vite": "5.4.8"
     },
     "packageManager": "pnpm@9.12.0",
     "engines": {
