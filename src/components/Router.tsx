@@ -27,14 +27,15 @@ export const Switch = ({children}: {children: ReactNode}) => {
         <>
             {
                 // TODO: `Children` is marked as deprecated.
-                Children.toArray(children).filter(child => {
+                Children.toArray(children).find(child => {
                     if (!isValidElement(child)) {
                         return false;
                     }
-                    // eslint-disable-next-line max-len
+
+                    // eslint-disable-next-line @stylistic/max-len
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
                     return match(child.props.path)(pathname);
-                })[0]
+                })
             }
         </>
     );
@@ -68,14 +69,14 @@ export const useHistory = () => {
     return useMemo(() => ({push: dispatch}), [dispatch]);
 };
 
-export const useParams = <T extends object>(): T => {
+export const useParams = () => {
     const path = useRoute();
     const {pathname} = useLocation();
     const fn = match(path);
     const matches = fn(pathname);
     if (!matches) {
-        return {} as T;
+        return {};
     }
 
-    return matches.params as T;
+    return matches.params;
 };
