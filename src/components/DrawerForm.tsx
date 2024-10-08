@@ -58,7 +58,7 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
     const {isSmallerThan540} = useBreakpoints();
     const history = useHistory();
     const disclosure = useChecked();
-    const params = useParams<{id?: string}>();
+    const params: {id?: string} = useParams();
     const [addText, editText, nameText, linkText, descText, submitText, cancelText] = useLocaleText([
         'drawer.header.add',
         'drawer.header.edit',
@@ -72,36 +72,44 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
 
     const [{name, link, desc}, dispatch] = useReducer(reducer, defaultValue);
 
-    const onClose = useCallback(() => history.push('/'), [history]);
-
-    const onClick = useCallback(
-        async () => {
-            if (name) {
-                if (id) {
-                    await request(updateItem, {id, name, link, desc});
-                }
-                else {
-                    await request(addItem, {name, link, desc});
-                    // redirect to all items tab after adding item
-                    disclosure.onOpen();
-                }
-
-                onClose();
-            }
+    const onClose = useCallback(
+        () => {
+            history.push('/');
         },
-        [name, id, onClose, link, desc, disclosure]
+        [history]
     );
 
+    const onClick = useCallback(async () => {
+        if (name) {
+            if (id) {
+                await request(updateItem, {id, name, link, desc});
+            }
+            else {
+                await request(addItem, {name, link, desc});
+                // redirect to all items tab after adding item
+                disclosure.onOpen();
+            }
+
+            onClose();
+        }
+    }, [name, id, onClose, link, desc, disclosure]);
+
     const onNameChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
-        e => dispatch({payload: e.target.value, type: 'name'}),
+        e => {
+            dispatch({payload: e.target.value, type: 'name'});
+        },
         []
     );
     const onLinkChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
-        e => dispatch({payload: e.target.value, type: 'link'}),
+        e => {
+            dispatch({payload: e.target.value, type: 'link'});
+        },
         []
     );
     const onDescChange = useCallback<ChangeEventHandler<HTMLTextAreaElement>>(
-        e => dispatch({payload: e.target.value, type: 'desc'}),
+        e => {
+            dispatch({payload: e.target.value, type: 'desc'});
+        },
         []
     );
 
@@ -154,7 +162,7 @@ const EditForm = ({id}: {id: number}) => {
 };
 
 export const DrawerForm = () => {
-    const params = useParams<{id?: string}>();
+    const params: {id?: string} = useParams();
     const id = params.id;
     if (!id) {
         return <CreateForm />;

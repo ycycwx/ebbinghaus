@@ -13,7 +13,9 @@ const DataList = lazy(() => import('./DataList').then(module => ({default: modul
 
 export const Main = () => {
     const history = useHistory();
-    const onAdd = useCallback(() => history.push('/add'), [history]);
+    const onAdd = useCallback(() => {
+        history.push('/add');
+    }, [history]);
 
     // polling the database
     const token = useIntervalToken(60_000);

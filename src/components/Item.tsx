@@ -47,7 +47,7 @@ export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausIt
                 p: 2,
                 borderRadius: 2,
                 ':hover': {
-                    // eslint-disable-next-line max-len
+                    // eslint-disable-next-line @stylistic/max-len
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
                     bgColor: theme.colors.teal['50'],
                 },

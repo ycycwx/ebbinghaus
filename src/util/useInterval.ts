@@ -16,8 +16,15 @@ export const useInterval = (callback: () => void, delay: number | null) => {
                 return;
             }
 
-            const id = setInterval(() => savedCallback.current(), delay);
-            return () => clearInterval(id);
+            const id = setInterval(
+                () => {
+                    savedCallback.current();
+                },
+                delay
+            );
+            return () => {
+                clearInterval(id);
+            };
         },
         [delay]
     );
@@ -25,6 +32,11 @@ export const useInterval = (callback: () => void, delay: number | null) => {
 
 export const useIntervalToken = (delay: number | null) => {
     const [token, setToken] = useState(0);
-    useInterval(() => setToken(token => token + 1), delay);
+    useInterval(
+        () => {
+            setToken(token => token + 1);
+        },
+        delay
+    );
     return token;
 };

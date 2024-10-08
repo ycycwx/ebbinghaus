@@ -12,14 +12,14 @@ export const Name = ({name, link}: Pick<EbbinghausItem, 'name' | 'link'>) => {
     if (link) {
         return (
             <Link href={link} isExternal sx={ellipsis} title={name}>
-                {name ?? '--'}
+                {name}
             </Link>
         );
     }
 
     return (
         <Box sx={ellipsis} title={name}>
-            {name ?? '--'}
+            {name}
         </Box>
     );
 };
