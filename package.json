@@ -22,7 +22,7 @@
         "@chakra-ui/system": "2.6.2",
         "@emotion/react": "11.13.3",
         "@emotion/styled": "11.13.0",
-        "compression": "1.7.4",
+        "compression": "1.7.5",
         "date-fns": "4.1.0",
         "dexie": "4.0.9",
         "dexie-react-hooks": "1.1.7",
