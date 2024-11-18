@@ -44,7 +44,7 @@
         "@yotsubacy/config": "1.15.3",
         "cross-env": "7.0.3",
         "eslint": "8.57.1",
-        "husky": "9.1.6",
+        "husky": "9.1.7",
         "lint-staged": "15.2.10",
         "vite": "5.4.11"
     },
