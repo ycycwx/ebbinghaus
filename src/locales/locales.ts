@@ -1,6 +1,6 @@
 import {createContext, useContext} from 'react';
+import enUS from './json/enUS.json' with {type: 'json'};
 import type {Locale} from 'date-fns';
-import type enUS from './json/enUS.json';
 
 export type LocaleConfigKeys = keyof typeof enUS;
 

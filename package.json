@@ -27,7 +27,7 @@
         "dexie": "4.0.10",
         "dexie-react-hooks": "1.1.7",
         "express": "4.21.1",
-        "framer-motion": "11.13.0",
+        "framer-motion": "11.13.1",
         "graphql": "16.9.0",
         "path-to-regexp": "8.2.0",
         "react": "18.3.1",
@@ -38,7 +38,7 @@
     "devDependencies": {
         "@babel/core": "7.26.0",
         "@types/express": "5.0.0",
-        "@types/react": "18.3.12",
+        "@types/react": "18.3.13",
         "@types/react-dom": "18.3.1",
         "@vitejs/plugin-react": "4.3.4",
         "@yotsubacy/config": "1.15.4",
@@ -46,7 +46,7 @@
         "eslint": "8.57.1",
         "husky": "9.1.7",
         "lint-staged": "15.2.10",
-        "vite": "6.0.2"
+        "vite": "6.0.3"
     },
     "packageManager": "pnpm@9.14.4",
     "engines": {
