@@ -26,7 +26,7 @@
         "date-fns": "4.1.0",
         "dexie": "4.0.10",
         "dexie-react-hooks": "1.1.7",
-        "express": "4.21.1",
+        "express": "4.21.2",
         "framer-motion": "11.13.1",
         "graphql": "16.9.0",
         "path-to-regexp": "8.2.0",
