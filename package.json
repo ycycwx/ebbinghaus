@@ -27,7 +27,7 @@
         "dexie": "4.0.10",
         "dexie-react-hooks": "1.1.7",
         "express": "4.21.2",
-        "framer-motion": "11.14.4",
+        "framer-motion": "11.15.0",
         "graphql": "16.10.0",
         "path-to-regexp": "8.2.0",
         "react": "18.3.1",
