@@ -24,7 +24,7 @@
         "@emotion/styled": "11.14.0",
         "compression": "1.7.5",
         "date-fns": "4.1.0",
-        "dexie": "4.0.10",
+        "dexie": "4.0.11",
         "dexie-react-hooks": "1.1.7",
         "express": "4.21.2",
         "framer-motion": "11.17.0",
