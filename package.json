@@ -27,7 +27,7 @@
         "dexie": "4.0.11",
         "dexie-react-hooks": "1.1.7",
         "express": "4.21.2",
-        "framer-motion": "12.0.11",
+        "framer-motion": "12.4.1",
         "graphql": "16.10.0",
         "path-to-regexp": "8.2.0",
         "react": "18.3.1",
@@ -36,7 +36,7 @@
         "typescript": "5.7.3"
     },
     "devDependencies": {
-        "@babel/core": "7.26.7",
+        "@babel/core": "7.26.8",
         "@types/express": "5.0.0",
         "@types/react": "18.3.18",
         "@types/react-dom": "18.3.5",
@@ -46,7 +46,7 @@
         "eslint": "8.57.1",
         "husky": "9.1.7",
         "lint-staged": "15.4.3",
-        "vite": "6.0.11"
+        "vite": "6.1.0"
     },
     "packageManager": "pnpm@10.2.0",
     "engines": {
