@@ -43,7 +43,7 @@
         "@vitejs/plugin-react": "4.3.4",
         "@yotsubacy/config": "1.15.14",
         "cross-env": "7.0.3",
-        "eslint": "8.57.1",
+        "eslint": "9.21.0",
         "husky": "9.1.7",
         "lint-staged": "15.4.3",
         "vite": "6.1.1"
