@@ -10,6 +10,7 @@
         "build:vercel": "tsc -p tsconfig.prod.json && vite build -c vite.vercel.config.ts",
         "build:client": "vite build --outDir dist/client",
         "build:server": "vite build --ssr src/server.tsx --outDir dist/server",
+        "lint": "eslint --max-warnings=0 .",
         "serve": "cross-env NODE_ENV=production node server.js",
         "prepare": "husky"
     },
@@ -41,7 +42,7 @@
         "@types/react": "18.3.18",
         "@types/react-dom": "18.3.5",
         "@vitejs/plugin-react": "4.3.4",
-        "@yotsubacy/config": "1.15.16",
+        "@yotsubacy/config": "1.16.1",
         "cross-env": "7.0.3",
         "eslint": "8.57.1",
         "husky": "9.1.7",
