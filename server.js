@@ -40,7 +40,6 @@ app.use('*', async (req, res) => {
         const url = req.originalUrl.replace(base, '');
         const manifest = isProd ? await fs.readFile('./dist/client/manifest.json', 'utf-8') : undefined;
         const render = isProd
-            // eslint-disable-next-line import/no-unresolved
             ? (await import('./dist/server/server.mjs')).render
             : (await vite.ssrLoadModule('/src/server.tsx')).render;
 

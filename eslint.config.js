@@ -1,10 +1,13 @@
-import {flatConfigs} from '@yotsubacy/config/eslint';
+import config from '@yotsubacy/config/eslint';
 
-export default flatConfigs.config(
-    ['node', 'browser', 'react', 'typescript'],
+export default config(
+    ['node', 'react', 'typescript', 'browser'],
     {
         languageOptions: {
             parserOptions: {
+                projectService: {
+                    allowDefaultProject: ['*.js'],
+                },
                 tsconfigRootDir: import.meta.dirname,
             },
         },
