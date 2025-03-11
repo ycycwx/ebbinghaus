@@ -79,8 +79,8 @@ importers:
         specifier: 4.3.4
         version: 4.3.4(vite@6.2.1(@types/node@22.13.10)(yaml@2.7.0))
       '@yotsubacy/config':
-        specifier: 2.0.2
-        version: 2.0.2(@typescript-eslint/parser@8.26.0(eslint@9.22.0)(typescript@5.8.2))(eslint@9.22.0)(typescript@5.8.2)
+        specifier: 2.0.5
+        version: 2.0.5(@typescript-eslint/parser@8.26.0(eslint@9.22.0)(typescript@5.8.2))(eslint@9.22.0)(typescript@5.8.2)
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -824,8 +824,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
 
-  '@yotsubacy/config@2.0.2':
-    resolution: {integrity: sha512-9mYsU8cLDgo/cYy1sB2Oq14yRJ/htJNEg8DLgeWxFry50sXezejm0p4bhwUJ3Sge91G57PooY35PWdl3oicouQ==}
+  '@yotsubacy/config@2.0.5':
+    resolution: {integrity: sha512-hJAcgTkjQERJxFPehHqlf81LlmJCI7INWVgtp2KUYWssZ9NJWWsjynySSD8DflWzVRU07TTUoNp8ifOfSe3M1w==}
     peerDependencies:
       eslint: ^9.21.0
 
@@ -3278,7 +3278,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@yotsubacy/config@2.0.2(@typescript-eslint/parser@8.26.0(eslint@9.22.0)(typescript@5.8.2))(eslint@9.22.0)(typescript@5.8.2)':
+  '@yotsubacy/config@2.0.5(@typescript-eslint/parser@8.26.0(eslint@9.22.0)(typescript@5.8.2))(eslint@9.22.0)(typescript@5.8.2)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.4.1(eslint@9.22.0)
       '@eslint/js': 9.22.0
