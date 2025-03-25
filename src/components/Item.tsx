@@ -15,14 +15,13 @@ import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon, RepeatIcon} from '
 import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, resetItem, updateStage, updateUpdateTime} from '../graphql';
-import {isAvailable, isFinished, useBreakpoints, useForceUpdate, useInterval} from '../util';
+import {isAvailable, isFinished, useForceUpdate, useInterval} from '../util';
 import {useHistory} from './Router';
 import {Name} from './Name';
 import type {EbbinghausItem} from '../../types/store';
 
 // eslint-disable-next-line max-lines-per-function
 export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausItem) => {
-    const {isLargerThan960} = useBreakpoints();
     const history = useHistory();
     const theme = useTheme();
     const dateLocale = useLocaleDate();
@@ -55,23 +54,19 @@ export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausIt
         >
             <Name name={name} link={link} />
             <HStack spacing={3}>
-                {isLargerThan960 && (
-                    <Tooltip
-                        label={
-                            available || hasFinish
-                                ? null
-                                : formatDistanceToNow(addDays(updateTime, stage), {addSuffix: true, locale: dateLocale})
-                        }
-                        isDisabled={available || hasFinish}
-                    >
-                        <Text>{formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}</Text>
-                    </Tooltip>
-                )}
-                {isLargerThan960 ? (
-                    <Badge variant="solid" fontFamily="monospace">
-                        {stage > 28 ? 'MAX' : stage}
-                    </Badge>
-                ) : null}
+                <Tooltip
+                    label={
+                        available || hasFinish
+                            ? null
+                            : formatDistanceToNow(addDays(updateTime, stage), {addSuffix: true, locale: dateLocale})
+                    }
+                    isDisabled={available || hasFinish}
+                >
+                    <Text>{formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}</Text>
+                </Tooltip>
+                <Badge variant="solid" fontFamily="monospace">
+                    {stage > 28 ? 'MAX' : stage}
+                </Badge>
                 <IconButton
                     aria-label="edit"
                     icon={<EditIcon />}

@@ -18,7 +18,6 @@ import {useLiveQuery} from 'dexie-react-hooks';
 import {addItem, request, updateItem} from '../graphql';
 import {useLocaleText} from '../locales';
 import {db} from '../db';
-import {useBreakpoints} from '../util';
 import {useHistory, useParams} from './Router';
 import {useChecked} from './Checked';
 import type {ChangeEventHandler} from 'react';
@@ -55,7 +54,6 @@ const reducer = (state: State, action: Action) => {
 };
 
 const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
-    const {isSmallerThan540} = useBreakpoints();
     const history = useHistory();
     const disclosure = useChecked();
     const params: {id?: string} = useParams();
@@ -113,9 +111,8 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
         []
     );
 
-    const drawerSize = isSmallerThan540 ? 'full' : 'md';
     return (
-        <Drawer isOpen placement="right" size={drawerSize} onClose={onClose}>
+        <Drawer isOpen placement="right" size="md" onClose={onClose}>
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
@@ -123,11 +120,11 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
                 <DrawerBody>
                     <FormControl isRequired>
                         <FormLabel>{nameText}</FormLabel>
-                        <Input value={name} onChange={onNameChange} />
+                        <Input size="sm" value={name} onChange={onNameChange} />
                     </FormControl>
                     <FormControl>
                         <FormLabel>{linkText}</FormLabel>
-                        <Input value={link} onChange={onLinkChange} />
+                        <Input size="sm" value={link} onChange={onLinkChange} />
                     </FormControl>
                     <FormControl>
                         <FormLabel>{descText}</FormLabel>

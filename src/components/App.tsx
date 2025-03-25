@@ -3,13 +3,9 @@ import {
     Center,
     ChakraProvider,
     HStack,
-    extendTheme,
-    withDefaultVariant,
-    withDefaultColorScheme,
-    withDefaultSize,
 } from '@chakra-ui/react';
 import {Locales} from '../locales';
-import {useBreakpoints} from '../util';
+import {theme} from '../theme';
 import {Router} from './Router';
 import {Title} from './Title';
 import type {LocalesContext} from '../locales';
@@ -24,39 +20,16 @@ const Fallback = () => {
     );
 };
 
-interface AppProps {
-    locales: LocalesContext;
-}
-
-export const App = memo<AppProps>(({locales}) => {
-    const {isLargerThan960} = useBreakpoints();
-    const theme = extendTheme(
-        withDefaultVariant({variant: 'outline'}),
-        withDefaultSize({
-            size: isLargerThan960 ? 'lg' : 'md',
-            components: ['Heading'],
-        }),
-        withDefaultSize({
-            size: isLargerThan960 ? 'md' : 'sm',
-            components: ['Switch'],
-        }),
-        withDefaultSize({
-            size: isLargerThan960 ? 'sm' : 'xs',
-            components: ['Button', 'IconButton', 'Input', 'Textarea'],
-        }),
-        withDefaultColorScheme({colorScheme: 'teal'})
-    );
-    return (
-        <StrictMode>
-            <Locales value={locales}>
-                <ChakraProvider theme={theme}>
-                    <Router>
-                        <Suspense fallback={<Fallback />}>
-                            <Main />
-                        </Suspense>
-                    </Router>
-                </ChakraProvider>
-            </Locales>
-        </StrictMode>
-    );
-});
+export const App = memo<{locales: LocalesContext}>(({locales}) => (
+    <StrictMode>
+        <Locales value={locales}>
+            <ChakraProvider theme={theme}>
+                <Router>
+                    <Suspense fallback={<Fallback />}>
+                        <Main />
+                    </Suspense>
+                </Router>
+            </ChakraProvider>
+        </Locales>
+    </StrictMode>
+));

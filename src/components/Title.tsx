@@ -12,7 +12,7 @@ interface TitleProps {
 export const Title = ({isOpen, onToggle = noop, onAdd = noop}: TitleProps) => {
     return (
         <>
-            <Heading>Ebbinghaus</Heading>
+            <Heading size="lg">Ebbinghaus</Heading>
             <IconButton variant="outline" aria-label="add" icon={<AddIcon />} onClick={onAdd} />
             <Switch isChecked={isOpen} onChange={onToggle} />
         </>
