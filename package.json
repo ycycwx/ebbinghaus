@@ -33,7 +33,7 @@
         "path-to-regexp": "8.2.0",
         "react": "19.0.0",
         "react-dom": "19.0.0",
-        "serve-static": "1.16.2",
+        "serve-static": "2.2.0",
         "typescript": "5.8.2"
     },
     "devDependencies": {
