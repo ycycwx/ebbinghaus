@@ -35,12 +35,12 @@ else {
     app.use(vite.middlewares);
 }
 
-app.use('*', async (req, res) => {
+app.use('*all', async (req, res) => {
     try {
         const url = req.originalUrl.replace(base, '');
         const manifest = isProd ? await fs.readFile('./dist/client/manifest.json', 'utf-8') : undefined;
         const render = isProd
-            ? (await import('./dist/server/server.mjs')).render
+            ? (await import('./dist/server/server.js')).render
             : (await vite.ssrLoadModule('/src/server.tsx')).render;
 
         render(url, req, res, manifest);
