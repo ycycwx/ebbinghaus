@@ -34,7 +34,7 @@
         "react": "19.1.0",
         "react-dom": "19.1.0",
         "serve-static": "2.2.0",
-        "typescript": "5.8.2"
+        "typescript": "5.8.3"
     },
     "devDependencies": {
         "@babel/core": "7.26.10",
