@@ -39,10 +39,10 @@
     "devDependencies": {
         "@babel/core": "7.26.10",
         "@types/express": "5.0.1",
-        "@types/react": "19.1.1",
+        "@types/react": "19.1.2",
         "@types/react-dom": "19.1.2",
         "@vitejs/plugin-react": "4.3.4",
-        "@yotsubacy/config": "2.0.11",
+        "@yotsubacy/config": "2.0.12",
         "cross-env": "7.0.3",
         "eslint": "9.24.0",
         "husky": "9.1.7",
