@@ -1,15 +1,14 @@
-import {lazy, useCallback, Suspense} from 'react';
+import {useCallback} from 'react';
 import {HStack, VStack, useDisclosure} from '@chakra-ui/react';
 import {useLiveQuery} from 'dexie-react-hooks';
 import {db} from '../db';
 import {useIntervalToken} from '../util';
-import {useHistory} from './Router';
 import {Checked} from './Checked';
+import {DataList} from './DataList';
+import {Debug} from './Debug';
+import {Form} from './Form';
 import {Title} from './Title';
-
-const Debug = lazy(() => import('./Debug').then(module => ({default: module.Debug})));
-const Form = lazy(() => import('./Form').then(module => ({default: module.Form})));
-const DataList = lazy(() => import('./DataList').then(module => ({default: module.DataList})));
+import {useHistory} from './Router';
 
 export const Main = () => {
     const history = useHistory();
@@ -33,11 +32,9 @@ export const Main = () => {
                 </HStack>
                 <VStack spacing={4} p={5} width="100%">
                     <DataList data={data} />
-                    <Suspense fallback={null}>{import.meta.env.DEV && <Debug />}</Suspense>
+                    {import.meta.env.DEV && <Debug />}
                 </VStack>
-                <Suspense fallback={null}>
-                    <Form />
-                </Suspense>
+                <Form />
             </Checked>
         </VStack>
     );
