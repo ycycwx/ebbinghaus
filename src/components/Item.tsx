@@ -9,13 +9,14 @@ import {
     PopoverTrigger,
     Text,
     Tooltip,
+    useInterval,
     useTheme,
 } from '@chakra-ui/react';
 import {CheckIcon, SmallCloseIcon, EditIcon, RepeatClockIcon, RepeatIcon} from '@chakra-ui/icons';
 import {addDays, formatDistanceToNow} from 'date-fns';
 import {useLocaleDate, useLocaleText} from '../locales';
 import {deleteItem, request, resetItem, updateStage, updateUpdateTime} from '../graphql';
-import {isAvailable, isFinished, useForceUpdate, useInterval} from '../util';
+import {isAvailable, isFinished, useForceUpdate} from '../util';
 import {useHistory} from './Router';
 import {Name} from './Name';
 import type {EbbinghausItem} from '../../types/store';
