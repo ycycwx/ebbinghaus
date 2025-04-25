@@ -1,9 +1,8 @@
 import {Accordion, AccordionItem, AccordionIcon, AccordionPanel, AccordionButton, Box, Heading} from '@chakra-ui/react';
-import {useLiveQuery} from 'dexie-react-hooks';
-import {db} from '../db';
+import {useItems} from '../db/hooks';
 
 export const Debug = () => {
-    const data = useLiveQuery(() => db.loadAllItems({variant: 'all'}));
+    const data = useItems();
     if (!data) {
         return null;
     }

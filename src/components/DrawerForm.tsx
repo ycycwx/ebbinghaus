@@ -14,10 +14,9 @@ import {
     FormLabel,
     Textarea,
 } from '@chakra-ui/react';
-import {useLiveQuery} from 'dexie-react-hooks';
 import {addItem, request, updateItem} from '../graphql';
 import {useLocaleText} from '../locales';
-import {db} from '../db';
+import {useItem} from '../db/hooks';
 import {useHistory, useParams} from './Router';
 import {useChecked} from './Checked';
 import type {ChangeEventHandler} from 'react';
@@ -151,7 +150,7 @@ const CreateForm = () => {
 };
 
 const EditForm = ({id}: {id: number}) => {
-    const data = useLiveQuery(() => db.getItem(id), [id]);
+    const data = useItem(id);
     if (!data) {
         return null;
     }

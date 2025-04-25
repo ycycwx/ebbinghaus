@@ -1,8 +1,6 @@
 import {useCallback} from 'react';
 import {HStack, VStack, useDisclosure} from '@chakra-ui/react';
-import {useLiveQuery} from 'dexie-react-hooks';
-import {db} from '../db';
-import {useIntervalToken} from '../util';
+import {useItems} from '../db/hooks';
 import {Checked} from './Checked';
 import {DataList} from './DataList';
 import {Debug} from './Debug';
@@ -17,12 +15,11 @@ export const Main = () => {
     }, [history]);
 
     // polling the database
-    const token = useIntervalToken(60_000);
     const disclosure = useDisclosure();
-    const data = useLiveQuery(
-        () => db.loadAllItems({variant: disclosure.isOpen ? 'all' : 'available'}),
-        [disclosure.isOpen, token]
-    );
+    const data = useItems({
+        variant: disclosure.isOpen ? 'all' : 'available',
+        polling: 60_000,
+    });
 
     return (
         <VStack p={6} m="0 auto" maxWidth={800}>
