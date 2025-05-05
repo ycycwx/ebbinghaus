@@ -66,7 +66,7 @@ export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausIt
                     <Text>{formatDistanceToNow(updateTime, {addSuffix: true, locale: dateLocale})}</Text>
                 </Tooltip>
                 <Badge variant="solid" fontFamily="monospace">
-                    {stage > 28 ? 'MAX' : stage}
+                    {stage > 365 ? 'MAX' : stage}
                 </Badge>
                 <IconButton
                     aria-label="edit"
