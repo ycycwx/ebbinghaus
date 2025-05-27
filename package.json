@@ -28,7 +28,7 @@
         "dexie": "4.0.11",
         "dexie-react-hooks": "1.1.7",
         "express": "5.1.0",
-        "framer-motion": "12.14.0",
+        "framer-motion": "12.15.0",
         "graphql": "16.11.0",
         "path-to-regexp": "8.2.0",
         "react": "19.1.0",
@@ -37,9 +37,9 @@
         "typescript": "5.8.3"
     },
     "devDependencies": {
-        "@babel/core": "7.27.1",
+        "@babel/core": "7.27.3",
         "@types/express": "5.0.2",
-        "@types/react": "19.1.5",
+        "@types/react": "19.1.6",
         "@types/react-dom": "19.1.5",
         "@vitejs/plugin-react": "4.5.0",
         "@yotsubacy/config": "2.0.15",
