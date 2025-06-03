@@ -41,7 +41,7 @@
         "@types/express": "5.0.2",
         "@types/react": "19.1.6",
         "@types/react-dom": "19.1.5",
-        "@vitejs/plugin-react": "4.5.0",
+        "@vitejs/plugin-react": "4.5.1",
         "@yotsubacy/config": "2.0.17",
         "cross-env": "7.0.3",
         "eslint": "9.28.0",
