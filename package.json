@@ -39,7 +39,7 @@
     "devDependencies": {
         "@babel/core": "7.27.4",
         "@types/express": "5.0.3",
-        "@types/react": "19.1.6",
+        "@types/react": "19.1.8",
         "@types/react-dom": "19.1.6",
         "@vitejs/plugin-react": "4.5.1",
         "@yotsubacy/config": "2.0.18",
