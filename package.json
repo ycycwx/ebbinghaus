@@ -22,13 +22,13 @@
         "@chakra-ui/styled-system": "2.12.0",
         "@chakra-ui/system": "2.6.2",
         "@emotion/react": "11.14.0",
-        "@emotion/styled": "11.14.0",
+        "@emotion/styled": "11.14.1",
         "compression": "1.8.0",
         "date-fns": "4.1.0",
         "dexie": "4.0.11",
         "dexie-react-hooks": "1.1.7",
         "express": "5.1.0",
-        "framer-motion": "12.18.1",
+        "framer-motion": "12.19.2",
         "graphql": "16.11.0",
         "path-to-regexp": "8.2.0",
         "react": "19.1.0",
@@ -37,17 +37,17 @@
         "typescript": "5.8.3"
     },
     "devDependencies": {
-        "@babel/core": "7.27.4",
+        "@babel/core": "7.27.7",
         "@types/express": "5.0.3",
         "@types/react": "19.1.8",
         "@types/react-dom": "19.1.6",
-        "@vitejs/plugin-react": "4.5.2",
-        "@yotsubacy/config": "2.0.18",
+        "@vitejs/plugin-react": "4.6.0",
+        "@yotsubacy/config": "2.0.19",
         "cross-env": "7.0.3",
-        "eslint": "9.29.0",
+        "eslint": "9.30.0",
         "husky": "9.1.7",
         "lint-staged": "16.1.2",
-        "vite": "6.3.5"
+        "vite": "7.0.0"
     },
     "packageManager": "pnpm@10.12.4",
     "engines": {
