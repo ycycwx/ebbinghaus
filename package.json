@@ -49,7 +49,7 @@
         "lint-staged": "16.1.2",
         "vite": "7.0.3"
     },
-    "packageManager": "pnpm@10.12.4",
+    "packageManager": "pnpm@10.13.1",
     "engines": {
         "node": ">=22.x"
     },
