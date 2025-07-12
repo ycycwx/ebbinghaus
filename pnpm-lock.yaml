@@ -79,8 +79,8 @@ importers:
         specifier: 4.6.0
         version: 4.6.0(vite@7.0.4(@types/node@24.0.12)(yaml@2.8.0))
       '@yotsubacy/config':
-        specifier: 2.0.19
-        version: 2.0.19(@typescript-eslint/parser@8.36.0(eslint@9.31.0)(typescript@5.8.3))(eslint@9.31.0)(typescript@5.8.3)
+        specifier: 2.0.20
+        version: 2.0.20(@typescript-eslint/parser@8.36.0(eslint@9.31.0)(typescript@5.8.3))(eslint@9.31.0)(typescript@5.8.3)
       cross-env:
         specifier: 7.0.3
         version: 7.0.3
@@ -540,10 +540,6 @@ packages:
     resolution: {integrity: sha512-gtF186CXhIl1p4pJNGZw8Yc6RlshoePRvE0X91oPGb3vZ8pM3qOS9W9NGPat9LziaBV7XrJWGylNQXkGcnM3IQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@eslint/js@9.30.1':
-    resolution: {integrity: sha512-zXhuECFlyep42KZUhWjfvsmXGX39W8K8LFb8AWXM9gSV9dQB+MrJGLKvW6Zw0Ggnbpw0VHTtrhFXYe3Gym18jg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
   '@eslint/js@9.31.0':
     resolution: {integrity: sha512-LOm5OVt7D4qiKCqoiPbA7LWmI+tbw1VbTUowBcUMgQSuM6poJufkFkYDcQpo5KfgD39TnNySV26QjOh7VFpSyw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -956,8 +952,8 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0 || ^7.0.0-beta.0
 
-  '@yotsubacy/config@2.0.19':
-    resolution: {integrity: sha512-pSCTbUwvaJ8eimA6e3sJU+1R5lJAk0sZ0dAqYmCwePmn44SrTSxg6PLJ0deE6sxSuyPKKPPKU4eNFgTdLZO1NQ==}
+  '@yotsubacy/config@2.0.20':
+    resolution: {integrity: sha512-rFMjJ/yqC9Ny8tyjanbvZdf0aCwbxLlxyBSMVgcQ3wBh1sU2E7ZP1uySkmyT+MAF2LdlCi/pRCdRmGi57mIlNw==}
     peerDependencies:
       eslint: ^9.22.0
 
@@ -3084,8 +3080,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@eslint/js@9.30.1': {}
-
   '@eslint/js@9.31.0': {}
 
   '@eslint/object-schema@2.1.6': {}
@@ -3477,10 +3471,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@yotsubacy/config@2.0.19(@typescript-eslint/parser@8.36.0(eslint@9.31.0)(typescript@5.8.3))(eslint@9.31.0)(typescript@5.8.3)':
+  '@yotsubacy/config@2.0.20(@typescript-eslint/parser@8.36.0(eslint@9.31.0)(typescript@5.8.3))(eslint@9.31.0)(typescript@5.8.3)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.31.0)
-      '@eslint/js': 9.30.1
+      '@eslint/js': 9.31.0
       '@stylistic/eslint-plugin': 5.1.0(eslint@9.31.0)
       eslint: 9.31.0
       eslint-import-resolver-alias: 1.1.2(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.36.0(eslint@9.31.0)(typescript@5.8.3))(eslint-import-resolver-typescript@4.4.4(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.36.0(eslint@9.31.0)(typescript@5.8.3))(eslint@9.31.0))(eslint@9.31.0))(eslint@9.31.0))
