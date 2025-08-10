@@ -33,6 +33,7 @@ export const Switch = ({children}: {children: ReactNode}) => {
                     }
 
                     // TODO: fix any issue
+
                     // eslint-disable-next-line @stylistic/max-len
                     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
                     return match((child.props as any).path)(pathname);
