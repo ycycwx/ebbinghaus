@@ -47,7 +47,7 @@
         "eslint": "9.36.0",
         "husky": "9.1.7",
         "lint-staged": "16.2.3",
-        "vite": "7.1.8"
+        "vite": "7.1.9"
     },
     "packageManager": "pnpm@10.17.1",
     "engines": {
