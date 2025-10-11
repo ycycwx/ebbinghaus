@@ -28,7 +28,7 @@
         "dexie": "4.2.1",
         "dexie-react-hooks": "4.2.0",
         "express": "5.1.0",
-        "framer-motion": "12.23.22",
+        "framer-motion": "12.23.24",
         "graphql": "16.11.0",
         "path-to-regexp": "8.3.0",
         "react": "19.2.0",
@@ -46,7 +46,7 @@
         "cross-env": "10.1.0",
         "eslint": "9.37.0",
         "husky": "9.1.7",
-        "lint-staged": "16.2.3",
+        "lint-staged": "16.2.4",
         "vite": "7.1.9"
     },
     "packageManager": "pnpm@10.18.0",
