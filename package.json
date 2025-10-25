@@ -37,17 +37,17 @@
         "typescript": "5.9.3"
     },
     "devDependencies": {
-        "@babel/core": "7.28.4",
-        "@types/express": "5.0.3",
+        "@babel/core": "7.28.5",
+        "@types/express": "5.0.4",
         "@types/react": "19.2.2",
         "@types/react-dom": "19.2.2",
-        "@vitejs/plugin-react": "5.0.4",
+        "@vitejs/plugin-react": "5.1.0",
         "@yotsubacy/config": "2.3.1",
         "cross-env": "10.1.0",
-        "eslint": "9.37.0",
+        "eslint": "9.38.0",
         "husky": "9.1.7",
-        "lint-staged": "16.2.4",
-        "vite": "7.1.10"
+        "lint-staged": "16.2.6",
+        "vite": "7.1.12"
     },
     "packageManager": "pnpm@10.18.3",
     "engines": {
