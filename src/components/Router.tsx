@@ -1,4 +1,4 @@
-import {createContext, isValidElement, useContext, useMemo, useState, Children} from 'react';
+import {createContext, isValidElement, useContext, useState, Children} from 'react';
 import {match, pathToRegexp} from 'path-to-regexp';
 import type {ReactNode, Dispatch, PropsWithChildren, SetStateAction} from 'react';
 
@@ -68,7 +68,7 @@ export const useHistory = () => {
     if (!dispatch) {
         throw new Error('`useHistory` should use under `Router`');
     }
-    return useMemo(() => ({push: dispatch}), [dispatch]);
+    return {push: dispatch};
 };
 
 export const useParams = () => {

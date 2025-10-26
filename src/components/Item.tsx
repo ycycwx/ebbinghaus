@@ -54,7 +54,7 @@ export const Item = ({name, link, updateTime, id, stage, ...props}: EbbinghausIt
             }}
         >
             <Name name={name} link={link} />
-            <HStack spacing={3}>
+            <HStack spacing={3} flexShrink={0}>
                 <Tooltip
                     label={
                         available || hasFinish

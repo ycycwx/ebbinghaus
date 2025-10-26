@@ -1,4 +1,4 @@
-import {useCallback, useReducer} from 'react';
+import {useReducer} from 'react';
 import {
     Button,
     Drawer,
@@ -19,7 +19,6 @@ import {useLocaleText} from '../locales';
 import {useItem} from '../db/hooks';
 import {useHistory, useParams} from './Router';
 import {useChecked} from './Checked';
-import type {ChangeEventHandler} from 'react';
 
 interface State {
     name: string;
@@ -69,49 +68,15 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
 
     const [{name, link, desc}, dispatch] = useReducer(reducer, defaultValue);
 
-    const onClose = useCallback(
-        () => {
-            history.push('/');
-        },
-        [history]
-    );
-
-    const onClick = useCallback(async () => {
-        if (name) {
-            if (id) {
-                await request(updateItem, {id, name, link, desc});
-            }
-            else {
-                await request(addItem, {name, link, desc});
-                // redirect to all items tab after adding item
-                disclosure.onOpen();
-            }
-
-            onClose();
-        }
-    }, [name, id, onClose, link, desc, disclosure]);
-
-    const onNameChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
-        e => {
-            dispatch({payload: e.target.value, type: 'name'});
-        },
-        []
-    );
-    const onLinkChange = useCallback<ChangeEventHandler<HTMLInputElement>>(
-        e => {
-            dispatch({payload: e.target.value, type: 'link'});
-        },
-        []
-    );
-    const onDescChange = useCallback<ChangeEventHandler<HTMLTextAreaElement>>(
-        e => {
-            dispatch({payload: e.target.value, type: 'desc'});
-        },
-        []
-    );
-
     return (
-        <Drawer isOpen placement="right" size="md" onClose={onClose}>
+        <Drawer
+            isOpen
+            placement="right"
+            size="md"
+            onClose={() => {
+                history.push('/');
+            }}
+        >
             <DrawerOverlay />
             <DrawerContent>
                 <DrawerCloseButton />
@@ -119,23 +84,62 @@ const DrawerInternal = ({defaultValue = defaults}: {defaultValue?: State}) => {
                 <DrawerBody>
                     <FormControl isRequired>
                         <FormLabel>{nameText}</FormLabel>
-                        <Input size="sm" value={name} onChange={onNameChange} />
+                        <Input
+                            size="sm"
+                            value={name}
+                            onChange={e => {
+                                dispatch({payload: e.target.value, type: 'name'});
+                            }}
+                        />
                     </FormControl>
                     <FormControl>
                         <FormLabel>{linkText}</FormLabel>
-                        <Input size="sm" value={link} onChange={onLinkChange} />
+                        <Input
+                            size="sm"
+                            value={link}
+                            onChange={e => {
+                                dispatch({payload: e.target.value, type: 'link'});
+                            }}
+                        />
                     </FormControl>
                     <FormControl>
                         <FormLabel>{descText}</FormLabel>
-                        <Textarea value={desc} onChange={onDescChange} />
+                        <Textarea
+                            value={desc}
+                            onChange={e => {
+                                dispatch({payload: e.target.value, type: 'desc'});
+                            }}
+                        />
                     </FormControl>
                 </DrawerBody>
                 <DrawerFooter>
                     <HStack spacing={3}>
-                        <Button variant="outline" onClick={onClose}>
+                        <Button
+                            variant="outline"
+                            onClick={() => {
+                                history.push('/');
+                            }}
+                        >
                             {cancelText}
                         </Button>
-                        <Button type="submit" disabled={!name} onClick={onClick}>
+                        <Button
+                            type="submit"
+                            disabled={!name}
+                            onClick={async () => {
+                                if (name) {
+                                    if (id) {
+                                        await request(updateItem, {id, name, link, desc});
+                                    }
+                                    else {
+                                        await request(addItem, {name, link, desc});
+                                        // redirect to all items tab after adding item
+                                        disclosure.onOpen();
+                                    }
+
+                                    history.push('/');
+                                }
+                            }}
+                        >
                             {submitText}
                         </Button>
                     </HStack>
