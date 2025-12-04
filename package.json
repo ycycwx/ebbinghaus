@@ -31,8 +31,8 @@
         "framer-motion": "12.23.25",
         "graphql": "16.12.0",
         "path-to-regexp": "8.3.0",
-        "react": "19.2.0",
-        "react-dom": "19.2.0",
+        "react": "19.2.1",
+        "react-dom": "19.2.1",
         "serve-static": "2.2.0",
         "typescript": "5.9.3"
     },
