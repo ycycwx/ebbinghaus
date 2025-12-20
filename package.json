@@ -28,12 +28,12 @@
         "dexie": "4.2.1",
         "dexie-react-hooks": "4.2.0",
         "express": "5.2.1",
-        "framer-motion": "12.23.25",
+        "framer-motion": "12.23.26",
         "graphql": "16.12.0",
         "path-to-regexp": "8.3.0",
-        "react": "19.2.1",
-        "react-dom": "19.2.1",
-        "serve-static": "2.2.0",
+        "react": "19.2.3",
+        "react-dom": "19.2.3",
+        "serve-static": "2.2.1",
         "typescript": "5.9.3"
     },
     "devDependencies": {
@@ -41,14 +41,14 @@
         "@types/express": "5.0.6",
         "@types/react": "19.2.7",
         "@types/react-dom": "19.2.3",
-        "@vitejs/plugin-react": "5.1.1",
+        "@vitejs/plugin-react": "5.1.2",
         "@yotsubacy/config": "2.3.4",
         "babel-plugin-react-compiler": "^1.0.0",
         "cross-env": "10.1.0",
-        "eslint": "9.39.1",
+        "eslint": "9.39.2",
         "husky": "9.1.7",
         "lint-staged": "16.2.7",
-        "vite": "7.2.7"
+        "vite": "7.3.0"
     },
     "packageManager": "pnpm@10.24.0",
     "engines": {
