@@ -1,4 +1,4 @@
-import {createContext, useContext} from 'react';
+import {createContext, use} from 'react';
 import type {useDisclosure} from '@chakra-ui/react';
 
 const CheckedContext = createContext<null | ReturnType<typeof useDisclosure>>(null);
@@ -6,7 +6,7 @@ const CheckedContext = createContext<null | ReturnType<typeof useDisclosure>>(nu
 export const Checked = CheckedContext.Provider;
 
 export const useChecked = () => {
-    const disclosure = useContext(CheckedContext);
+    const disclosure = use(CheckedContext);
     if (!disclosure) {
         throw new Error('useChecked must be used within a Checked');
     }

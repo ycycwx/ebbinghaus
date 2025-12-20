@@ -1,4 +1,4 @@
-import {createContext, isValidElement, useContext, useState, Children} from 'react';
+import {createContext, isValidElement, use, useState, Children} from 'react';
 import {match, pathToRegexp} from 'path-to-regexp';
 import type {ReactNode, Dispatch, PropsWithChildren, SetStateAction} from 'react';
 
@@ -17,7 +17,7 @@ export const Router = ({children}: {children: ReactNode}) => {
 };
 
 export const useLocation = () => {
-    const path = useContext(pathContext);
+    const path = use(pathContext);
     return {pathname: path};
 };
 
@@ -44,7 +44,7 @@ export const Switch = ({children}: {children: ReactNode}) => {
 };
 
 const useRoute = () => {
-    const path = useContext(routeContext);
+    const path = use(routeContext);
     // eslint-disable-next-line eqeqeq
     if (path == undefined) {
         throw new Error('must be wrapped with `Route`');
@@ -64,7 +64,7 @@ export const Route = ({path, children}: PropsWithChildren<{path: string}>) => {
 };
 
 export const useHistory = () => {
-    const dispatch = useContext(dispatchContext);
+    const dispatch = use(dispatchContext);
     if (!dispatch) {
         throw new Error('`useHistory` should use under `Router`');
     }

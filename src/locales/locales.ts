@@ -1,4 +1,4 @@
-import {createContext, useContext} from 'react';
+import {createContext, use} from 'react';
 import enUS from './json/enUS.json' with {type: 'json'};
 import type {Locale} from 'date-fns';
 
@@ -14,7 +14,7 @@ const context = createContext<LocalesContext | null>(null);
 export const Locales = context.Provider;
 
 const useLocales = () => {
-    const locales = useContext(context);
+    const locales = use(context);
     if (!locales) {
         throw new Error('`useLocales` must be used with `Locales`');
     }
