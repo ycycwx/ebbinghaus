@@ -42,7 +42,7 @@
         "@types/react": "19.2.7",
         "@types/react-dom": "19.2.3",
         "@vitejs/plugin-react": "5.1.2",
-        "@yotsubacy/config": "2.3.4",
+        "@yotsubacy/config": "2.3.5",
         "babel-plugin-react-compiler": "^1.0.0",
         "cross-env": "10.1.0",
         "eslint": "9.39.2",
