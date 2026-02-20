@@ -45,7 +45,7 @@
         "@yotsubacy/config": "2.3.5",
         "babel-plugin-react-compiler": "^1.0.0",
         "cross-env": "10.1.0",
-        "eslint": "9.39.2",
+        "eslint": "9.39.3",
         "husky": "9.1.7",
         "lint-staged": "16.2.7",
         "vite": "7.3.1"
