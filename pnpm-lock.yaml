@@ -45,8 +45,8 @@ importers:
         specifier: 12.34.3
         version: 12.34.3(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       graphql:
-        specifier: 16.12.0
-        version: 16.12.0
+        specifier: 16.13.0
+        version: 16.13.0
       path-to-regexp:
         specifier: 8.3.0
         version: 8.3.0
@@ -1636,8 +1636,8 @@ packages:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
 
-  graphql@16.12.0:
-    resolution: {integrity: sha512-DKKrynuQRne0PNpEbzuEdHlYOMksHSUI8Zc9Unei5gTsMNA2/vMpoMz/yKba50pejK56qj98qM0SjYxAKi13gQ==}
+  graphql@16.13.0:
+    resolution: {integrity: sha512-uSisMYERbaB9bkA9M4/4dnqyktaEkf1kMHNKq/7DHyxVeWqHQ2mBmVqm5u6/FVHwF3iCNalKcg82Zfl+tffWoA==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   has-bigints@1.1.0:
@@ -4349,7 +4349,7 @@ snapshots:
 
   gopd@1.2.0: {}
 
-  graphql@16.12.0: {}
+  graphql@16.13.0: {}
 
   has-bigints@1.1.0: {}
 
