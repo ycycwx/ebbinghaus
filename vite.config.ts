@@ -7,7 +7,7 @@ export default defineConfig({
     plugins: [
         react(),
         babel({
-            presets: [reactCompilerPreset],
+            presets: [reactCompilerPreset()],
         }),
     ],
     build: {
