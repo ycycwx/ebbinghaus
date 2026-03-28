@@ -26,7 +26,7 @@
         "compression": "1.8.1",
         "date-fns": "4.1.0",
         "dexie": "4.4.1",
-        "dexie-react-hooks": "4.2.0",
+        "dexie-react-hooks": "4.4.0",
         "express": "5.2.1",
         "framer-motion": "12.38.0",
         "graphql": "16.13.2",
