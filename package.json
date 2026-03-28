@@ -30,7 +30,7 @@
         "express": "5.2.1",
         "framer-motion": "12.38.0",
         "graphql": "16.13.2",
-        "path-to-regexp": "8.3.0",
+        "path-to-regexp": "8.4.0",
         "react": "19.2.4",
         "react-dom": "19.2.4",
         "serve-static": "2.2.1",
