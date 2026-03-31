@@ -33,11 +33,11 @@ importers:
         specifier: 4.1.0
         version: 4.1.0
       dexie:
-        specifier: 4.4.1
-        version: 4.4.1
+        specifier: 4.4.2
+        version: 4.4.2
       dexie-react-hooks:
         specifier: 4.4.0
-        version: 4.4.0(dexie@4.4.1)(react@19.2.4)
+        version: 4.4.0(dexie@4.4.2)(react@19.2.4)
       express:
         specifier: 5.2.1
         version: 5.2.1
@@ -1097,8 +1097,8 @@ packages:
       dexie: '>=4.2.0-alpha.1 <5.0.0'
       react: '>=16'
 
-  dexie@4.4.1:
-    resolution: {integrity: sha512-4Xec5+yrS+TgyFAnMrneFOt/QG8sD3FxlkUVpfypui3SriRN80UN0SZBWmkNAY7ulfKgk0ilvv7M6pBURprdgA==}
+  dexie@4.4.2:
+    resolution: {integrity: sha512-zMtV8q79EFE5U8FKZvt0Y/77PCU/Hr/RDxv1EDeo228L+m/HTbeN2AjoQm674rhQCX8n3ljK87lajt7UQuZfvw==}
 
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
@@ -3580,12 +3580,12 @@ snapshots:
 
   detect-node-es@1.1.0: {}
 
-  dexie-react-hooks@4.4.0(dexie@4.4.1)(react@19.2.4):
+  dexie-react-hooks@4.4.0(dexie@4.4.2)(react@19.2.4):
     dependencies:
-      dexie: 4.4.1
+      dexie: 4.4.2
       react: 19.2.4
 
-  dexie@4.4.1: {}
+  dexie@4.4.2: {}
 
   doctrine@2.1.0:
     dependencies:
