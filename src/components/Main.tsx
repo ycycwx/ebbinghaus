@@ -6,6 +6,7 @@ import {DataList} from './DataList';
 import {Debug} from './Debug';
 import {Form} from './Form';
 import {Title} from './Title';
+import {InstallPwaButton} from './InstallPwaButton';
 import {useHistory} from './Router';
 
 export const Main = () => {
@@ -26,6 +27,7 @@ export const Main = () => {
             <Checked value={disclosure}>
                 <HStack spacing={3}>
                     <Title isOpen={disclosure.isOpen} onToggle={disclosure.onToggle} onAdd={onAdd} />
+                    <InstallPwaButton />
                 </HStack>
                 <VStack spacing={4} p={5} width="100%">
                     <DataList data={data} />

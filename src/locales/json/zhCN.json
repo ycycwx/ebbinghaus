@@ -10,5 +10,6 @@
     "dataList.action.delay": "延期处理",
     "dataList.action.finish": "确认记住",
     "dataList.action.remove": "确认删除",
-    "dataList.action.reset": "确认重置"
+    "dataList.action.reset": "确认重置",
+    "pwa.install": "保存到桌面"
 }

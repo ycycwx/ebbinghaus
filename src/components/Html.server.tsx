@@ -49,8 +49,11 @@ export const Html = ({manifest, lang}: HtmlProps) => {
                 {import.meta.env.DEV && <script type="module" src="/@vite/client" />}
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta name="theme-color" content="#ffffff" />
                 <title>Ebbinghaus</title>
                 <link rel="shortcut icon" href="favicon.ico" />
+                <link rel="manifest" href="/manifest.webmanifest" />
+                <link rel="apple-touch-icon" href="/pwa-192.png" />
                 <ManifestResolver manifest={manifest} />
             </head>
             <body>

@@ -13,5 +13,5 @@ export default config(
             },
         },
     },
-    globalIgnores(['dist'])
+    globalIgnores(['dist', 'public/sw.js'])
 );
