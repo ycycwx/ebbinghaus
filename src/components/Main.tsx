@@ -1,12 +1,12 @@
 import {useCallback} from 'react';
 import {HStack, VStack, useDisclosure} from '@chakra-ui/react';
 import {useItems} from '../db/hooks';
+import {InstallPwaButton} from '../pwa/InstallPwaButton';
 import {Checked} from './Checked';
 import {DataList} from './DataList';
 import {Debug} from './Debug';
 import {Form} from './Form';
 import {Title} from './Title';
-import {InstallPwaButton} from './InstallPwaButton';
 import {useHistory} from './Router';
 
 export const Main = () => {
