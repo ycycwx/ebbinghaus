@@ -29,7 +29,7 @@
         "dexie-react-hooks": "4.4.0",
         "express": "5.2.1",
         "framer-motion": "12.40.0",
-        "graphql": "16.14.0",
+        "graphql": "16.14.1",
         "path-to-regexp": "8.4.2",
         "react": "19.2.6",
         "react-dom": "19.2.6",
