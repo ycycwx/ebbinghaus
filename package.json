@@ -31,8 +31,8 @@
         "motion": "12.43.0",
         "graphql": "17.0.2",
         "path-to-regexp": "8.4.2",
-        "react": "19.3.0",
-        "react-dom": "19.3.0",
+        "react": "19.3.1",
+        "react-dom": "19.3.1",
         "serve-static": "2.2.1",
         "typescript": "6.0.3"
     },
