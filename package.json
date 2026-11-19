@@ -48,7 +48,7 @@
         "cross-env": "10.1.0",
         "eslint": "9.39.5",
         "husky": "9.1.7",
-        "lint-staged": "17.6.0",
+        "lint-staged": "17.6.1",
         "vite": "8.3.5"
     },
     "packageManager": "pnpm@11.28.13",
